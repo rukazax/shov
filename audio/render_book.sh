@@ -15,7 +15,13 @@ for f in ../BOOK01/ch*.md; do
     flock -n 9 || { echo "занято: $b"; exit 0; }
     [ -f "$out" ] && [ "$out" -nt "$f" ] && [ -z "${FORCE:-}" ] && exit 0
     echo "== $b"
-    python3 render.py "$f" --jobs "$JOBS"
+    # Глава не собралась (сервис синтеза молчал волной) — пауза и ещё заход.
+    # Кэш блоков делает повтор дешёвым: синтезируется только недостающее.
+    for try in 1 2 3 4 5 6; do
+      if python3 render.py "$f" --jobs "$JOBS"; then break; fi
+      echo "  $b: заход $try не собрался, пауза 120 с"
+      sleep 120
+    done
   ) 9>"out/$b.lock"
 done
 echo "воркер $FROM-$TO готов"

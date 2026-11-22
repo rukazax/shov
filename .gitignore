@@ -6,3 +6,4 @@ dist/
 audio/logs/
 __pycache__/
 *.bak-*
+audio/out/.cast-rebuild

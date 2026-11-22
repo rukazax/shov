@@ -33,28 +33,30 @@ SR = 44100
 # role -> базовый тембр и манера. rate/pitch/volume — строки edge-tts,
 # поверх них ложится просодия от эмоции (см. prosody()).
 VOICES = {
-    # Тембры подобраны по замеру, а не на слух: у каждого кандидата считалась
-    # доля шипящих 4–8 кГц (жёсткость) и периодичность. Мягче = меньше шипящих.
-    #   муж:  Andrew 12,5 %  Remy 13,6 %  Dmitry 14,4 %  William 14,8 %  |  Brian 20,1 %
-    #   жен:  Ava 18,4 %  Svetlana 19,2 %  Emma 19,6 %  |  Vivienne 25,2 %  Thalita 25,3 %
-    # Самое злое из старого набора — Thalita и Brian — из основных ролей убрано.
-    "narrator":   {"voice": "ru-RU-DmitryNeural",              "rate": "-2%",  "pitch": "-2Hz",  "volume": "+0%"},
-    "hero":       {"voice": "en-US-AndrewMultilingualNeural",  "rate": "+1%",  "pitch": "+1Hz",  "volume": "+1%"},
-    "bocman":     {"voice": "en-AU-WilliamMultilingualNeural", "rate": "-10%", "pitch": "-14Hz", "volume": "+1%"},
-    "vitya":      {"voice": "fr-FR-RemyMultilingualNeural",    "rate": "+5%",  "pitch": "+7Hz",  "volume": "+1%"},
-    "muhin":      {"voice": "it-IT-GiuseppeMultilingualNeural","rate": "-4%",  "pitch": "-8Hz",  "volume": "+0%"},
-    "grisha":     {"voice": "fr-FR-RemyMultilingualNeural",    "rate": "-1%",  "pitch": "-2Hz",  "volume": "+0%"},
-    "mihalych":   {"voice": "ru-RU-DmitryNeural",              "rate": "-7%",  "pitch": "-9Hz",  "volume": "+0%"},
-    "leytenant":  {"voice": "en-US-AndrewMultilingualNeural",  "rate": "+3%",  "pitch": "+5Hz",  "volume": "+1%"},
-    "tehnik":     {"voice": "fr-FR-RemyMultilingualNeural",    "rate": "+2%",  "pitch": "+2Hz",  "volume": "-1%"},
-    "ganna":      {"voice": "ru-RU-SvetlanaNeural",            "rate": "-7%",  "pitch": "-5Hz",  "volume": "+0%"},
-    "dasha":      {"voice": "en-US-EmmaMultilingualNeural",    "rate": "+6%",  "pitch": "+9Hz",  "volume": "+1%"},
-    "lida":       {"voice": "en-US-AvaMultilingualNeural",     "rate": "+2%",  "pitch": "+3Hz",  "volume": "+0%"},
-    "pozharskaya":{"voice": "en-US-EmmaMultilingualNeural",    "rate": "-3%",  "pitch": "-4Hz",  "volume": "+0%"},
-    "agrafena":   {"voice": "ru-RU-SvetlanaNeural",            "rate": "-14%", "pitch": "-10Hz", "volume": "+0%"},
-    "female":     {"voice": "en-US-AvaMultilingualNeural",     "rate": "-1%",  "pitch": "+0Hz",  "volume": "+0%"},
-    "babka":      {"voice": "en-US-AvaMultilingualNeural",     "rate": "-11%", "pitch": "-7Hz",  "volume": "+1%"},
-    "system":     {"voice": "ru-RU-DmitryNeural",              "rate": "-12%", "pitch": "-8Hz",  "volume": "+0%"},
+    # Только родные русские голоса: их ровно два — Dmitry (муж) и Svetlana
+    # (жен). Мультиязычные голоса каталога читают по-русски с акцентом — на
+    # слух это слышно сразу, поэтому в карте их нет. Персонажей различает
+    # согласованный сдвиг темпа и тона: мужские 106–138 Гц с шагом 3–5 Гц,
+    # женские 157–181 Гц с шагом 4–5 Гц. Проверка — voice_probe.py: он печатает
+    # медиану основного тона по роли, а не «на глаз».
+    # Женская база female (+3 % / +2 Гц) — принятый владельцем вариант.
+    "narrator":   {"voice": "ru-RU-DmitryNeural",   "rate": "-2%",  "pitch": "-2Hz",  "volume": "+0%"},
+    "hero":       {"voice": "ru-RU-DmitryNeural",   "rate": "+1%",  "pitch": "+2Hz",  "volume": "+1%"},
+    "bocman":     {"voice": "ru-RU-DmitryNeural",   "rate": "-15%", "pitch": "-16Hz", "volume": "+1%"},
+    "vitya":      {"voice": "ru-RU-DmitryNeural",   "rate": "+14%", "pitch": "+14Hz", "volume": "+1%"},
+    "muhin":      {"voice": "ru-RU-DmitryNeural",   "rate": "-5%",  "pitch": "-5Hz",  "volume": "+0%"},
+    "grisha":     {"voice": "ru-RU-DmitryNeural",   "rate": "-8%",  "pitch": "-8Hz",  "volume": "+0%"},
+    "mihalych":   {"voice": "ru-RU-DmitryNeural",   "rate": "-11%", "pitch": "-11Hz", "volume": "+0%"},
+    "leytenant":  {"voice": "ru-RU-DmitryNeural",   "rate": "+5%",  "pitch": "+4Hz",  "volume": "+1%"},
+    "tehnik":     {"voice": "ru-RU-DmitryNeural",   "rate": "+9%",  "pitch": "+9Hz",  "volume": "-1%"},
+    "system":     {"voice": "ru-RU-DmitryNeural",   "rate": "-25%", "pitch": "-18Hz", "volume": "+0%"},
+    "ganna":      {"voice": "ru-RU-SvetlanaNeural", "rate": "-4%",  "pitch": "-5Hz",  "volume": "+0%"},
+    "dasha":      {"voice": "ru-RU-SvetlanaNeural", "rate": "+12%", "pitch": "+11Hz", "volume": "+1%"},
+    "lida":       {"voice": "ru-RU-SvetlanaNeural", "rate": "+8%",  "pitch": "+7Hz",  "volume": "+0%"},
+    "pozharskaya":{"voice": "ru-RU-SvetlanaNeural", "rate": "+0%",  "pitch": "-1Hz",  "volume": "+0%"},
+    "agrafena":   {"voice": "ru-RU-SvetlanaNeural", "rate": "-13%", "pitch": "-13Hz", "volume": "+0%"},
+    "female":     {"voice": "ru-RU-SvetlanaNeural", "rate": "+3%",  "pitch": "+2Hz",  "volume": "+0%"},
+    "babka":      {"voice": "ru-RU-SvetlanaNeural", "rate": "-8%",  "pitch": "-9Hz",  "volume": "+1%"},
 }
 
 FEMALE_ROLES = {"ganna", "dasha", "lida", "pozharskaya", "agrafena", "female", "babka"}
@@ -390,6 +392,8 @@ def prosody(kind, text, role):
     # же пресетом — именно это и слышится как «механически». Разброс считается
     # от текста, поэтому повторный рендер даёт тот же результат и тот же кэш.
     j = int(hashlib.sha1(t.encode()).hexdigest()[:8], 16)
+    # ±2 — предел без ресинтеза: ключ кэша включает rate/pitch, а голос
+    # рассказчика (Dmitry) у сервиса периодически отбивает целиком.
     rate += (j % 5) - 2                       # ± 2 %
     pitch += ((j >> 8) % 5) - 2               # ± 2 Гц
     if j % 3 == 0 and len(t) > 90:            # длинная реплика — чуть ровнее
@@ -492,6 +496,9 @@ def tail_gap(text, kind):
         g += int(0.06 * SR)
     if e.endswith("…") or e.endswith("..."):
         g += int(0.28 * SR)
+    # Дыхание ±60 мс от текста: ровные паузы подряд слышны как метроном.
+    j = int(hashlib.sha1(text.encode()).hexdigest()[:6], 16)
+    g += int(((j % 5) - 2) * 0.03 * SR)
     return g
 
 
@@ -551,14 +558,27 @@ async def synth_one(text, spec, path):
     # NoAudioReceived — это троттлинг: слишком много запросов в полёте.
     # 4 воркера по 7 «джобов» давали 28 параллельных и валили почти всё,
     # поэтому пауза растёт на каждой попытке, а не стоит 0,4 с.
-    for attempt in range(8):
+    # Сервис отбивает запросы волнами: минуту всё проходит, потом 0/10 подряд.
+    # Поэтому пробуем не «8 раз», а до 5 минут на блок с паузой до 8 с —
+    # волна проходит, и блок доезжает. Ниже по коду блоки, не прошедшие это,
+    # добиваются ещё тремя заходами.
+    deadline = time.time() + 300
+    attempt = 0
+    while time.time() < deadline:
         try:
-            await edge_tts.Communicate(text, spec["voice"], **kwargs).save(path)
+            # Без таймаута один зависший запрос держит воркер часами: процесс
+            # живёт, CPU 0 %, кэш не растёт. 25 с хватает любому блоку.
+            await asyncio.wait_for(
+                edge_tts.Communicate(text, spec["voice"], **kwargs).save(path), timeout=25)
             if os.path.getsize(path) > 500:
                 return True
         except Exception as e:  # noqa: BLE001
-            print(f"  ! {type(e).__name__}: {e} (попытка {attempt+1})", file=sys.stderr)
-            await asyncio.sleep(1.2 * (attempt + 1) + random.random())
+            print(f"  ! {type(e).__name__} [{spec['voice'].split('-')[2]} {spec['rate']} {spec['pitch']}] "
+                  f"(попытка {attempt+1}) {text[:40]}", file=sys.stderr)
+        attempt += 1
+        # Отказ приходит быстро (2–4 с) и по одному запросу, поэтому длинные
+        # паузы только съедают время: долбим часто, пока не попадём в окно.
+        await asyncio.sleep(0.15 + random.random() * 0.35)
     return False
 
 
@@ -758,6 +778,9 @@ def main():
         # смягчение тембра и комната — на каждой реплике, до раскладки:
         # хвост уходит в паузу, поэтому блок становится длиннее исходного
         y = room(soften(x))
+        # Микродинамика ±0.5 дБ по блоку: без неё соседние абзацы звучат
+        # одной громкостью, и текст читается как объявление, а не как рассказ.
+        y = y * np.float32(10.0 ** ((((i * 37) % 11) - 5) / 40.0))
         e = min(len(voice), cur + len(y))
         voice[cur:e] += y[: e - cur]
         samples.append((cur, cur + len(x)))
