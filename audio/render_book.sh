@@ -4,6 +4,7 @@
 set -u
 cd "$(dirname "$0")"
 FROM=${1:-0}; TO=${2:-99}
+JOBS=${JOBS:-4}   # больше 6 параллельных запросов edge-tts начинает троттлить
 for f in ../BOOK01/ch*.md; do
   b=$(basename "$f" .md)
   n=$(printf '%s' "$b" | grep -o '[0-9]\+' | head -1); n=${n:-0}
@@ -14,7 +15,7 @@ for f in ../BOOK01/ch*.md; do
     flock -n 9 || { echo "занято: $b"; exit 0; }
     [ -f "$out" ] && [ "$out" -nt "$f" ] && [ -z "${FORCE:-}" ] && exit 0
     echo "== $b"
-    python3 render.py "$f"
+    python3 render.py "$f" --jobs "$JOBS"
   ) 9>"out/$b.lock"
 done
 echo "воркер $FROM-$TO готов"

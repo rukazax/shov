@@ -4,3 +4,5 @@ audio/out/*.lock
 audio/out/*.mp3
 dist/
 audio/logs/
+__pycache__/
+*.bak-*

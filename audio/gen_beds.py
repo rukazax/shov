@@ -141,7 +141,10 @@ def bed_action(dur=75.0):
                     harmonics=(1.0, 0.35, 0.1))
         out[start:start + len(bass)] += bass[: n - start]
         if i % 2 == 1:
-            hat = noise(0.05, amp=0.10, lowpass=0.5)
+            # был шумовой хэт — на слух это «шипение на фоне». Теперь короткий
+            # тон с быстрым спадом: щёлчок слышен, шума не добавляет.
+            hat = note(5200.0, 0.05, amp=0.06, attack=0.001, decay=0.04,
+                       harmonics=(1.0, 0.4, 0.15))
             out[start:start + len(hat)] += hat[: n - start]
         i += 1
         k += step
@@ -157,8 +160,12 @@ def bed_seam(dur=60.0):
     t = np.arange(n, dtype=np.float32) / SR
     base = 0.18 * np.sin(2 * np.pi * 41.0 * t) + 0.1 * np.sin(2 * np.pi * 41.7 * t)
     trem = 0.6 + 0.4 * np.sin(2 * np.pi * 0.35 * t)
-    hiss = noise(dur, amp=0.06, lowpass=0.35)
-    out = (base * trem).astype(np.float32) + hiss
+    # было непрерывное белое шипение на всю длину — это и был «ветер».
+    # Теперь высокий тон с медленной дрожью: тревожно, но без шума.
+    t = np.arange(n, dtype=np.float32) / SR
+    shimmer = 0.022 * np.sin(2 * np.pi * 1234.0 * t) * (0.5 + 0.5 * np.sin(2 * np.pi * 0.7 * t))
+    shimmer += 0.014 * np.sin(2 * np.pi * 1850.5 * t) * (0.5 + 0.5 * np.sin(2 * np.pi * 0.43 * t + 1.1))
+    out = (base * trem).astype(np.float32) + shimmer.astype(np.float32)
     return fade(reverb(out, mix=0.35), 2.0)
 
 

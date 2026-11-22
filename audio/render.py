@@ -10,7 +10,9 @@ python3 render.py BOOK01/ch01.md [-o out/ch01.mp3] [--only-text]
 import argparse
 import asyncio
 import hashlib
+import json
 import os
+import random
 import re
 import subprocess
 import sys
@@ -23,6 +25,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BEDS = os.path.join(HERE, "beds")
 CACHE = os.path.join(HERE, "cache")
 OUTDIR = os.path.join(HERE, "out")
+CASTDIR = os.path.join(HERE, "cast")
 SR = 44100
 
 # --- голоса ---------------------------------------------------------------
@@ -30,22 +33,27 @@ SR = 44100
 # role -> базовый тембр и манера. rate/pitch/volume — строки edge-tts,
 # поверх них ложится просодия от эмоции (см. prosody()).
 VOICES = {
-    "narrator":   {"voice": "ru-RU-DmitryNeural",              "rate": "-3%",  "pitch": "-3Hz",  "volume": "+0%"},
-    "hero":       {"voice": "ru-RU-DmitryNeural",              "rate": "+1%",  "pitch": "+1Hz",  "volume": "+2%"},
-    "bocman":     {"voice": "en-AU-WilliamMultilingualNeural", "rate": "-10%", "pitch": "-16Hz", "volume": "+2%"},
-    "vitya":      {"voice": "en-US-BrianMultilingualNeural",   "rate": "+5%",  "pitch": "+6Hz",  "volume": "+1%"},
-    "muhin":      {"voice": "fr-FR-RemyMultilingualNeural",    "rate": "-4%",  "pitch": "-8Hz",  "volume": "+0%"},
-    "grisha":     {"voice": "it-IT-GiuseppeMultilingualNeural","rate": "-2%",  "pitch": "-3Hz",  "volume": "+0%"},
-    "mihalych":   {"voice": "en-US-AndrewMultilingualNeural",  "rate": "-7%",  "pitch": "-10Hz", "volume": "+0%"},
-    "leytenant":  {"voice": "en-US-AndrewMultilingualNeural",  "rate": "+2%",  "pitch": "+5Hz",  "volume": "+1%"},
-    "tehnik":     {"voice": "en-US-BrianMultilingualNeural",   "rate": "+2%",  "pitch": "+2Hz",  "volume": "-1%"},
-    "ganna":      {"voice": "ru-RU-SvetlanaNeural",            "rate": "-8%",  "pitch": "-6Hz",  "volume": "+0%"},
-    "dasha":      {"voice": "en-US-AvaMultilingualNeural",     "rate": "+6%",  "pitch": "+14Hz", "volume": "+1%"},
-    "lida":       {"voice": "en-US-EmmaMultilingualNeural",    "rate": "+0%",  "pitch": "+2Hz",  "volume": "+0%"},
-    "pozharskaya":{"voice": "fr-FR-VivienneMultilingualNeural","rate": "-3%",  "pitch": "-4Hz",  "volume": "+0%"},
-    "agrafena":   {"voice": "ru-RU-SvetlanaNeural",            "rate": "-16%", "pitch": "-12Hz", "volume": "+0%"},
-    "female":     {"voice": "pt-BR-ThalitaMultilingualNeural", "rate": "-2%",  "pitch": "+0Hz",  "volume": "+0%"},
-    "babka":      {"voice": "pt-BR-ThalitaMultilingualNeural", "rate": "-12%", "pitch": "-10Hz", "volume": "+2%"},
+    # Тембры подобраны по замеру, а не на слух: у каждого кандидата считалась
+    # доля шипящих 4–8 кГц (жёсткость) и периодичность. Мягче = меньше шипящих.
+    #   муж:  Andrew 12,5 %  Remy 13,6 %  Dmitry 14,4 %  William 14,8 %  |  Brian 20,1 %
+    #   жен:  Ava 18,4 %  Svetlana 19,2 %  Emma 19,6 %  |  Vivienne 25,2 %  Thalita 25,3 %
+    # Самое злое из старого набора — Thalita и Brian — из основных ролей убрано.
+    "narrator":   {"voice": "ru-RU-DmitryNeural",              "rate": "-2%",  "pitch": "-2Hz",  "volume": "+0%"},
+    "hero":       {"voice": "en-US-AndrewMultilingualNeural",  "rate": "+1%",  "pitch": "+1Hz",  "volume": "+1%"},
+    "bocman":     {"voice": "en-AU-WilliamMultilingualNeural", "rate": "-10%", "pitch": "-14Hz", "volume": "+1%"},
+    "vitya":      {"voice": "fr-FR-RemyMultilingualNeural",    "rate": "+5%",  "pitch": "+7Hz",  "volume": "+1%"},
+    "muhin":      {"voice": "it-IT-GiuseppeMultilingualNeural","rate": "-4%",  "pitch": "-8Hz",  "volume": "+0%"},
+    "grisha":     {"voice": "fr-FR-RemyMultilingualNeural",    "rate": "-1%",  "pitch": "-2Hz",  "volume": "+0%"},
+    "mihalych":   {"voice": "ru-RU-DmitryNeural",              "rate": "-7%",  "pitch": "-9Hz",  "volume": "+0%"},
+    "leytenant":  {"voice": "en-US-AndrewMultilingualNeural",  "rate": "+3%",  "pitch": "+5Hz",  "volume": "+1%"},
+    "tehnik":     {"voice": "fr-FR-RemyMultilingualNeural",    "rate": "+2%",  "pitch": "+2Hz",  "volume": "-1%"},
+    "ganna":      {"voice": "ru-RU-SvetlanaNeural",            "rate": "-7%",  "pitch": "-5Hz",  "volume": "+0%"},
+    "dasha":      {"voice": "en-US-EmmaMultilingualNeural",    "rate": "+6%",  "pitch": "+9Hz",  "volume": "+1%"},
+    "lida":       {"voice": "en-US-AvaMultilingualNeural",     "rate": "+2%",  "pitch": "+3Hz",  "volume": "+0%"},
+    "pozharskaya":{"voice": "en-US-EmmaMultilingualNeural",    "rate": "-3%",  "pitch": "-4Hz",  "volume": "+0%"},
+    "agrafena":   {"voice": "ru-RU-SvetlanaNeural",            "rate": "-14%", "pitch": "-10Hz", "volume": "+0%"},
+    "female":     {"voice": "en-US-AvaMultilingualNeural",     "rate": "-1%",  "pitch": "+0Hz",  "volume": "+0%"},
+    "babka":      {"voice": "en-US-AvaMultilingualNeural",     "rate": "-11%", "pitch": "-7Hz",  "volume": "+1%"},
     "system":     {"voice": "ru-RU-DmitryNeural",              "rate": "-12%", "pitch": "-8Hz",  "volume": "+0%"},
 }
 
@@ -88,8 +96,45 @@ MANNER = (r"(?:тихо|громко|негромко|быстро|медлен�
           r"тут же|же|не оборачиваясь|за её спиной|за его спиной|в спину|в трубку)?")
 ATTR_RE = re.compile(SPEAK_VERB + r"\s*" + MANNER + r"\s+(\S+)")
 
-BED_GAIN = 0.05          # подложка под голосом: было 0.11 — гул в паузах
-BED_HP_HZ = 110          # срез низа подложки: он и звучал «фоновым шумом»
+BED_GAIN = 0.0           # 1С читает БЕЗ подложки: у эталона пол тишины −84,9 dBFS,
+                         # то есть в паузах почти цифровой ноль. Музыка у них
+                         # только в шапке. Проверено замером — подложку не включать.
+BED_HP_HZ = 80           # срез низа: ниже него подложка гудит
+
+# --- XTTS v2 на Windows-боксе -------------------------------------------
+# Тембры — живые эталоны 1С-Паблишинг (11 с монозаписи). Управление эмоцией
+# идёт через эталон: движок клонирует не только тембр, но и манеру отрывка,
+# поэтому у одного голоса может быть несколько отрывков под разные состояния.
+XTTS_URL = os.environ.get("XTTS_URL", "")
+XTTS_REFS = {
+    "narrator": "hero", "hero": "hero", "system": "hero",
+    "babka": "female2", "agrafena": "female2", "ganna": "female2",
+    "dasha": "female1", "lida": "female1", "pozharskaya": "female1", "female": "female1",
+    "bocman": "male_poteryaev", "muhin": "male_poteryaev", "mihalych": "male_poteryaev",
+    "vitya": "male_petrov", "grisha": "male_petrov", "tehnik": "male_petrov",
+    "leytenant": "male_petrov",
+}
+# октавный сдвиг тембра, когда роль делит эталон с другой ролью
+REF_PITCH = {"babka": -3, "agrafena": -5, "ganna": -1, "dasha": +2, "lida": 0,
+             "pozharskaya": -2, "bocman": -4, "muhin": -2, "mihalych": -3,
+             "vitya": +3, "grisha": 0, "tehnik": +1, "leytenant": +1}
+
+# Смягчение тембра и комната. Проверяется замером: доля шипящих 4–8 кГц
+# должна падать, а тишина между блоками — не быть цифровым нулём.
+SOFT_SHELF_HZ = 4600     # выше — режем: там живёт «механическая» жёсткость
+SOFT_SHELF_DB = -4.0     # эталон 1С: шипящих 7,8 % — у нас −3 дБ даёт 8,8 %
+SOFT_BODY_DB = 5.0       # тела внизу: у эталона 16,5 % энергии ниже 120 Гц, у нас 8 %
+SOFT_PRES_DB = 2.0       # присутствие 1,8 кГц: эталон ярче нас на ~190 Гц центроида,
+                         # но яркость берём ниже шипящих, а не выше
+ROOM_WET = 0.42          # сколько отражений подмешать к сухому голосу
+ROOM_TAIL = 0.62         # длина хвоста комнаты, с
+ROOM_TONE_DB = -85.0     # «воздух» студии. У эталона пол тишины −84,9 dBFS,
+                         # у нас был абсолютный ноль — это и есть мёртвая пауза.
+                         # Это не слышимый шум, а маскировка цифровой тишины.
+LOUD_I = -20.0           # эталон −21,5 LUFS; −20 — компромисс с телефоном
+LOUD_TP = -3.0           # dBTP, лимитер
+FX_WHOOSH = 0.0          # шумовые эффекты на границах сцен — выключены
+FX_STATIC = 0.0
 
 SYSTEM_RE = re.compile(
     r"^(Согласование|Метка|Допуск|Ранг|Протечка|Сдвиг|Приказ|Пост|Край|Регистрация|Носитель|"
@@ -141,6 +186,41 @@ def movavg(x, w):
 def norm(x, peak=0.9):
     m = float(np.max(np.abs(x))) or 1.0
     return x / m * peak
+
+
+def compress(x, thr=-16.0, ratio=1.8, att_ms=8.0, rel_ms=180.0):
+    """Плотность студийной записи.
+
+    Цель — не «плотнее», а как у эталона: у 1С LRA 7,1 LU. При ratio 3,5 у нас
+    выходило 4,4 LU — уже пережато, и это слышно как ровное, бездыханное
+    чтение. Здесь мягко: атака 8 мс, чтобы согласные не срезались.
+    """
+    a = max(1, int(att_ms * SR / 1000))
+    env_db = 20.0 * np.log10(movavg(np.abs(x), a) + 1e-9)
+    over = np.maximum(env_db - thr, 0.0)
+    gr_db = movavg(over * (1.0 - 1.0 / ratio), max(1, int(rel_ms * SR / 1000)))
+    return (x * (10.0 ** (-gr_db / 20.0))).astype(np.float32)
+
+
+def studio_air(n):
+    """Очень тихий ровный «воздух» на месте цифрового нуля.
+
+    Пол тишины у эталона −84,9 dBFS. Убрать шум совсем — значит получить
+    мёртвые паузы, в которых слышно, что это файл, а не запись. На −85 дБ
+    шум не слышен как шум, он только убирает провал в абсолютный ноль.
+    Детерминированный: повторный рендер даёт тот же результат.
+    """
+    rnd = np.random.RandomState(5)
+    air = rnd.randn(n).astype(np.float32)
+    air = highpass(air, 90)                     # без инфраниза
+    return air * (10.0 ** (ROOM_TONE_DB / 20.0))
+
+
+def integrated_lufs(path):
+    r = subprocess.run(["ffmpeg", "-i", path, "-af", "ebur128", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    m = re.findall(r"I:\s*(-?\d+\.\d+)\s*LUFS", r.stderr)
+    return float(m[-1]) if m else LOUD_I
 
 
 def robotize(x):
@@ -244,6 +324,9 @@ def resolve_dialogue(idx, blocks, recent, prev_role, narr_role="narrator", adjac
     r = attribution_role(text)
     if r in ("male_recent", "female_recent"):
         pool = MALE_ROLES if r == "male_recent" else FEMALE_ROLES
+        # «сказал он» — это заведомо не рассказчик: о себе он сказал бы «сказал я».
+        # Без этого recent[0] почти всегда hero и реплика уходила ему же.
+        pool = pool - {"hero"}
         r = next((x for x in recent if x in pool), None)
     if r:
         return r
@@ -302,18 +385,102 @@ def prosody(kind, text, role):
         rate -= 4
     if kind == "dialogue" and len(t) < 18 and tail.endswith("."):  # сухая рубленая реплика
         rate -= 3; pitch -= 2
-    return {"voice": base["voice"], "rate": f"{rate:+d}%", "pitch": f"{pitch:+d}Hz",
+
+    # Микроразброс. Без него каждая реплика одного персонажа звучит одним и тем
+    # же пресетом — именно это и слышится как «механически». Разброс считается
+    # от текста, поэтому повторный рендер даёт тот же результат и тот же кэш.
+    j = int(hashlib.sha1(t.encode()).hexdigest()[:8], 16)
+    rate += (j % 5) - 2                       # ± 2 %
+    pitch += ((j >> 8) % 5) - 2               # ± 2 Гц
+    if j % 3 == 0 and len(t) > 90:            # длинная реплика — чуть ровнее
+        rate -= 1
+
+    spec = {"voice": base["voice"], "rate": f"{rate:+d}%", "pitch": f"{pitch:+d}Hz",
             "volume": f"{vol:+d}%", "fx": fx}
+    if XTTS_URL:
+        mood = "tense" if fx == "shout" or t.rstrip().endswith("!") else "calm"
+        base_ref = XTTS_REFS.get(role, "hero")
+        spec["ref"] = f"{base_ref}_{mood}"
+        spec["speed"] = round(1.0 + rate / 100.0, 3)
+        spec["shift"] = REF_PITCH.get(role, 0)
+    return spec
 
 
 def cache_key(spec, text):
-    sig = "|".join((spec["voice"], spec["rate"], spec["pitch"], spec["volume"], text))
-    return hashlib.sha1(sig.encode()).hexdigest()[:20]
+    parts = [spec["voice"], spec["rate"], spec["pitch"], spec["volume"], text]
+    if spec.get("ref"):
+        parts += [spec["ref"], str(spec["speed"]), str(spec.get("shift", 0))]
+    return hashlib.sha1("|".join(parts).encode()).hexdigest()[:20]
 
 
 def highpass(x, hz=BED_HP_HZ):
     """Однополюсный срез низа — чтобы подложка не гудела в паузах."""
     return (x - movavg(x, int(SR / hz))).astype(np.float32)
+
+
+# Коррекция тембра: замер по 14 полосам против эталона 1С-Паблишинг
+# (официальный демо-фрагмент, Влад Римский, введение книги 1).
+# Слева — середина полосы, справа — на сколько дБ поднять/опустить.
+# Эталон: сильный низ 50–120 Гц, меньше «коробки» 180–700, крупное присутствие
+# 2,5–3,5 кГц, меньше шипящих 4,5–6 к и больше воздуха 8–11 к.
+def _eq_table():
+    """Кривая живёт в eq_curve.json: её правит eq_calibrate.py по замеру,
+    а не человек на слух. Нет файла — берётся зашитый замер."""
+    base = [(55.0, 3.6), (100.0, 4.7), (150.0, 0.0), (230.0, -4.2), (360.0, -2.8),
+            (570.0, -3.1), (880.0, -2.2), (1350.0, -1.2), (2100.0, 1.8), (3000.0, 6.7),
+            (4000.0, 1.0), (5200.0, -3.3), (7000.0, 0.5), (9500.0, 2.7), (12000.0, -6.0)]
+    p = os.path.join(HERE, "eq_curve.json")
+    try:
+        with open(p, encoding="utf-8") as f:
+            return [(float(a), float(b)) for a, b in json.load(f)["points"]]
+    except Exception:
+        return base
+
+
+EQ_TABLE = _eq_table()
+
+
+def soften(x):
+    """Тембр под эталон: одна кривая по замеру, а не три догадки.
+
+    «Механический» голос — это не только шипящие: у синтеза мало низкого тела
+    и мало присутствия 2,5–3,5 кГц, зато больше «коробки» 200–700 Гц. Кривая
+    EQ_TABLE снята сравнением спектров по полосам с записью 1С, поэтому
+    исправляет сразу всё, что слышно как «не живой человек в студии».
+    """
+    n = len(x)
+    if n < 256:
+        return x
+    S = np.fft.rfft(x.astype(np.float64))
+    f = np.fft.rfftfreq(n, 1.0 / SR)
+    xs = np.log2(np.maximum(f, 1.0))
+    pts_x = np.log2(np.array([p[0] for p in EQ_TABLE]))
+    pts_y = np.array([p[1] for p in EQ_TABLE])
+    db = np.interp(xs, pts_x, pts_y)
+    g = 10.0 ** (db / 20.0)
+    g *= 1.0 / (1.0 + (np.maximum(f - 11500.0, 0.0) / 1200.0) ** 4)   # без цифрового воздуха
+    return np.fft.irfft(S * g, n).astype(np.float32)
+
+
+def room(x, wet=ROOM_WET):
+    """Ранние отражения и короткий хвост. Возвращает блок длиннее исходного:
+    хвост ложится в паузу после реплики — так тишина перестаёт быть цифровым
+    нулём, и чтение звучит как в помещении, а не в вакууме.
+    """
+    ir_len = int(ROOM_TAIL * SR)
+    ir = np.zeros(ir_len, dtype=np.float32)
+    for d_ms, a in ((9, 0.30), (16, 0.24), (25, 0.18), (37, 0.13), (53, 0.09), (71, 0.06)):
+        ir[int(d_ms * SR / 1000)] += a
+    tail = np.random.RandomState(11).randn(ir_len - int(0.014 * SR)).astype(np.float32)
+    tail *= np.exp(-np.linspace(0.0, 6.5, len(tail))).astype(np.float32) * 0.05
+    ir[int(0.014 * SR):] += tail
+    ir /= max(float(np.abs(ir).sum()), 1e-6)
+    n = len(x) + ir_len - 1
+    y = np.fft.irfft(np.fft.rfft(x, n) * np.fft.rfft(ir, n), n).astype(np.float32)
+    out = np.zeros(n, dtype=np.float32)
+    out[:len(x)] = x * (1.0 - wet)
+    out += y * wet
+    return out
 
 
 def tail_gap(text, kind):
@@ -344,17 +511,54 @@ def pick_bed(blocks):
 
 # --- синтез ---------------------------------------------------------------
 
+def synth_xtts(text, spec, path):
+    """Синтез через XTTS v2: POST на сервер Windows-бокса, обратно — wav."""
+    import urllib.request
+    body = json.dumps({"text": text, "ref": spec["ref"], "language": "ru",
+                       "speed": spec["speed"]}).encode()
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    for attempt in range(4):
+        try:
+            req = urllib.request.Request(XTTS_URL.rstrip("/") + "/tts", data=body,
+                                         headers={"Content-Type": "application/json"})
+            data = opener.open(req, timeout=600).read()
+            if len(data) < 2000:
+                raise ValueError(f"короткий ответ {len(data)} байт")
+            raw = path + ".src.wav"
+            with open(raw, "wb") as f:
+                f.write(data)
+            shift = spec.get("shift", 0)
+            if shift:   # сдвиг тембра без смены длительности
+                k = 2.0 ** (shift / 12.0)
+                af = f"asetrate=24000*{k:.6f},aresample=24000,atempo={1/k:.6f}"
+            else:
+                af = "anull"
+            subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", raw, "-af", af,
+                            "-b:a", "128k", path], check=True)
+            os.remove(raw)
+            return os.path.getsize(path) > 500
+        except Exception as e:  # noqa: BLE001
+            print(f"  ! XTTS {type(e).__name__}: {e} (попытка {attempt+1})", file=sys.stderr)
+            time.sleep(1.0 * (attempt + 1))
+    return False
+
+
 async def synth_one(text, spec, path):
+    if spec.get("ref"):
+        return await asyncio.to_thread(synth_xtts, text, spec, path)
     import edge_tts
     kwargs = {"rate": spec["rate"], "pitch": spec["pitch"], "volume": spec.get("volume", "+0%")}
-    for attempt in range(6):
+    # NoAudioReceived — это троттлинг: слишком много запросов в полёте.
+    # 4 воркера по 7 «джобов» давали 28 параллельных и валили почти всё,
+    # поэтому пауза растёт на каждой попытке, а не стоит 0,4 с.
+    for attempt in range(8):
         try:
             await edge_tts.Communicate(text, spec["voice"], **kwargs).save(path)
             if os.path.getsize(path) > 500:
                 return True
         except Exception as e:  # noqa: BLE001
             print(f"  ! {type(e).__name__}: {e} (попытка {attempt+1})", file=sys.stderr)
-            await asyncio.sleep(0.4 * (attempt + 1))
+            await asyncio.sleep(1.2 * (attempt + 1) + random.random())
     return False
 
 
@@ -381,8 +585,17 @@ def main():
     ap.add_argument("chapter")
     ap.add_argument("-o", "--out", default=None)
     ap.add_argument("--only-text", action="store_true", help="не синтезировать, только разбор")
+    ap.add_argument("--dump-cast", action="store_true", help="записать разметку ролей в cast/")
     ap.add_argument("--jobs", type=int, default=7)
+    ap.add_argument("--xtts", default=None, metavar="URL",
+                    help="синтез через XTTS на Windows-боксе, напр. http://192.168.88.20:8765")
     args = ap.parse_args()
+
+    global XTTS_URL
+    if args.xtts:
+        XTTS_URL = args.xtts
+    if XTTS_URL:
+        print(f"движок: XTTS {XTTS_URL}")
 
     os.makedirs(CACHE, exist_ok=True)
     os.makedirs(OUTDIR, exist_ok=True)
@@ -422,6 +635,46 @@ def main():
             prev_role = role
             last_spoken[role] = i
         jobs.append((i, kind, text, role))
+
+    # Расстановка голосов угадывается по ремаркам и хорошо работает там, где
+    # они есть. Файл cast/<глава>.cast.txt — источник правды: он же правится
+    # руками. Нет файла — работает угадывание, как раньше.
+    cast_path = os.path.join(CASTDIR, stem + ".cast.txt")
+    if args.dump_cast:
+        os.makedirs(CASTDIR, exist_ok=True)
+        with open(cast_path, "w", encoding="utf-8") as f:
+            f.write(f"# {stem} — кто говорит. Колонки: номер, тип, роль, текст.\n")
+            f.write("# Правится только роль. Строки на # игнорируются.\n")
+            f.write("# Роли: " + " ".join(sorted(VOICES)) + "\n")
+            for i, kind, text, role in jobs:
+                f.write("%d\t%s\t%s\t%s\n" % (i, kind, role, " ".join(text.split())))
+        print(f"{stem}: разметка → {cast_path}, блоков {len(jobs)}")
+        return
+
+    if os.path.exists(cast_path):
+        roles = {}
+        for line in open(cast_path, encoding="utf-8"):
+            if not line.strip() or line.lstrip().startswith("#"):
+                continue
+            parts = line.rstrip("\n").split("\t")
+            if len(parts) < 3:
+                continue
+            try:
+                roles[int(parts[0])] = parts[2].strip()
+            except ValueError:
+                continue
+        fixed, out = 0, []
+        for i, kind, text, role in jobs:
+            want = roles.get(i)
+            if want and want != role:
+                if want in VOICES:
+                    print(f"  #{i}: {role} → {want}   {text[:50]}")
+                    role, fixed = want, fixed + 1
+                else:
+                    print(f"  #{i}: роли «{want}» нет, оставил {role}", file=sys.stderr)
+            out.append((i, kind, text, role))
+        jobs = out
+        print(f"{stem}: разметка из файла, исправлено {fixed} из {len(jobs)}")
 
     if args.only_text:
         for i, kind, text, v in jobs[:20]:
@@ -481,7 +734,7 @@ def main():
         elif spec["fx"] == "whisper":
             x = (highpass(x, 200) * 0.72).astype(np.float32)  # шёпот: ближе, глуше
         pieces.append((i, kind, x, text))
-        total = sum(len(p[2]) for p in pieces) + int(0.35 * SR) * len(pieces)
+        total = sum(len(p[2]) for p in pieces) + int((0.35 + ROOM_TAIL) * SR) * len(pieces)
 
     if not pieces:
         print("нечего собирать", file=sys.stderr)
@@ -502,7 +755,11 @@ def main():
             voice[cur:cur + len(chime)] += chime[: len(voice) - cur] * 0.35
             marks.append((cur, "system"))
             cur += int(0.55 * SR)
-        voice[cur:cur + len(x)] += x
+        # смягчение тембра и комната — на каждой реплике, до раскладки:
+        # хвост уходит в паузу, поэтому блок становится длиннее исходного
+        y = room(soften(x))
+        e = min(len(voice), cur + len(y))
+        voice[cur:e] += y[: e - cur]
         samples.append((cur, cur + len(x)))
         g = tail_gap(text, kind)
         marks.append((cur + len(x) + g, "after_scene" if i in scene_after else kind))
@@ -511,16 +768,18 @@ def main():
     n = cur + int(3.0 * SR)
     voice = voice[:n]
 
-    # подложка: один цикл на всю главу с дакингом по огибающей голоса
-    bed_len = n
-    reps = int(np.ceil(bed_len / max(1, len(bed))))
-    bedfull = np.tile(bed, reps)[:bed_len]
-    # огибающая голоса
-    env = movavg(np.abs(voice), int(0.05 * SR))
-    env = movavg(env, int(0.35 * SR))
-    peak = float(np.max(env)) or 1.0
-    duck = 1.0 - 0.78 * np.clip(env / peak, 0, 1)
-    bed_track = bedfull * duck * BED_GAIN
+    # подложка: один цикл на всю главу с дакингом по огибающей голоса.
+    # При BED_GAIN = 0 не считаем вовсе: тайл на 30 млн отсчётов впустую.
+    if BED_GAIN > 0:
+        reps = int(np.ceil(n / max(1, len(bed))))
+        bedfull = np.tile(bed, reps)[:n]
+        env = movavg(np.abs(voice), int(0.05 * SR))
+        env = movavg(env, int(0.35 * SR))
+        peak = float(np.max(env)) or 1.0
+        duck = 1.0 - 0.78 * np.clip(env / peak, 0, 1)
+        bed_track = bedfull * duck * BED_GAIN
+    else:
+        bed_track = np.zeros(1, dtype=np.float32)
 
     # эффекты
     fx = np.zeros(n, dtype=np.float32)
@@ -536,13 +795,19 @@ def main():
     # на каждый разрыв сцены — whoosh + короткий шум
     for pos, kind in marks:
         if kind == "after_scene":
-            place(whoosh, pos, 0.35)
-            place(static, pos + int(0.15 * SR), 0.12)
+            # шумовые эффекты на границах сцен убраны: сквозняк и статика
+            # читались как «белый шум на фоне». Остались скрип двери и колокол.
+            place(whoosh, pos, FX_WHOOSH)
+            place(static, pos + int(0.15 * SR), FX_STATIC)
     # финальный аккорд
-    place(whoosh, n - int(2.2 * SR), 0.3)
+    place(whoosh, n - int(2.2 * SR), FX_WHOOSH)
 
     mix = voice * 1.0 + bed_track + fx * 0.8
-    mix = np.tanh(mix * 1.05).astype(np.float32)  # мягкий лимитер
+    mix = compress(mix)                 # плотность как у студийной записи
+    mix = mix + studio_air(len(mix))    # паузы перестают быть цифровым нулём
+    # мягкий лимитер без поджатия: tanh с коэффициентом >1 добавлял гармоник,
+    # а это и есть та самая «металлическая» жёсткость на громких репликах
+    mix = np.tanh(mix * 0.85).astype(np.float32)
     mix = norm(mix, 0.92)
 
     tmp = os.path.join(OUTDIR, stem + ".wav")
@@ -552,14 +817,21 @@ def main():
         w.setframerate(SR)
         w.writeframes((mix * 32767).astype("<i2").tobytes())
 
-    r = run(["ffmpeg", "-y", "-v", "error", "-i", tmp, "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
+    # Громкость статичной поправкой, а не loudnorm: однопроходный loudnorm
+    # в динамическом режиме подкачивает уровень и убивает размах, из-за чего
+    # чтение звучит ровно-механически. Считаем LUFS, добавляем ровно дельту,
+    # пики держит alimiter.
+    gain = LOUD_I - integrated_lufs(tmp)
+    lim = 10.0 ** (LOUD_TP / 20.0)
+    r = run(["ffmpeg", "-y", "-v", "error", "-i", tmp,
+             "-af", f"volume={gain:.2f}dB,alimiter=limit={lim:.4f}:attack=5:release=80:level=disabled",
              "-ar", str(SR), "-ac", "1", "-b:a", "96k", out_path])
     if r.returncode != 0:
         print(r.stderr[-800:], file=sys.stderr)
         sys.exit(1)
     os.remove(tmp)
     dur = len(mix) / SR
-    print(f"готово: {out_path}  {dur/60:.1f} мин")
+    print(f"готово: {out_path}  {dur/60:.1f} мин, {LOUD_I:.0f} LUFS")
 
 
 if __name__ == "__main__":
