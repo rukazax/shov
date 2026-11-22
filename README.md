@@ -18,11 +18,13 @@
   <img src="https://img.shields.io/badge/серия-30_томов-8b949e?style=flat-square" alt="30 томов">
 </p>
 
-**Разделы:** [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
+**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
 
 ---
 
 ## О книге
+
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Скачать том 1 «Щепка»</b></a><br>EPUB · единый markdown · обложка · аудиоархив 627 МБ · пример озвучки</p>
 
 Двенадцатого августа 2019 года над Северным Уралом в небе появилась полоса: двенадцать километров длиной, сто пятьдесят метров шириной. Не портал, не дыра и не разлом — **стык двух реальностей с разной геометрией**. Через него сочится чужая геометрия, а иногда просачиваются люди.
 
@@ -284,6 +286,8 @@ shov/
 Текст — © Константин Ерёмин. Скрипты сборки, озвучки и генерации подложек — MIT, берите и пользуйтесь. Голос серии снят с книг Михаила Атаманова как стилевой ориентир; ни одна строка из «Искажающих реальность» здесь не воспроизведена.
 
 ## English
+
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Download volume one</b></a><br>EPUB · single-file markdown · cover artwork · 627 MB audiobook archive · audio sample</p>
 
 **The Seam** — a thirty-volume series written in the voice of Mikhail Atamanov's *Distorting Reality* cycle, with a new world, new people and a new plot. Not a work by that author; the style profile was derived from thirteen volumes and stays out of this repository.
 
