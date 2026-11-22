@@ -1,5 +1,7 @@
 <p align="center"><img src="assets/banner.svg" alt="Шов — серия на 30 томов" width="100%"></p>
 
+<p align="center"><img src="assets/cover-tom1.png" alt="Шов. Книга первая: Щепка — обложка" width="46%"></p>
+
 **RU** · [English](#english)
 
 ![томов в плане](https://img.shields.io/badge/томов_в_плане-30-2f6fed?style=flat-square)

@@ -1,2 +1,3 @@
 audio/cache/
 audio/out/*.wav
+audio/out/*.lock
