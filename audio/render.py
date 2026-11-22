@@ -352,7 +352,7 @@ def main():
         w.writeframes((mix * 32767).astype("<i2").tobytes())
 
     r = run(["ffmpeg", "-y", "-v", "error", "-i", tmp, "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
-             "-ar", str(SR), "-ac", "1", "-b:a", "128k", out_path])
+             "-ar", str(SR), "-ac", "1", "-b:a", "96k", out_path])
     if r.returncode != 0:
         print(r.stderr[-800:], file=sys.stderr)
         sys.exit(1)
