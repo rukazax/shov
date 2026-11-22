@@ -65,7 +65,7 @@
 
   <!-- название -->
   <text x="96" y="196" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="28"
-        letter-spacing="9" fill="#7d9bc6">СЕРИЯ НА 30 ТОМОВ</text>
+        letter-spacing="9" fill="#7d9bc6">КОНСТАНТИН ЕРЁМИН</text>
   <text x="86" y="500" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="240"
         font-weight="700" letter-spacing="16" fill="#f4f8ff">ШОВ</text>
   <text x="98" y="596" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="86"
