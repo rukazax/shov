@@ -1,13 +1,20 @@
 #!/usr/bin/env bash
-# Рендерит все главы, у которых md новее готового mp3. Идемпотентно.
+# usage: ./render_book.sh FROM TO   (номера глав включительно)
+# Каждая глава рендерится под flock, чтобы параллельные воркеры не мешали друг другу.
 set -u
 cd "$(dirname "$0")"
-fail=0
+FROM=${1:-0}; TO=${2:-99}
 for f in ../BOOK01/ch*.md; do
   b=$(basename "$f" .md)
+  n=$(printf '%s' "$b" | grep -o '[0-9]\+' | head -1); n=${n:-0}
+  [ "$n" -ge "$FROM" ] && [ "$n" -le "$TO" ] || continue
   out="out/$b.mp3"
-  if [ -f "$out" ] && [ "$out" -nt "$f" ]; then continue; fi
-  echo "== $b"
-  python3 render.py "$f" || { echo "FAIL $b"; fail=1; }
+  [ -f "$out" ] && [ "$out" -nt "$f" ] && continue
+  (
+    flock -n 9 || { echo "занято: $b"; exit 0; }
+    [ -f "$out" ] && [ "$out" -nt "$f" ] && exit 0
+    echo "== $b"
+    python3 render.py "$f"
+  ) 9>"out/$b.lock"
 done
-echo "готово, fail=$fail"
+echo "воркер $FROM-$TO готов"
