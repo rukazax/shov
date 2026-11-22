@@ -1,3 +1,6 @@
 audio/cache/
 audio/out/*.wav
 audio/out/*.lock
+audio/out/*.mp3
+dist/
+audio/logs/

@@ -9,10 +9,10 @@ for f in ../BOOK01/ch*.md; do
   n=$(printf '%s' "$b" | grep -o '[0-9]\+' | head -1); n=${n:-0}
   [ "$n" -ge "$FROM" ] && [ "$n" -le "$TO" ] || continue
   out="out/$b.mp3"
-  [ -f "$out" ] && [ "$out" -nt "$f" ] && continue
+  [ -f "$out" ] && [ "$out" -nt "$f" ] && [ -z "${FORCE:-}" ] && continue
   (
     flock -n 9 || { echo "занято: $b"; exit 0; }
-    [ -f "$out" ] && [ "$out" -nt "$f" ] && exit 0
+    [ -f "$out" ] && [ "$out" -nt "$f" ] && [ -z "${FORCE:-}" ] && exit 0
     echo "== $b"
     python3 render.py "$f"
   ) 9>"out/$b.lock"

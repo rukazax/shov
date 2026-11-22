@@ -14,6 +14,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import wave
 
 import numpy as np
@@ -182,14 +183,14 @@ def pick_bed(blocks):
 async def synth_one(text, spec, path):
     import edge_tts
     kwargs = {"rate": spec["rate"], "pitch": spec["pitch"]}
-    for attempt in range(4):
+    for attempt in range(6):
         try:
             await edge_tts.Communicate(text, spec["voice"], **kwargs).save(path)
             if os.path.getsize(path) > 500:
                 return True
         except Exception as e:  # noqa: BLE001
             print(f"  ! {type(e).__name__}: {e} (попытка {attempt+1})", file=sys.stderr)
-            await asyncio.sleep(1.5 * (attempt + 1))
+            await asyncio.sleep(0.4 * (attempt + 1))
     return False
 
 
@@ -216,7 +217,7 @@ def main():
     ap.add_argument("chapter")
     ap.add_argument("-o", "--out", default=None)
     ap.add_argument("--only-text", action="store_true", help="не синтезировать, только разбор")
-    ap.add_argument("--jobs", type=int, default=4)
+    ap.add_argument("--jobs", type=int, default=7)
     args = ap.parse_args()
 
     os.makedirs(CACHE, exist_ok=True)
@@ -256,8 +257,18 @@ def main():
     if tasks:
         ok = asyncio.run(synth_all(tasks, args.jobs))
         failed = [t for t, r in zip(tasks, ok) if not r]
+        # сервис синтеза регулярно отбивает часть запросов: добиваем пачками,
+        # а недобор до конца — это дырка в дорожке, её нельзя молча оставить
+        for attempt in range(1, 4):
+            if not failed:
+                break
+            print(f"  не синтезировано: {len(failed)}, пауза и заход {attempt}/3", file=sys.stderr)
+            time.sleep(3 * attempt)
+            ok = asyncio.run(synth_all(failed, max(2, args.jobs // 2)))
+            failed = [t for t, r in zip(failed, ok) if not r]
         if failed:
-            print(f"  не синтезировано: {len(failed)}", file=sys.stderr)
+            print(f"  ОТКАЗ: {len(failed)} блоков не синтезировано, дорожка не собрана", file=sys.stderr)
+            sys.exit(1)
 
     # сборка
     bed = sess(pick_bed(blocks))
