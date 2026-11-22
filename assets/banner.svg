@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 340" width="1280" height="340" role="img" aria-label="Шов — серия на 30 томов">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1119"/>
+      <stop offset="1" stop-color="#141a24"/>
+    </linearGradient>
+    <linearGradient id="seam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5f8bff" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#7fc4ff"/>
+      <stop offset="0.55" stop-color="#cfe6ff"/>
+      <stop offset="0.85" stop-color="#7fc4ff"/>
+      <stop offset="1" stop-color="#5f8bff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-300%" width="160%" height="700%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="340" fill="url(#bg)"/>
+
+  <!-- далёкие звёзды -->
+  <g fill="#a8c6ff" opacity="0.35">
+    <circle cx="90" cy="52" r="1.4"/><circle cx="215" cy="118" r="1"/><circle cx="330" cy="40" r="1.2"/>
+    <circle cx="470" cy="96" r="1"/><circle cx="600" cy="34" r="1.5"/><circle cx="735" cy="88" r="1"/>
+    <circle cx="880" cy="46" r="1.3"/><circle cx="1010" cy="104" r="1"/><circle cx="1145" cy="60" r="1.6"/>
+    <circle cx="1225" cy="132" r="1"/><circle cx="160" cy="196" r="1"/><circle cx="1080" cy="205" r="1.2"/>
+  </g>
+
+  <!-- шов: рваная линия с крупными стежками -->
+  <g filter="url(#glow)">
+    <path d="M40 232 L120 226 L200 236 L280 224 L360 234 L440 222 L520 232 L600 220
+             L680 230 L760 218 L840 228 L920 216 L1000 226 L1080 214 L1160 224 L1240 216"
+          fill="none" stroke="url(#seam)" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+  <g stroke="#9dc8ff" stroke-opacity="0.75" stroke-width="2" stroke-linecap="round">
+    <line x1="120" y1="214" x2="114" y2="240"/><line x1="280" y1="212" x2="274" y2="238"/>
+    <line x1="440" y1="210" x2="434" y2="236"/><line x1="600" y1="208" x2="594" y2="234"/>
+    <line x1="760" y1="206" x2="754" y2="232"/><line x1="920" y1="204" x2="914" y2="230"/>
+    <line x1="1080" y1="202" x2="1074" y2="228"/><line x1="1204" y1="204" x2="1198" y2="230"/>
+  </g>
+
+  <text x="80" y="150" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="104" font-weight="700"
+        fill="#eef4ff" letter-spacing="10">ШОВ</text>
+  <text x="84" y="196" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="26"
+        fill="#8fb3e8" letter-spacing="2">серия на 30 томов</text>
+
+  <text x="1200" y="150" text-anchor="end" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="22"
+        fill="#7f9bc4">попаданец · вторая земля · сеть стыков</text>
+
+  <text x="80" y="300" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="18" fill="#5f7ba6">
+    том первый — «Щепка»
+  </text>
+</svg>

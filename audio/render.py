@@ -70,14 +70,23 @@ def wav_read(path):
 
 def decode_any(path):
     """mp3/wav -> float32 mono 44.1k через ffmpeg."""
-    p = run(["ffmpeg", "-v", "quiet", "-i", path, "-f", "s16le", "-acodec", "pcm_s16le",
-             "-ac", "1", "-ar", str(SR), "-"])
+    p = subprocess.run(["ffmpeg", "-v", "quiet", "-i", path, "-f", "s16le", "-acodec", "pcm_s16le",
+                        "-ac", "1", "-ar", str(SR), "-"], capture_output=True)
     return np.frombuffer(p.stdout, dtype="<i2").astype(np.float32) / 32768.0
 
 
 def sess(name):
     p = os.path.join(BEDS, name)
     return wav_read(p) if os.path.exists(p) else np.zeros(1, dtype=np.float32)
+
+
+def movavg(x, w):
+    """Скользящее среднее за O(n): cumsum вместо convolve с длинным окном."""
+    w = max(1, int(w))
+    c = np.cumsum(np.concatenate(([0.0], x.astype(np.float64))))
+    out = (c[w:] - c[:-w]) / w
+    pad = np.full(len(x) - len(out), out[-1] if len(out) else 0.0)
+    return np.concatenate((out, pad)).astype(np.float32) if len(out) else np.zeros_like(x)
 
 
 def norm(x, peak=0.9):
@@ -306,9 +315,8 @@ def main():
     reps = int(np.ceil(bed_len / max(1, len(bed))))
     bedfull = np.tile(bed, reps)[:bed_len]
     # огибающая голоса
-    win = int(0.05 * SR)
-    env = np.convolve(np.abs(voice), np.ones(win, dtype=np.float32) / win, mode="same")
-    env = np.convolve(env, np.ones(int(0.35 * SR), dtype=np.float32) / int(0.35 * SR), mode="same")
+    env = movavg(np.abs(voice), int(0.05 * SR))
+    env = movavg(env, int(0.35 * SR))
     peak = float(np.max(env)) or 1.0
     duck = 1.0 - 0.78 * np.clip(env / peak, 0, 1)
     bed_track = bedfull * duck * 0.11
