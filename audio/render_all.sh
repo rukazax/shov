@@ -28,16 +28,21 @@ for round in $(seq 1 40); do
 
   for idx in $(seq 0 $((STREAMS-1))); do
     (
-      i=0
+      # порядок строго по номеру главы: свободный поток берёт САМУЮ МЛАДШУЮ
+      # несобранную дорожку (занятые пропускаем по flock), а не «свою» по остатку
       for f in ../BOOK01/ch*.md; do
         b=$(basename "${f%.md}")
         if fresh "$b"; then continue; fi
-        if [ $((i % STREAMS)) -ne "$idx" ]; then i=$((i+1)); continue; fi
-        i=$((i+1))
         exec 9>"out/$b.lock" || continue
         flock -n 9 || { exec 9>&-; continue; }
         echo "-- $b старт $(date +%H:%M:%S)"
-        python3 -u render.py "$f" --jobs "$JOBS" || echo "  ! $b не собрался, вернёмся кругом позже"
+        # упавшая глава не паркуется до конца круга (а круг — это вся книга):
+        # три захода подряд, потом отпускаем, и её подхватит первый свободный поток
+        for try in 1 2 3; do
+          python3 -u render.py "$f" --jobs "$JOBS" && break
+          echo "  ! $b не собрался, заход $try/3, пауза 20 с"
+          [ "$try" -lt 3 ] && sleep 20
+        done
         exec 9>&-
       done
     ) &

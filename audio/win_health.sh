@@ -20,7 +20,7 @@ health() { curl -s --noproxy '*' -m 8 -o /dev/null -w '%{http_code}' "http://$HO
 # Настоящая проба: /health отдаёт живой поток, даже когда модель не считает.
 # Синтез короткой фразы — единственное доказательство, что движок работает.
 probe() {
-  curl -s --noproxy '*' -m 120 -X POST -H 'Content-Type: application/json' \
+  curl -s --noproxy '*' -m 25 -X POST -H 'Content-Type: application/json' \
     -d '{"text":"Проверка.","ref":"hero_calm"}' "http://$HOST:$PORT/tts" 2>/dev/null | wc -c | tr -d ' \n'
 }
 
@@ -50,9 +50,13 @@ if [ -z "$CREDS" ] || [ ! -x "$WMIPATH" ]; then
   exit 1
 fi
 
-timeout 150 "$WMIPATH" "$CREDS@$HOST" 'C:\tts\restart_f5.bat' >>"$LOG" 2>&1
-for i in 1 2 3 4 5 6; do
-  sleep 20
+# Движок 8765 держит задача планировщика ttsserver (C:\tts\tts_server.py).
+# Раньше здесь стоял restart_f5.bat — он поднимает ДРУГОЙ сервер (F5-TTS, 8767),
+# поэтому «перезапуск» проходил успешно, а 8765 оставался мёртвым (23.11).
+timeout 90 "$WMIPATH" "$CREDS@$HOST" \
+  'schtasks /end /tn ttsserver & schtasks /run /tn ttsserver' >>"$LOG" 2>&1
+for i in 1 2 3 4 5; do
+  sleep 15
   code=$(health)
   bytes=$(probe)
   if [ "$code" = 200 ] && [ "${bytes:-0}" -gt 2000 ]; then

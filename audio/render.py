@@ -553,33 +553,132 @@ def synth_xtts(text, spec, path):
 async def synth_one(text, spec, path):
     if spec.get("ref"):
         return await asyncio.to_thread(synth_xtts, text, spec, path)
+    if await synth_try(text, spec, path, 40):
+        return True
+    return await synth_split(text, spec, path)
+
+
+# Сервис отдаёт звук неровно: 22.11 в провале было 0/16 и 0/12 подряд, днём
+# 23.11 — стабильно 25 % успеха (3 из 12) даже в один поток, а изредка
+# открывается «окно» и проходит почти всё. То есть «ничего не приходит 5 минут»
+# — это провал, а «3 из 12» — рабочий режим, и путать их нельзя.
+# Предохранитель общий для всех процессов (лежит файлом): смотрим не на число
+# отказов подряд, а на время с последнего УСПЕХА. Если звука нет 45 с при 30
+# отказах — вся машина спит, пауза 60/120/240/480 с по уровням, а любой
+# успешный блок снимает паузу и обнуляет уровень.
+BREAKER = os.path.join(CACHE, "breaker.json")
+
+
+def _breaker_timeout():
+    try:
+        with open(BREAKER) as f:
+            return max(0.0, float(json.load(f).get("until", 0)) - time.time())
+    except Exception:
+        return 0.0
+
+
+def _breaker_update(ok):
+    import fcntl
+    with open(BREAKER + ".lock", "w") as lk:
+        fcntl.flock(lk, fcntl.LOCK_EX)
+        try:
+            now = time.time()
+            try:
+                with open(BREAKER) as f:
+                    st = json.load(f)
+            except Exception:
+                st = {"fail": 0, "level": 0, "until": 0.0, "last_ok": now}
+            if ok:
+                st.update(fail=0, level=0, until=0.0, last_ok=now)
+            else:
+                st["fail"] = st.get("fail", 0) + 1
+                silent = now - float(st.get("last_ok", now))
+                if st["fail"] >= 30 and silent > 45:
+                    st["level"] = min(st.get("level", 0) + 1, 4)
+                    wait = min(480, 60 * 2 ** (st["level"] - 1))
+                    st.update(fail=0, until=now + wait)
+                    print(f"  ⏸ звука нет {silent:.0f} с: вся машина спит {wait} с "
+                          f"(уровень {st['level']})", file=sys.stderr)
+            tmp = BREAKER + ".tmp"
+            with open(tmp, "w") as f:
+                json.dump(st, f)
+            os.replace(tmp, BREAKER)
+        finally:
+            fcntl.flock(lk, fcntl.LOCK_UN)
+
+
+def _svc_note(ok):
+    _breaker_update(ok)
+
+
+async def _svc_wait():
+    while True:
+        left = _breaker_timeout()
+        if left <= 0:
+            return
+        await asyncio.sleep(min(left, 30) + random.random())
+
+
+async def synth_try(text, spec, path, tries):
+    """Долбим один и тот же текст, пока сервис не отдаст звук (без обрыва по времени)."""
     import edge_tts
     kwargs = {"rate": spec["rate"], "pitch": spec["pitch"], "volume": spec.get("volume", "+0%")}
-    # NoAudioReceived — это троттлинг: слишком много запросов в полёте.
-    # 4 воркера по 7 «джобов» давали 28 параллельных и валили почти всё,
-    # поэтому пауза растёт на каждой попытке, а не стоит 0,4 с.
-    # Сервис отбивает запросы волнами: минуту всё проходит, потом 0/10 подряд.
-    # Поэтому пробуем не «8 раз», а до 5 минут на блок с паузой до 8 с —
-    # волна проходит, и блок доезжает. Ниже по коду блоки, не прошедшие это,
-    # добиваются ещё тремя заходами.
-    deadline = time.time() + 300
+    # Замер 22.11: сервис отбивает 8 запросов из 12 подряд даже при свободной
+    # памяти и одном соединении — это его собственная чехарда, не наш троттлинг.
+    # По времени блок не обрываем (обрыв = дырка в дорожке), но паузу растим:
+    # отказ приходит за 2-4 с, поэтому в начале долбим часто, а на затяжной
+    # волне переходим на выжидание.
     attempt = 0
-    while time.time() < deadline:
+    while attempt < tries:
+        await _svc_wait()
         try:
             # Без таймаута один зависший запрос держит воркер часами: процесс
             # живёт, CPU 0 %, кэш не растёт. 25 с хватает любому блоку.
             await asyncio.wait_for(
                 edge_tts.Communicate(text, spec["voice"], **kwargs).save(path), timeout=25)
             if os.path.getsize(path) > 500:
+                _svc_note(True)
                 return True
+            _svc_note(False)
         except Exception as e:  # noqa: BLE001
+            _svc_note(False)
             print(f"  ! {type(e).__name__} [{spec['voice'].split('-')[2]} {spec['rate']} {spec['pitch']}] "
                   f"(попытка {attempt+1}) {text[:40]}", file=sys.stderr)
         attempt += 1
-        # Отказ приходит быстро (2–4 с) и по одному запросу, поэтому длинные
-        # паузы только съедают время: долбим часто, пока не попадём в окно.
+        # Замер 23.11 (00:28): на 24 потоках отказов ровно столько же, сколько
+        # в один поток (29–34 %), а успех растёт линейно с параллельностью:
+        # 8 потоков — 35 блоков/мин, 16 — 78, 24 — 136. Поэтому «выжидающие»
+        # паузы каждые 10 попыток только режут темп: провал ловит предохранитель
+        # выше, а между попытками хватает короткой дрожи.
         await asyncio.sleep(0.15 + random.random() * 0.35)
     return False
+
+
+async def synth_split(text, spec, path):
+    """Блок, который сервис не отдаёт целиком, режем по фразам и склеиваем."""
+    parts = [p for p in re.split(r"(?<=[.!?…])\s+", text) if p.strip()]
+    if len(parts) < 2:                 # нечего резать — фраза одна
+        return False
+    print(f"  ~ блок не отдаётся, режу на {len(parts)} фраз", file=sys.stderr)
+    pieces = []
+    for i, part in enumerate(parts):
+        p = f"{path}.p{i:03d}.mp3"
+        if not await synth_try(part, spec, p, 40):
+            for q in pieces:
+                os.path.exists(q) and os.remove(q)
+            return False
+        pieces.append(p)
+    lst = f"{path}.concat.txt"
+    with open(lst, "w", encoding="utf-8") as f:
+        for q in pieces:
+            f.write("file '%s'\n" % os.path.abspath(q))
+    try:
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0",
+                        "-i", lst, "-c", "copy", path], check=True)
+    finally:
+        for q in pieces + [lst]:
+            os.path.exists(q) and os.remove(q)
+    return os.path.getsize(path) > 500
 
 
 async def synth_all(items, jobs=4):
@@ -697,9 +796,17 @@ def main():
         print(f"{stem}: разметка из файла, исправлено {fixed} из {len(jobs)}")
 
     if args.only_text:
+        missing = 0
+        for i, kind, text, role in jobs:
+            spec = prosody(kind, text, role)
+            mp3 = os.path.join(CACHE, cache_key(spec, cleanup_for_tts(text)) + ".mp3")
+            if not (os.path.exists(mp3) and os.path.getsize(mp3) > 500):
+                missing += 1
+                if missing <= 5:
+                    print(f"  НЕТ КЭША #{i} {role} ({len(text)} зн.): {text[:120]}")
         for i, kind, text, v in jobs[:20]:
             print(f"{i:3d} {kind:9s} {v:7s} {text[:60]}")
-        print(f"... всего {len(jobs)} блоков")
+        print(f"... всего {len(jobs)} блоков, нет в кэше {missing}")
         return
 
     tasks, specs = [], {}
