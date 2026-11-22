@@ -27,21 +27,69 @@ SR = 44100
 
 # --- голоса ---------------------------------------------------------------
 
+# role -> базовый тембр и манера. rate/pitch/volume — строки edge-tts,
+# поверх них ложится просодия от эмоции (см. prosody()).
 VOICES = {
-    "hero":   {"voice": "ru-RU-DmitryNeural", "rate": "-4%", "pitch": "-2Hz"},
-    "male2":  {"voice": "en-US-BrianMultilingualNeural", "rate": "+2%", "pitch": "-4Hz"},
-    "male3":  {"voice": "en-AU-WilliamMultilingualNeural", "rate": "+4%", "pitch": "+2Hz"},
-    "female": {"voice": "ru-RU-SvetlanaNeural", "rate": "+2%", "pitch": "+2Hz"},
-    "system": {"voice": "ru-RU-DmitryNeural", "rate": "-12%", "pitch": "-8Hz"},
+    "narrator":   {"voice": "ru-RU-DmitryNeural",              "rate": "-3%",  "pitch": "-3Hz",  "volume": "+0%"},
+    "hero":       {"voice": "ru-RU-DmitryNeural",              "rate": "+1%",  "pitch": "+1Hz",  "volume": "+2%"},
+    "bocman":     {"voice": "en-AU-WilliamMultilingualNeural", "rate": "-10%", "pitch": "-16Hz", "volume": "+2%"},
+    "vitya":      {"voice": "en-US-BrianMultilingualNeural",   "rate": "+5%",  "pitch": "+6Hz",  "volume": "+1%"},
+    "muhin":      {"voice": "fr-FR-RemyMultilingualNeural",    "rate": "-4%",  "pitch": "-8Hz",  "volume": "+0%"},
+    "grisha":     {"voice": "it-IT-GiuseppeMultilingualNeural","rate": "-2%",  "pitch": "-3Hz",  "volume": "+0%"},
+    "mihalych":   {"voice": "en-US-AndrewMultilingualNeural",  "rate": "-7%",  "pitch": "-10Hz", "volume": "+0%"},
+    "leytenant":  {"voice": "en-US-AndrewMultilingualNeural",  "rate": "+2%",  "pitch": "+5Hz",  "volume": "+1%"},
+    "tehnik":     {"voice": "en-US-BrianMultilingualNeural",   "rate": "+2%",  "pitch": "+2Hz",  "volume": "-1%"},
+    "ganna":      {"voice": "ru-RU-SvetlanaNeural",            "rate": "-8%",  "pitch": "-6Hz",  "volume": "+0%"},
+    "dasha":      {"voice": "en-US-AvaMultilingualNeural",     "rate": "+6%",  "pitch": "+14Hz", "volume": "+1%"},
+    "lida":       {"voice": "en-US-EmmaMultilingualNeural",    "rate": "+0%",  "pitch": "+2Hz",  "volume": "+0%"},
+    "pozharskaya":{"voice": "fr-FR-VivienneMultilingualNeural","rate": "-3%",  "pitch": "-4Hz",  "volume": "+0%"},
+    "agrafena":   {"voice": "ru-RU-SvetlanaNeural",            "rate": "-16%", "pitch": "-12Hz", "volume": "+0%"},
+    "female":     {"voice": "pt-BR-ThalitaMultilingualNeural", "rate": "-2%",  "pitch": "+0Hz",  "volume": "+0%"},
+    "babka":      {"voice": "pt-BR-ThalitaMultilingualNeural", "rate": "-12%", "pitch": "-10Hz", "volume": "+2%"},
+    "system":     {"voice": "ru-RU-DmitryNeural",              "rate": "-12%", "pitch": "-8Hz",  "volume": "+0%"},
 }
 
-MALE_NAMES = ["техник", "Витя", "Кожин", "Боцман", "Михалыч", "Геннадий", "Мухин", "Аркадий"]
-MALE2_NAMES = ["Семён-2", "лейтенант", "Семёна-2", "Семёну-2"]
-FEMALE_NAMES = [
-    "Даша", "Юля", "бабушка", "Нина Петровна", "Аграфена", "Аграфена Тихоновна",
-    "Пожарская", "Ольга Тимуровна", "Лида", "Ганна", "Ткач", "мама", "мать",
-    "вахтёрша", "старуха", "девчонка", "женщина",
+FEMALE_ROLES = {"ganna", "dasha", "lida", "pozharskaya", "agrafena", "female", "babka"}
+MALE_ROLES = {"hero", "bocman", "vitya", "muhin", "grisha", "mihalych", "leytenant", "tehnik"}
+
+# Стем имени -> роль. Стем, а не полная форма: «Боцману», «Боцманом»,
+# «Боцман» ловятся одним куском, падежные таблицы не нужны.
+CAST = [
+    (r"Боцман", "bocman"),
+    (r"Вит(?:я|ю|и|е|ей)\b", "vitya"),
+    (r"Мухин", "muhin"),
+    (r"Гриш(?:а|у|и|е|ей)\b", "grisha"),
+    (r"Кожин", "grisha"),
+    (r"(?:Геннадий Михалыч|Михалыч)", "mihalych"),
+    (r"лейтенант", "leytenant"),
+    (r"техник", "tehnik"),
+    (r"(?:Ганна|Ганн)\b", "ganna"),
+    (r"Ткач\b", "ganna"),
+    (r"Даш(?:а|у|и|е|ей)\b", "dasha"),
+    (r"девчонк", "dasha"),
+    (r"Лид(?:а|у|ы|е|ой)\b", "lida"),
+    (r"Пожарск", "pozharskaya"),
+    (r"(?:Аграфен|Тихоновн)", "agrafena"),
+    (r"Юл(?:я|ю|и|е|ей)\b", "female"),
+    (r"(?:Нина Петровна|Ольга Тимуровна)", "female"),
+    (r"\bмам[аыуе]\b|\bмать\b|\bматер", "female"),
+    (r"(?:вахтёрш|старух|бабк)", "babka"),
+    (r"\bженщин", "female"),
 ]
+
+SPEAK_VERB = (r"(?:сказал|сказала|спросил|спросила|ответил|ответила|проговорил|проговорила|"
+              r"произнёс|произнесла|добавил|добавила|крикнул|крикнула|буркнул|буркнула|"
+              r"повторил|повторила|заметил|заметила|уточнил|уточнила|позвал|позвала|"
+              r"шепнул|шепнула|рявкнул|рявкнула|хмыкнул|хмыкнула|усмехнулся|усмехнулась|"
+              r"вздохнул|вздохнула|кивнул|кивнула|продолжил|продолжила|перебил|перебила|"
+              r"согласился|согласилась|возразил|возразила|поинтересовался|поинтересовалась|"
+              r"объявил|объявила|приказал|приказала|пробормотал|пробормотала)")
+MANNER = (r"(?:тихо|громко|негромко|быстро|медленно|упрямо|устало|резко|спокойно|снова|опять|"
+          r"тут же|же|не оборачиваясь|за её спиной|за его спиной|в спину|в трубку)?")
+ATTR_RE = re.compile(SPEAK_VERB + r"\s*" + MANNER + r"\s+(\S+)")
+
+BED_GAIN = 0.05          # подложка под голосом: было 0.11 — гул в паузах
+BED_HP_HZ = 110          # срез низа подложки: он и звучал «фоновым шумом»
 
 SYSTEM_RE = re.compile(
     r"^(Согласование|Метка|Допуск|Ранг|Протечка|Сдвиг|Приказ|Пост|Край|Регистрация|Носитель|"
@@ -144,24 +192,140 @@ def _is_system(line):
     return False
 
 
-def pick_voice(kind, text, prev_speaker):
-    if kind == "system":
-        return "system"
-    if kind != "dialogue":
+def cast_hit(text):
+    for pat, role in CAST:
+        if re.search(pat, text, re.I):
+            return role
+    return None
+
+
+def tag_cast(text):
+    """Имя в ремарке: «– Ганна Фёдоровна, – лейтенант подошёл ровно, – разрешите вопрос»."""
+    for seg in re.split(r"\s[–—]\s", text)[1:]:
+        hit = cast_hit(seg)
+        if hit:
+            return hit
+    return None
+
+
+def attribution_role(text):
+    """Кто говорит по атрибуции внутри реплики: «– сказала бабка», «– сказал техник»."""
+    hit = tag_cast(text)
+    if hit:
+        return hit
+    m = ATTR_RE.search(text)
+    if not m:
+        return None
+    first = (m.group(1) or "").strip(",.!?…–—»").lower()
+    if first == "я":
         return "hero"
-    for n in MALE2_NAMES:
-        if n in text:
-            return "male3"
-    for n in MALE_NAMES:
-        if n in text:
-            return "male2"
-    for n in FEMALE_NAMES:
-        if n in text:
-            return "female"
-    # без имени: чередуем героя и «собеседника»
-    if prev_speaker in (None, "male2", "male3", "female"):
-        return "hero"
-    return "male2"
+    if first in ("она", "её", "ей", "ее"):
+        return "female_recent"
+    if first in ("он", "его", "ему"):
+        return "male_recent"
+    window = text[m.start(): m.end() + 45] + " " + text[max(0, m.start() - 30): m.start()]
+    return cast_hit(window)
+
+
+def scene_participants(blocks, idx, span=6):
+    """Кто есть в сцене рядом: имена из ремарок и соседних абзацев, свежие впереди."""
+    seen = []
+    for j in range(max(0, idx - span), min(len(blocks), idx + span + 1)):
+        hit = cast_hit(blocks[j][1])
+        if hit and hit not in seen:
+            seen.append(hit)
+    return seen
+
+
+def resolve_dialogue(idx, blocks, recent, prev_role, narr_role="narrator", adjacent=False,
+                     last_spoken=None):
+    """Говорящий реплики: ремарка, оклик, ответ второго участника сцены."""
+    text = blocks[idx][1]
+    r = attribution_role(text)
+    if r in ("male_recent", "female_recent"):
+        pool = MALE_ROLES if r == "male_recent" else FEMALE_ROLES
+        r = next((x for x in recent if x in pool), None)
+    if r:
+        return r
+    # оклик — «– Техник! Сюда!»: имя в реплике означает адресата, а не говорящего
+    called = cast_hit(text)
+    if called and len(text) < 30:
+        for pool in (recent, scene_participants(blocks, idx)):
+            others = [x for x in pool if x != called and x != "system"]
+            if others:
+                return others[0]
+        return prev_role or (list(MALE_ROLES - {called})[0] if called in FEMALE_ROLES else "hero")
+    # после абзаца без ремарки обычно продолжает тот же, кто говорил
+    if prev_role and not adjacent:
+        return prev_role
+    # ответ второго участника: сперва те, кто уже говорил, потом просто упомянутые
+    mentioned = list(scene_participants(blocks, idx))
+    if narr_role == "hero" and "hero" not in mentioned:
+        mentioned.append("hero")
+    if prev_role:
+        for pool in (recent, mentioned):
+            others = [x for x in pool if x != prev_role and x != "system"]
+            if others:
+                if last_spoken:
+                    others.sort(key=lambda x: last_spoken.get(x, -1), reverse=True)
+                return others[0]
+    pool = list(recent)
+    for x in mentioned:
+        if x not in pool:
+            pool.append(x)
+    return pool[0] if pool else "hero"
+
+
+def prosody(kind, text, role):
+    """Характер реплики поверх тембра: крик, шёпот, вопрос, оборванная фраза."""
+    base = VOICES[role]
+    rate = int(base["rate"].rstrip("%"))
+    pitch = int(base["pitch"].rstrip("Hz"))
+    vol = int(base["volume"].rstrip("%"))
+    fx = None
+    t = text
+    if re.search(r"[А-ЯЁ]{4,}", t) or re.search(
+            r"(?:крикн|рявкн|заорал|орёт|орал|гаркнул|завопил|взвыл|завопила)", t):
+        rate += 7; pitch += 6; vol += 9; fx = "shout"
+    if re.search(r"(?:шёпот|шепот|прошептал|вполголоса|тихо сказал|тихо сказала)", t):
+        rate -= 5; vol -= 14; fx = "whisper"
+    tail = t.rstrip()
+    if tail.endswith("?"):
+        pitch += 6; rate += 3; vol += 2
+    if tail.endswith("!"):
+        pitch += 5; rate += 5; vol += 6
+    if tail.endswith("?" ) and len(t) < 40:      # короткий переспрос — резче
+        pitch += 4; rate += 3
+    if t.count("…") + t.count("...") >= 2:       # оборванная, тянущаяся фраза
+        rate -= 8; pitch -= 3
+    if kind == "narration" and len(t) > 380:     # длинный абзац — ровнее и медленнее
+        rate -= 4
+    if kind == "dialogue" and len(t) < 18 and tail.endswith("."):  # сухая рубленая реплика
+        rate -= 3; pitch -= 2
+    return {"voice": base["voice"], "rate": f"{rate:+d}%", "pitch": f"{pitch:+d}Hz",
+            "volume": f"{vol:+d}%", "fx": fx}
+
+
+def cache_key(spec, text):
+    sig = "|".join((spec["voice"], spec["rate"], spec["pitch"], spec["volume"], text))
+    return hashlib.sha1(sig.encode()).hexdigest()[:20]
+
+
+def highpass(x, hz=BED_HP_HZ):
+    """Однополюсный срез низа — чтобы подложка не гудела в паузах."""
+    return (x - movavg(x, int(SR / hz))).astype(np.float32)
+
+
+def tail_gap(text, kind):
+    g = int(0.22 * SR) if kind == "dialogue" else int(0.34 * SR)
+    e = text.rstrip()
+    if e.endswith("!"):
+        g += int(0.12 * SR)
+    if e.endswith("?"):
+        g += int(0.06 * SR)
+    if e.endswith("…") or e.endswith("..."):
+        g += int(0.28 * SR)
+    return g
 
 
 def pick_bed(blocks):
@@ -182,7 +346,7 @@ def pick_bed(blocks):
 
 async def synth_one(text, spec, path):
     import edge_tts
-    kwargs = {"rate": spec["rate"], "pitch": spec["pitch"]}
+    kwargs = {"rate": spec["rate"], "pitch": spec["pitch"], "volume": spec.get("volume", "+0%")}
     for attempt in range(6):
         try:
             await edge_tts.Communicate(text, spec["voice"], **kwargs).save(path)
@@ -227,17 +391,37 @@ def main():
     stem = os.path.splitext(os.path.basename(args.chapter))[0]
     out_path = args.out or os.path.join(OUTDIR, stem + ".mp3")
 
-    # назначение голосов
-    jobs, prev = [], None
+    # назначение голосов: рассказчик — всегда один (narrator), персонажи —
+    # по атрибуции «– сказал Боцман» и по имени в соседнем абзаце
+    narration_text = " ".join(t for k, t in blocks if k == "narration")
+    first_person = len(re.findall(r"(?:^|\s)(?:я|меня|мне|мной|мой|моя|моё)(?:\s|[,.!?…]|$)", narration_text, re.I))
+    narr_role = "hero" if first_person > max(3, len(narration_text) // 900) else "narrator"
+
+    jobs, prev_role, recent, prev_dialogue, last_spoken = [], None, [], False, {}
     for i, (kind, text) in enumerate(blocks):
         if kind in ("title", "scenebreak"):
             continue
-        v = pick_voice(kind, text, prev)
+        if kind == "scenebreak":
+            prev_role, prev_dialogue = None, False
+            continue
+        if kind == "system":
+            role = "system"
+        elif kind == "dialogue":
+            role = resolve_dialogue(i, blocks, recent, prev_role, narr_role, prev_dialogue, last_spoken)
+            recent = [role] + [r for r in recent if r != role]
+            hit = cast_hit(text)
+            if hit and (hit == role or len(text) < 60):
+                recent = [hit] + [x for x in recent if x != hit]
+        else:
+            role = narr_role
+            hit = cast_hit(text)
+            if hit:
+                recent = [hit] + [r for r in recent if r != hit]
+        prev_dialogue = kind == "dialogue"
         if kind == "dialogue":
-            prev = v
-        elif kind != "system":
-            prev = None
-        jobs.append((i, kind, text, v))
+            prev_role = role
+            last_spoken[role] = i
+        jobs.append((i, kind, text, role))
 
     if args.only_text:
         for i, kind, text, v in jobs[:20]:
@@ -245,14 +429,16 @@ def main():
         print(f"... всего {len(jobs)} блоков")
         return
 
-    tasks = []
-    for i, kind, text, v in jobs:
+    tasks, specs = [], {}
+    for i, kind, text, role in jobs:
         clean = cleanup_for_tts(text)
-        key = hashlib.sha1((v + "|" + clean).encode()).hexdigest()[:20]
+        spec = prosody(kind, text, role)
+        key = cache_key(spec, clean)
+        specs[i] = (spec, key)
         path = os.path.join(CACHE, key + ".mp3")
         if os.path.exists(path) and os.path.getsize(path) > 500:
             continue
-        tasks.append((clean, VOICES[v], path))
+        tasks.append((clean, spec, path))
     print(f"{stem}: блоков {len(jobs)}, синтез новых {len(tasks)}")
     if tasks:
         ok = asyncio.run(synth_all(tasks, args.jobs))
@@ -271,7 +457,7 @@ def main():
             sys.exit(1)
 
     # сборка
-    bed = sess(pick_bed(blocks))
+    bed = highpass(sess(pick_bed(blocks)), BED_HP_HZ)
     seam = sess("seam.wav")
     chime = sess("chime.wav")
     whoosh = sess("whoosh.wav")
@@ -280,9 +466,8 @@ def main():
 
     total = 0
     pieces = []
-    for i, kind, text, v in jobs:
-        clean = cleanup_for_tts(text)
-        key = hashlib.sha1((v + "|" + clean).encode()).hexdigest()[:20]
+    for i, kind, text, role in jobs:
+        spec, key = specs[i]
         path = os.path.join(CACHE, key + ".mp3")
         if not os.path.exists(path):
             continue
@@ -291,7 +476,11 @@ def main():
             continue
         if kind == "system":
             x = robotize(x)
-        pieces.append((i, kind, x))
+        elif spec["fx"] == "shout":
+            x = np.tanh(x * 1.45).astype(np.float32)   # крик: поджатый, резкий
+        elif spec["fx"] == "whisper":
+            x = (highpass(x, 200) * 0.72).astype(np.float32)  # шёпот: ближе, глуше
+        pieces.append((i, kind, x, text))
         total = sum(len(p[2]) for p in pieces) + int(0.35 * SR) * len(pieces)
 
     if not pieces:
@@ -308,15 +497,16 @@ def main():
     voice = np.zeros(total + int(6 * SR), dtype=np.float32)
     marks = []  # (pos, kind)
     samples = []
-    for i, kind, x in pieces:
+    for i, kind, x, text in pieces:
         if kind == "system":
             voice[cur:cur + len(chime)] += chime[: len(voice) - cur] * 0.35
             marks.append((cur, "system"))
             cur += int(0.55 * SR)
         voice[cur:cur + len(x)] += x
         samples.append((cur, cur + len(x)))
-        marks.append((cur + len(x) + gap_n, "after_scene" if i in scene_after else kind))
-        cur += len(x) + (gap_d if kind == "dialogue" else gap_n)
+        g = tail_gap(text, kind)
+        marks.append((cur + len(x) + g, "after_scene" if i in scene_after else kind))
+        cur += len(x) + g
 
     n = cur + int(3.0 * SR)
     voice = voice[:n]
@@ -330,7 +520,7 @@ def main():
     env = movavg(env, int(0.35 * SR))
     peak = float(np.max(env)) or 1.0
     duck = 1.0 - 0.78 * np.clip(env / peak, 0, 1)
-    bed_track = bedfull * duck * 0.11
+    bed_track = bedfull * duck * BED_GAIN
 
     # эффекты
     fx = np.zeros(n, dtype=np.float32)
@@ -352,7 +542,7 @@ def main():
     place(whoosh, n - int(2.2 * SR), 0.3)
 
     mix = voice * 1.0 + bed_track + fx * 0.8
-    mix = np.tanh(mix * 1.1).astype(np.float32)  # мягкий лимитер
+    mix = np.tanh(mix * 1.05).astype(np.float32)  # мягкий лимитер
     mix = norm(mix, 0.92)
 
     tmp = os.path.join(OUTDIR, stem + ".wav")
