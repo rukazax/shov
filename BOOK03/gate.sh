@@ -30,6 +30,7 @@ for f in ch*.md; do
     if [ "$chars" -lt 16000 ] || [ "$chars" -gt 23000 ]; then ok="ОБЪЁМ"; fi
   fi
   if [ "$f" != "ch00_vvedenie.md" ] && [ "$dpct" -lt 25 ]; then ok="$ok/ДИАЛОГ"; fi
+  [ "$ok" = "ok" ] || FAIL=1
   TOTAL=$((TOTAL+chars)); SCENES=$((SCENES+scenes)); SYSTEM=$((SYSTEM+sys))
   printf '%-16s %7d %3d%% %4d %4d %s\n' "$f" "$chars" "$dpct" "$scenes" "$sys" "$ok"
 done

@@ -85,6 +85,8 @@ VOICES = {
     "dorohov":      {"voice": "ru-RU-DmitryNeural",   "rate": "+6%",  "pitch": "-8Hz",  "volume": "+0%"},
     "tarasov":      {"voice": "ru-RU-DmitryNeural",   "rate": "+11%", "pitch": "-1Hz",  "volume": "+1%"},
     "teacher":      {"voice": "ru-RU-SvetlanaNeural", "rate": "+7%",  "pitch": "-6Hz",  "volume": "+0%"},
+    "dyakov":       {"voice": "ru-RU-DmitryNeural",   "rate": "-6%",  "pitch": "+3Hz",  "volume": "+0%"},
+    "pankratov":    {"voice": "ru-RU-DmitryNeural",   "rate": "+8%",  "pitch": "-15Hz", "volume": "+1%"},
 }
 
 FEMALE_ROLES = {"ganna", "dasha", "lida", "pozharskaya", "agrafena", "female", "babka",
@@ -99,6 +101,15 @@ CAST = [
     (r"Вит(?:я|ю|и|е|ей)\b", "vitya"),
     (r"Мухин", "muhin"),
     (r"Гриш(?:а|у|и|е|ей)\b", "grisha"),
+    # --- том 3 «Мост»: свои имена раньше общих шаблонов ---------------
+    (r"Кержак", "kerzhak"),
+    (r"Веретенников|Аристарх", "veretennikov"),
+    (r"Дорохов", "dorohov"),
+    (r"Тарасов", "tarasov"),
+    (r"Кац\b", "kac"),
+    (r"Дьяков", "dyakov"),
+    (r"Панкратов", "pankratov"),
+    (r"Лёх(?:а|у|и|е|ой)|Лех(?:а|у|и|е|ой)", "vitya"),
     (r"Кожин", "grisha"),
     (r"(?:Геннадий Михалыч|Михалыч)", "mihalych"),
     (r"лейтенант", "leytenant"),
@@ -111,7 +122,10 @@ CAST = [
     (r"Пожарск", "pozharskaya"),
     (r"(?:Аграфен|Тихоновн)", "agrafena"),
     (r"Юл(?:я|ю|и|е|ей)\b", "female"),
-    (r"Нин[аыуео][йя]?\s+Петровн|Ольга Тимуровна", "babka"),
+    (r"Нин[аыуео][йя]?\s+Петровн", "babka"),
+    # Ольга Тимуровна — Пожарская, начальница. До 23.11 стояла в строке с
+    # «Нина Петровна», и авторазметка сажала начальницу на голос старухи.
+    (r"Ольга Тимуровна", "pozharskaya"),
     (r"Нин[аыуео][йя]?\b", "nina"),
     (r"Гущин", "gushchin"),
     (r"Ковал[её]в", "kovaleva"),

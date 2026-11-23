@@ -7,14 +7,21 @@ LOG="$PWD/logs/publish.log"
 mkdir -p logs
 say() { printf '%s %s\n' "$(date '+%F %T')" "$*" | tee -a "$LOG"; }
 
-STAMP=out/.cast-rebuild
+BOOK="${BOOK:-BOOK01}"
+if [ "$BOOK" = "BOOK01" ]; then
+  OUT="${AUDIO_OUT:-out}"
+else
+  OUT="${AUDIO_OUT:-out$(echo "$BOOK" | sed 's/BOOK0*/-t/')}"
+fi
+export BOOK OUT
+STAMP="$OUT/.cast-rebuild"
 DEADLINE=$(( $(date +%s) + 6*3600 ))
 
 count_fresh() {
   local total=0 fresh=0 b
-  for f in ../BOOK01/ch*.md; do
+  for f in ../$BOOK/ch*.md; do
     b=$(basename "${f%.md}"); total=$((total+1))
-    [ -f "out/$b.mp3" ] && [ "out/$b.mp3" -nt "$STAMP" ] && fresh=$((fresh+1))
+    [ -f "$OUT/$b.mp3" ] && [ "$OUT/$b.mp3" -nt "$STAMP" ] && fresh=$((fresh+1))
   done
   echo "$fresh $total"
 }
@@ -34,15 +41,21 @@ say "приёмка: check_out.py"
 if python3 check_out.py >logs/check-out.txt 2>&1; then say "приёмка ok"; else say "приёмка: расхождения, см. logs/check-out.txt"; fi
 
 say "сбор фактов для README"
+# README один на каталог и описывает том 1; для остальных томов факты идут в TRACKS-tN.md
+if [ "$BOOK" != "BOOK01" ]; then
+  BOOK="$BOOK" python3 tracks.py >>"$LOG" 2>&1 || true
+  say "факты тома — в TRACKS-t$(echo "$BOOK" | sed 's/BOOK0*//').md"
+else
 python3 - "$STAMP" <<'PY' >>"$LOG" 2>&1
 import glob, json, os, subprocess, sys
 
 stamp = float(os.stat(sys.argv[1]).st_mtime)
-files = sorted(f for f in glob.glob("../BOOK01/ch*.md") if os.path.exists("out/" + os.path.basename(f)[:-3] + ".mp3"))
+BOOK, OUT = os.environ["BOOK"], os.environ["OUT"]
+files = sorted(f for f in glob.glob(f"../{BOOK}/ch*.md") if os.path.exists(OUT + "/" + os.path.basename(f)[:-3] + ".mp3"))
 dur = size = 0.0
 lufs = []
 for md in files:
-    mp3 = "out/" + os.path.basename(md)[:-3] + ".mp3"
+    mp3 = OUT + "/" + os.path.basename(md)[:-3] + ".mp3"
     d = float(subprocess.run(["ffprobe", "-v", "quiet", "-show_entries", "format=duration",
                               "-of", "csv=p=0", mp3], capture_output=True, text=True).stdout.strip() or 0)
     dur += d
@@ -74,6 +87,7 @@ else:
 open("README.md", "w", encoding="utf-8").write(readme)
 print(f"вписано в README: {len(files)} дорожек, {hours} ч {mins} мин, {size / 2**20:.0f} МБ, LUFS {min(lufs):.1f}…{max(lufs):.1f}")
 PY
+fi
 
 cd ..
 say "git: коммит и push"

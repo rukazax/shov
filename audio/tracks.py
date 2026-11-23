@@ -4,7 +4,7 @@ import glob, os, subprocess
 
 BOOK = os.environ.get("BOOK", "BOOK01")
 OUT = os.environ.get("AUDIO_OUT", "out")
-TITLE = {"BOOK01": "1 «Щепка»", "BOOK02": "2 «Ходок»"}.get(BOOK, BOOK)
+TITLE = {"BOOK01": "1 «Щепка»", "BOOK02": "2 «Ходок»", "BOOK03": "3 «Мост»"}.get(BOOK, BOOK)
 
 rows = []
 OUTFILE = 'TRACKS.md' if BOOK == 'BOOK01' else 'TRACKS-' + BOOK[-2:].lstrip('0') + '.md'
