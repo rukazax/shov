@@ -11,10 +11,11 @@
   <img src="assets/cover-tom8.png" alt="Шов. Книга восьмая: Орбита — обложка" width="13%">
   <img src="assets/cover-tom9.png" alt="Шов. Книга девятая: Трос — обложка" width="13%">
   <img src="assets/cover-tom10.png" alt="Шов. Книга десятая: Узел — обложка" width="13%">
+  <img src="assets/cover-tom11.png" alt="Шов. Книга одиннадцатая: Долг — обложка" width="13%">
 </p>
 
 <h1 align="center">Шов</h1>
-<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · <b>Книга третья. Мост</b> · <b>Книга четвёртая. Опора</b> · <b>Книга пятая. Двести лет</b> · <b>Книга шестая. Чужая родня</b> · <b>Книга седьмая. Стык</b> · <b>Книга восьмая. Орбита</b> · <b>Книга девятая. Трос</b> · <b>Книга десятая. Узел</b> · Константин Ерёмин</p>
+<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · <b>Книга третья. Мост</b> · <b>Книга четвёртая. Опора</b> · <b>Книга пятая. Двести лет</b> · <b>Книга шестая. Чужая родня</b> · <b>Книга седьмая. Стык</b> · <b>Книга восьмая. Орбита</b> · <b>Книга девятая. Трос</b> · <b>Книга десятая. Узел</b> · <b>Книга одиннадцатая. Долг</b> · Константин Ерёмин</p>
 
 <p align="center">
   <b>RU</b> · <a href="#english">English</a>
@@ -31,15 +32,16 @@
   <img src="https://img.shields.io/badge/том_8_«Орбита»-готов-3fb950?style=flat-square" alt="том 8 готов">
   <img src="https://img.shields.io/badge/том_9_«Трос»-готов-3fb950?style=flat-square" alt="том 9 готов">
   <img src="https://img.shields.io/badge/том_10_«Узел»-готов-3fb950?style=flat-square" alt="том 10 готов">
-  <img src="https://img.shields.io/badge/глав-330_+_10_введений-2f6fed?style=flat-square" alt="330 глав">
-  <img src="https://img.shields.io/badge/объём-6_097_912_знаков-2f6fed?style=flat-square" alt="6 097 912 знаков">
-  <img src="https://img.shields.io/badge/Дальше_по_плану_—_том_одиннадцатый-8b949e?style=flat-square" alt="дальше — том одиннадцатый">
+  <img src="https://img.shields.io/badge/том_11_«Долг»-готов-3fb950?style=flat-square" alt="том 11 готов">
+  <img src="https://img.shields.io/badge/глав-363_+_11_введений-2f6fed?style=flat-square" alt="363 главы">
+  <img src="https://img.shields.io/badge/объём-6_706_218_знаков-2f6fed?style=flat-square" alt="6 706 218 знаков">
+  <img src="https://img.shields.io/badge/Дальше_по_плану_—_том_двенадцатый-8b949e?style=flat-square" alt="дальше — том двенадцатый">
   <img src="https://img.shields.io/badge/аудио-68_дорожек-8957e5?style=flat-square" alt="68 дорожек">
   <img src="https://img.shields.io/badge/EPUB-в_релизе-8b949e?style=flat-square" alt="EPUB">
   <img src="https://img.shields.io/badge/серия-30_томов-8b949e?style=flat-square" alt="30 томов">
 </p>
 
-**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Том третий](#том-третий-мост) · [Том четвёртый](#том-четвёртый-опора) · [Том пятый](#том-пятый-двести-лет) · [Том шестой](#том-шестой-чужая-родня) · [Том седьмой](#том-седьмой-стык) · [Том восьмой](#том-восьмой-орбита) · [Том девятый](#том-девятый-трос) · [Том десятый](#том-десятый-узел) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
+**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Том третий](#том-третий-мост) · [Том четвёртый](#том-четвёртый-опора) · [Том пятый](#том-пятый-двести-лет) · [Том шестой](#том-шестой-чужая-родня) · [Том седьмой](#том-седьмой-стык) · [Том восьмой](#том-восьмой-орбита) · [Том девятый](#том-девятый-трос) · [Том десятый](#том-десятый-узел) · [Том одиннадцатый](#том-одиннадцатый-долг) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
 
 ---
 
@@ -88,7 +90,7 @@ graph LR
 | IV. Война за узел | 21–27 | существование всех Земель |
 | V. Финал | 28–30 | чем ты готов быть, чтобы шов держался |
 
-**Готово:** тома 1–8 — «Щепка», «Ходок», «Мост», «Опора», «Двести лет», «Чужая родня», «Стык», «Орбита». Первая часть плана закрыта: своя шкура, работа и дочь отработаны от начала до двери. Вторая часть идёт третьей книгой: жизнь на Второй Земле, служба, которая здесь называется «Сшивка», и история их Шова через документы, а не через лекцию. Шестой том перевёл дверь в почту и выдал герою живую бабушку, мать, которая здесь не уходила, и жену, которая его никогда не встречала. Седьмой поставил его в службу Стыка, между «порядком» и людьми, и забрал право подписи. Восьмой нашёл второй выход из шва — вверх, к орбите, — и вернул ему дочь голосом по связи. Девятый вывел его на край троса, где шов держат руками и где человек без веса не считается человеком: книга про квоту, табель и то, что остаётся после подписи. Десятый свёл сеть: узлы, геометров, регламент и цену, которая считается временем, а не деньгами. Дальше по плану — том одиннадцатый.
+**Готово:** тома 1–11 — «Щепка», «Ходок», «Мост», «Опора», «Двести лет», «Чужая родня», «Стык», «Орбита», «Трос», «Узел», «Долг». Первая часть плана закрыта: своя шкура, работа и дочь отработаны от начала до двери. Вторая часть идёт третьей книгой: жизнь на Второй Земле, служба, которая здесь называется «Сшивка», и история их Шова через документы, а не через лекцию. Шестой том перевёл дверь в почту и выдал герою живую бабушку, мать, которая здесь не уходила, и жену, которая его никогда не встречала. Седьмой поставил его в службу Стыка, между «порядком» и людьми, и забрал право подписи. Восьмой нашёл второй выход из шва — вверх, к орбите, — и вернул ему дочь голосом по связи. Девятый вывел его на край троса, где шов держат руками и где человек без веса не считается человеком: книга про квоту, табель и то, что остаётся после подписи. Десятый свёл сеть: узлы, геометров, регламент и цену, которая считается временем, а не деньгами. Одиннадцатый посчитал долг: вклад по табелю узла, три перехода и остаток, который нельзя ни отработать, ни выкупить. Двенадцатый в работе.
 
 Раскадровка на тридцать томов — [PLAN.md](PLAN.md). Идея мира и правила — [IDEA.md](IDEA.md).
 
@@ -630,8 +632,8 @@ graph LR
 
 | Параметр | Том 9 | Норма серии |
 |---|---|---|
-| Объём | **606 961 знак** (15,2 а.л.) | 588–624 тыс. |
-| Без пробелов | 491 234 знака | — |
+| Объём | **607 029 знак** (15,2 а.л.) | 588–624 тыс. |
+| Без пробелов | 491 292 знака | — |
 | Глав | 33 + Введение | 26–37 |
 | Средняя глава | 18,4 тыс. знаков | 16–23 тыс. |
 | Слов | 101 078 | — |
@@ -647,7 +649,7 @@ graph LR
 - **системных строк чуть реже** (148, одна на 4,1 тыс. знаков): их место заняли весы, отвес и прочерк в графе, которые работают как системная строка, не будучи ею.
 
 <details>
-<summary>Оглавление тома 9 — 34 файла, 606 961 знак</summary>
+<summary>Оглавление тома 9 — 34 файла, 607 029 знак</summary>
 
 | # | Глава | Объём |
 |---|---|---|
@@ -761,6 +763,78 @@ graph LR
 </details>
 
 Читать целиком: [BOOK10/SHOV-tom10.md](BOOK10/SHOV-tom10.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v10.0](https://github.com/rukazax/shov/releases/tag/v10.0). Библия тома — [BOOK10/BIBLE.md](BOOK10/BIBLE.md), брифы — [BOOK10/BRIEFS](BOOK10/BRIEFS), спина глав — [BOOK10/SPINE.md](BOOK10/SPINE.md). Озвучки пока нет: пойдёт тем же конвейером, `BOOK=BOOK10 ./audio/render_all.sh`.
+
+## Том одиннадцатый «Долг»
+
+Ставка тома – долг. Не тот, что в расписке, а тот, что висит на метке: вклад времени, который человек вносит собой, и извещение, которое приходит без спроса. Метка «У-3» – значит работа по допуску, и в графе «выезд» стоит тридцать суток, а не больше.
+
+Извещение он читает вслух, потому что с бумагой так честнее. Вклад по табелю узла – девяносто три суток. Переходов – три. Остаток – семьдесят два часа. Явка – тридцать суток. И приписка снизу, мелкая, как сноска в бухгалтерии: «неявка – изъятие вклада».
+
+Между тем снаружи прошло четыре месяца, а книга узла считает по табелю, потому что внутри время идёт медленнее. 93 − 90 = трое суток. Трое суток – это 72 часа. Вот только переход кратен месяцу, а трое суток не месяц, и потому остаток нельзя ни отработать переходом, ни выкупить: Свод не торгует.
+
+Чем кончается: метку снимают, печатью ниже метки, без разговоров. Вклад закрыт штампом, а семьдесят два часа остаются в закрытой книге: «Списанное можно вернуть. Закрытое нельзя». В книге Свода тем временем стоит вторая запись на ту же фамилию – «Лоскутов С. А.», другой год рождения, – и бумага уже не про вклад, а про него самого: подойти для сверки личности. Дома девочка смотрит на него и говорит: «Ты не папа. Папа был раньше».
+
+| Параметр | Том 11 | Норма серии |
+|---|---|---|
+| Объём | **608 306 знаков** (15,2 а.л.) | 588–624 тыс. |
+| Без пробелов | 490 866 знаков | — |
+| Глав | 33 + Введение | 26–37 |
+| Средняя глава | 18,2 тыс. знаков | 16–23 тыс. |
+| Слов | 102 328 | — |
+| Сцен | 146 (4–5 на главу) | 3–6 на главу |
+| Системных строк | 155 (одна на 3,9 тыс. знаков) | ~1 на 3,8 тыс. знаков |
+| Диалог | 50 % строк | 30–38 % |
+| Средняя фраза | 8,6 слова | 12–16 |
+
+Где книга вылезает из нормы — честно:
+
+- **диалога больше** (50 % против 30–38 %): том держится на окошках, извещениях и слушании, а окошко разговаривает только вслух. Бумагу здесь не читают про себя – её читают вслух, потому что цифру надо ещё и произнести;
+- **средняя фраза короче** (8,6 против 12–16 слов): у сводки, остатка и счёта свой синтаксис – короткий, с числом в конце. Длинная фраза в разговоре про семьдесят два часа читается как оговорка;
+- **системных строк в норме** (155, одна на 3,9 тыс. знаков): у тома снова есть свой прибор, и он пишет сам.
+
+<details>
+<summary>Оглавление тома 11 — 34 файла, 608 306 знаков</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Предъявитель | 7 тыс. |
+| 1 | Глава 1. «А кто это» | 19 тыс. |
+| 2 | Глава 2. «Никто» | 19 тыс. |
+| 3 | Глава 3. «Даша, девять» | 18 тыс. |
+| 4 | Глава 4. «Приёмный лист» | 19 тыс. |
+| 5 | Глава 5. «Мать по бумаге» | 18 тыс. |
+| 6 | Глава 6. «Дело на приём» | 19 тыс. |
+| 7 | Глава 7. «Скажи» | 18 тыс. |
+| 8 | Глава 8. «Условие» | 18 тыс. |
+| 9 | Глава 9. «Паспортный стол» | 18 тыс. |
+| 10 | Глава 10. «Три ограничения» | 18 тыс. |
+| 11 | Глава 11. «Тридцать суток» | 18 тыс. |
+| 12 | Глава 12. «День рождения» | 18 тыс. |
+| 13 | Глава 13. «Комната у Свода» | 19 тыс. |
+| 14 | Глава 14. «Работа без допуска» | 18 тыс. |
+| 15 | Глава 15. «Теплосеть» | 18 тыс. |
+| 16 | Глава 16. «Две Юли» | 18 тыс. |
+| 17 | Глава 17. «Долг» | 18 тыс. |
+| 18 | Глава 18. «Извещение» | 18 тыс. |
+| 19 | Глава 19. «Буш» | 18 тыс. |
+| 20 | Глава 20. «Один переход» | 18 тыс. |
+| 21 | Глава 21. «Первый переход» | 19 тыс. |
+| 22 | Глава 22. «Опека» | 19 тыс. |
+| 23 | Глава 23. «Пускать» | 19 тыс. |
+| 24 | Глава 24. «Мялин уходит» | 18 тыс. |
+| 25 | Глава 25. «Второй переход» | 18 тыс. |
+| 26 | Глава 26. «Шесть часов» | 18 тыс. |
+| 27 | Глава 27. «Третий» | 18 тыс. |
+| 28 | Глава 28. «Срок» | 18 тыс. |
+| 29 | Глава 29. «Сверка» | 18 тыс. |
+| 30 | Глава 30. «Голос» | 18 тыс. |
+| 31 | Глава 31. «Метку снимают» | 18 тыс. |
+| 32 | Глава 32. «Слушание» | 18 тыс. |
+| 33 | Глава 33. «Финал» | 18 тыс. |
+
+</details>
+
+Читать целиком: [BOOK11/SHOV-tom11.md](BOOK11/SHOV-tom11.md) – единый файл с содержанием и эпиграфом. EPUB – в [релизе v11.0](https://github.com/rukazax/shov/releases/tag/v11.0). Библия тома – [BOOK11/BIBLE.md](BOOK11/BIBLE.md), брифы – [BOOK11/BRIEFS](BOOK11/BRIEFS), спина глав – [BOOK11/SPINE.md](BOOK11/SPINE.md). Озвучки пока нет: пойдёт тем же конвейером, `BOOK=BOOK11 ./audio/render_all.sh`.
 
 ## Аудио
 
@@ -1239,7 +1313,103 @@ System lines number 112 — one per 5.4 thousand characters, rarer than the norm
 
 Read in full: [BOOK08/SHOV-tom8.md](BOOK08/SHOV-tom8.md) — a single file with a title page and an epigraph. EPUB is in [release v8.0](https://github.com/rukazax/shov/releases/tag/v8.0). The volume bible is [BOOK08/BIBLE.md](BOOK08/BIBLE.md), briefs are [BOOK08/BRIEFS](BOOK08/BRIEFS), the chapter spine is [BOOK08/SPINE.md](BOOK08/SPINE.md). Audio is not rendered yet — the same pipeline, `BOOK=BOOK08 ./audio/render_all.sh`.
 
-The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md), [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md), [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md), [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md) and [BOOK08/SHOV-tom8.md](BOOK08/SHOV-tom8.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
+### Volume nine «Cable»
+
+The descent is scheduled for August only, and his daughter is up here, behind a door that was closed on him for good reason: after another child's tag, nobody enters the nursery. And there is one more staircase — not down but up, to a platform at the very end of the cable, where the seam opens into emptiness and breaks off. Three hundred kilometres of climbing, four hours in the shaft, counting the brackets out loud, because counting is the only thing to do with yourself.
+
+Up here they count neither money nor rank but weight and air. The weight ledger is the post's main document: every person has a kilogram limit and a breathing quota, three hundred and forty litres a day and nine litres of water. A kilogram over the limit costs a day of someone else's breathing, and that is not a metaphor: the excess is taken off the common cylinder. The door at the edge is held by the keeper — the man who does not leave the post; he is replaced only by exchange, arranged a month in advance.
+
+An exchange is not an agreement between two people but a deal with procedure: first someone agrees to stay, then he is written into the line, then the signatures go on, and only then does the cage open. Semyon looks for such a man for the whole book — and finds him in himself. And while he looks, he becomes the one others are counted through: he leaves his ration in the nursery, and the scales show it without mercy. He loses eight kilograms, his daughter reaches her limit and stops being a shortfall that someone was breathing.
+
+The cage takes four hundred and twenty kilograms and goes down with three. Two children and the keeper Loskutov-2 inside, he outside at the door, and from below a voice calls him by name. A double cliffhanger: under his line in the upper inventory a second, a child's, appears — and in the column "for descent" there is a dash again.
+
+| Parameter | Volume 9 | Series norm |
+|---|---|---|
+| Length | **607,029 characters** (15.2 author sheets) | 588–624 thousand |
+| Without spaces | 491,292 characters | — |
+| Chapters | 33 + Introduction | 26–37 |
+| Average chapter | 18.4 thousand characters | 16–23 thousand |
+| Words | 101,078 | — |
+| Scenes | 146 (4–5 per chapter) | 3–6 per chapter |
+| System lines | 148 (one per ~4,100 characters) | ~1 per 3,800 characters |
+| Cast | Krut, head of the orbital post, who counts people as figures and never misses; the keeper Loskutov-2, who has already walked everything the hero is about to walk; Tyurina; the nursery where Dasha lives behind a closed door |
+| Dialogue | 54 % of lines | 30–38 % |
+| Average sentence | 8.6 words | 12–16 |
+
+How it differs:
+
+- **Not a new place but new arithmetic.** The same world — the same cable, cage and seam. What changes is the measure of a man: not kinship and not a signature, but kilograms and litres. Krut says it in one line: "Weight is who you are in the ledger. Kilograms are how much of you is in the cage."
+- **The antagonist is a document.** There is no villain with a plan: there is a ledger, a summary, an inventory and a dash in a column. A dash is worse than a refusal, because a refusal is said to a man, and a dash is said instead of him.
+- **Weight as the language of love, without a word about love.** He does not eat eight kilograms, she gains four. Nobody in the book links the two facts aloud: the scales link them, and it is the quietest gesture of the series.
+- **A double ending.** The descent happens, but not for him: the cage leaves with three and he stays as keeper. And that staying has a consequence — a child's line in the upper inventory, dated not today.
+
+Read in full: [BOOK09/SHOV-tom9.md](BOOK09/SHOV-tom9.md) — a single file with a title page and an epigraph. EPUB is in [release v9.0](https://github.com/rukazax/shov/releases/tag/v9.0). The volume bible is [BOOK09/BIBLE.md](BOOK09/BIBLE.md), briefs are [BOOK09/BRIEFS](BOOK09/BRIEFS), the chapter spine is [BOOK09/SPINE.md](BOOK09/SPINE.md). Audio is not rendered yet — the same pipeline, `BOOK=BOOK09 ./audio/render_all.sh`.
+
+### Volume ten «Knot»
+
+He comes out of the knot and learns that four months have passed outside. The knot draws time out of whoever holds it the way it draws weight, and the rate is counted in hours: at the edge an hour costs a day, in the centre thirty hours. The holder pays the most, which is why the order for a holder is always shorter than what the clock shows. The order says eighty-eight days, the clock says a hundred and twenty, and the column is filled with exactly that: "as found".
+
+Down on the Junction it turns out that a junction is not a door but a knot in a network: the place where the seam crosses itself and keeps not two worlds from sliding but every world stitched to it. There are eleven knots on Earth, and the network shuts them down by arithmetic: three against eleven — a sum with no malice in it, only cloth. Knot «4-bis» is next in the queue, and its holder has stood inside for seventy-seven days while six years and four months passed outside.
+
+Semyon returns to the service not as a hero but as a line in an estimate: he is transferred, not returned. He chooses to stand inside instead of a shutdown, signs an order for four days, counts aloud the way Dasha did, and names the price: four months. The cage with his daughter goes down without him — he watches the boarding over the comms and cannot be there. He comes out, is weighed (sixty-four, nine short), and at home finds another man's lock, a sold flat and a ledger with no line for him. By the door where Yulya stands, a girl sits counting aloud; she looks at him and does not recognise him — she used to know him by his voice, and over four months of standing he has unlearned how to give it.
+
+| Parameter | Volume 10 | Series norm |
+|---|---|---|
+| Length | **611,494 characters** (15.3 author sheets) | 588–624 thousand |
+| Without spaces | 493,476 characters | — |
+| Chapters | 33 + Introduction | 26–37 |
+| Average chapter | 18.5 thousand characters | 16–23 thousand |
+| Words | 100,963 | — |
+| Scenes | 152 (4–5 per chapter) | 3–6 per chapter |
+| System lines | 156 (one per ~3,900 characters) | ~1 per 3,800 characters |
+| Cast | Tamara Gess, head of knot 4-bis, who keeps the shutdown regulation and does not consider herself a villain; network inspector Anna Shtil, who counts cloth rather than people; junior surveyor Myalin, who believes a knot can be held; Tseitlin, the voice of the office on the comms |
+| Dialogue | 57 % of lines | 30–38 % |
+| Average sentence | 8.2 words | 12–16 |
+
+How it differs:
+
+- **Not a place but a sum.** The eighth volume went up, the ninth stood at the edge. The tenth changes nothing in the world and changes the unit of measure: a man is counted neither by weight nor by signature but by hours. Gess says it plainly: "A knot is not saved. A knot is closed in time."
+- **The antagonist is a regulation.** There is not one malicious person in the volume. There is a procedure in which the holder is missing from the estimate because he is an expense; an inspector who counts cloth rather than people; a head of the knot with two hundred names and forty days. The evil is distributed across forms.
+- **For the first time the price is paid in years, not kilograms.** He loses not weight but four months of his daughter's life. And he learns it not from people but from the lock on his own door.
+- **The double cliffhanger is a recognition, not an event.** The girl at the door looks at him and asks her mother: "Who is that?" She used to know him by his voice — and over four months of standing he has unlearned how to give it.
+
+Read in full: [BOOK10/SHOV-tom10.md](BOOK10/SHOV-tom10.md) — a single file with a title page and an epigraph. EPUB is in [release v10.0](https://github.com/rukazax/shov/releases/tag/v10.0). The volume bible is [BOOK10/BIBLE.md](BOOK10/BIBLE.md), briefs are [BOOK10/BRIEFS](BOOK10/BRIEFS), the chapter spine is [BOOK10/SPINE.md](BOOK10/SPINE.md). Audio is not rendered yet — the same pipeline, `BOOK=BOOK10 ./audio/render_all.sh`.
+
+### Volume eleven «Debt»
+
+He comes out of the knot and learns he did not come out on the side he left: a girl stands at the door, the girl who used to know him by his voice, and asks her mother "who is that?". What begins next is not a return but a recount.
+
+At the passport office he is given the tag «U-3» — because he owns a deposit of time. The tag carries three limits: work by permit, travel no longer than thirty days, and the column "grounds", into which he cannot write himself. He is a man with a deposit of time, and a recount is due from him.
+
+The recount arrives as paper: the deposit is ninety-three days by the knot's ledger, three transitions, seventy-two hours left, thirty days to appear, and at the bottom the note "failure to appear — forfeiture of the deposit". The four outside months are not in the notice, and that is no mistake: four months passed outside, while the knot's book counts by the ledger, because inside time runs slower. Ninety-three minus ninety is three days, seventy-two hours. Exactly as much as can be neither worked off by a transition nor bought out, because a transition is a multiple of a month and the Junction does not trade.
+
+He trades time for time: an hour of shift at the joint costs a day outside, a transition cancels a month of deposit. He stretches three transitions over half a year, and all that time he lives on someone else's paper: in a room by the Junction, night shifts without a payroll sheet, Saturdays by permit, an objection to another's guardianship that is accepted for consideration — and that is the first time he has managed anything.
+
+How it ends: the tag is removed, the deposit is closed with a stamp below the tag, and the remaining seventy-two hours stay in the closed book — "what is written off can be returned; what is closed cannot". And in the Junction's book a second «Loskutov S. A.» appears, with a different year of birth, and he is asked to come in for an identity check. At home, left with him for a minute, the girl says: "You're not papa. Papa was before."
+
+| Parameter | Volume 11 | Series norm |
+|---|---|---|
+| Length | **608,306 characters** (15.2 author sheets) | 588–624 thousand |
+| Without spaces | 490,866 characters | — |
+| Chapters | 33 + Introduction | 26–37 |
+| Average chapter | 18.2 thousand characters | 16–23 thousand |
+| Words | 102,328 | — |
+| Scenes | 146 (4–5 per chapter) | 3–6 per chapter |
+| System lines | 155 (one per ~3,900 characters) | ~1 per 3,800 characters |
+| Cast | Bush, who counts deposits at the Junction; Shtil, who brings the notice; Korolyova, who keeps the file; Gess, who grants a transition not out of kindness; and a girl at the door who says exactly what she means |
+| Dialogue | 50 % of lines | 30–38 % |
+| Average sentence | 8.6 words | 12–16 |
+
+How it differs:
+
+- **Not a knot but paper.** The tenth volume counted hours, the eleventh counts other people's hours. The plot rests not on cloth but on a form: a ticket, a card, a notice, an inventory, a note at the bottom. Not one paper in the volume is malicious, and every one of them is irrevocable.
+- **The antagonist is neither a person nor a regulation but a debt.** The debt has no manager: Bush counts, Shtil serves the notice, Korolyova keeps the file, Gess grants a transition not out of kindness but because the Junction's list has one man who knows the edge. There is no one to blame, and that is the hardest part.
+- **The price is paid neither in weight nor in years but in right.** He loses no kilograms and misses no months: he loses a column. For three remaining days a man becomes grounds, and guardianship is what makes him grounds — that is, another paper.
+- **The main account is arithmetic that converges on the worst outcome.** He counts a month as thirty days, a transition as a multiple of a month, and his column gives a month left; he is told "count in hours"; the ledger gives ninety-three days; twenty-two thousand three hundred and thirty-two minus two thousand one hundred and sixty is seventy-two hours. It adds up, only not in his favour: "time robbed me, and there is no thief".
+
+Read in full: [BOOK11/SHOV-tom11.md](BOOK11/SHOV-tom11.md) — a single file with a title page and an epigraph. EPUB is in [release v11.0](https://github.com/rukazax/shov/releases/tag/v11.0). The volume bible is [BOOK11/BIBLE.md](BOOK11/BIBLE.md), briefs are [BOOK11/BRIEFS](BOOK11/BRIEFS), the chapter spine is [BOOK11/SPINE.md](BOOK11/SPINE.md). Audio is not rendered yet — the same pipeline, `BOOK=BOOK11 ./audio/render_all.sh`.
+
+The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md), [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md), [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md), [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md), [BOOK08/SHOV-tom8.md](BOOK08/SHOV-tom8.md), [BOOK09/SHOV-tom9.md](BOOK09/SHOV-tom9.md), [BOOK10/SHOV-tom10.md](BOOK10/SHOV-tom10.md) and [BOOK11/SHOV-tom11.md](BOOK11/SHOV-tom11.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
 
 The production pipeline — foundation, bible, briefs, fan-out, machine gates, assembly, cover, audiobook — is documented step by step in [PRODUCTION.md](PRODUCTION.md).
 

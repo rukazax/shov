@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| Текст | 608 239 знаков, 102 305 слов, 15,2 а.л. |
+| Текст | 608 306 знаков, 102 328 слов, 15,2 а.л. |
 | Главы | 34: Введение + 33 главы |
 | Сцены | 146 |
 | Системные строки | 155 (одна на ~3,9 тыс. знаков) |
@@ -54,7 +54,7 @@ The eleventh book of the «Seam» series: full text, EPUB and cover. Audio ships
 
 | | |
 |---|---|
-| Text | 608,239 characters, 102,305 words, 15.2 author sheets |
+| Text | 608,306 characters, 102,328 words, 15.2 author sheets |
 | Chapters | 34: Introduction + 33 chapters |
 | Scenes | 146 |
 | System lines | 155 (one per ~3,900 characters) |
