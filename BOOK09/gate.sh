@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Машинные гейты тома 9 «Трос». Запуск: BOOK09/gate.sh
+# Машинные гейты тома 8 «Орбита». Запуск: BOOK08/gate.sh
 set -u
 cd "$(dirname "$0")"
 

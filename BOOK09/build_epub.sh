@@ -10,7 +10,7 @@ mkdir -p ../dist
 pandoc SHOV-tom9.md \
   -o ../dist/shov-tom9.epub \
   --toc --toc-depth=1 --split-level=1 \
-  --metadata title="Шов. Книга восьмая: Орбита" \
+  --metadata title="Шов. Книга девятая: Трос" \
   --metadata author="Константин Ерёмин" \
   --metadata lang=ru-RU \
   --metadata date="2026-11-23" \
