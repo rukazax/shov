@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| Текст | 609 707 знаков, 100 196 слов, 15,2 а.л. |
+| Текст | 609 704 знака, 100 175 слов, 15,2 а.л. |
 | Главы | 34: Введение + 33 главы |
 | Сцены | 154 |
 | Системные строки | 183 (одна на ~3,3 тыс. знаков) |
@@ -50,7 +50,7 @@ The eighth book of the «Seam» series: full text, EPUB and cover. Audio ships a
 
 | | |
 |---|---|
-| Text | 609,707 characters, 100,196 words, 15.2 author sheets |
+| Text | 609,704 characters, 100,175 words, 15.2 author sheets |
 | Chapters | 34: Introduction + 33 chapters |
 | Scenes | 154 |
 | System lines | 183 (one per ~3,300 characters) |
