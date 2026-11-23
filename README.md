@@ -141,6 +141,8 @@ graph LR
 
 Озвучка в духе записей 1С-Паблишинг: рассказчик, отдельные голоса на персонажей, музыкальная подложка с дакингом, эффекты на сценарные границы и системные строки.
 
+> **Слушать:** [релиз v1.1 — 34 дорожки, 14 ч 57 мин, 616 МБ](https://github.com/rukazax/shov/releases/tag/v1.1). Каждая глава — отдельный mp3, ссылки в таблице ниже. Прежний каст лежит архивом в [v1.0](https://github.com/rukazax/shov/releases/tag/v1.0) и больше не актуален.
+>
 > **Как доводили звучание:** образцы новых голосов (минута, все тембры), замеры по эталонам 1С и отвергнутые движки — [audio/VOICES.md](audio/VOICES.md).
 
 | Слой | Как сделано |
@@ -148,7 +150,7 @@ graph LR
 | Голоса | нейронный синтез, пять тембров: рассказчик, два мужских, женский, «железный» для системных строк |
 | Музыка | четыре подложки (спокойствие, напряжение, действие, Шов) синтезируются numpy |
 | Эффекты | колокол системной строки, статика, удар, сквозняк, скрип клети, щелчок |
-| Сведение | дакинг музыки по огибающей голоса, мягкий лимитер, `loudnorm` −16 LUFS |
+| Сведение | дакинг музыки по огибающей голоса, мягкий лимитер, `loudnorm` −20 LUFS |
 
 | Роль | Голос |
 |---|---|
@@ -158,51 +160,64 @@ graph LR
 | Женские роли (бабушка, Даша) | `ru-RU-SvetlanaNeural` |
 | Системные строки Согласования | тот же рассказчик через кольцевую модуляцию и эхо — «железный» голос |
 
-**34 дорожки, 15 ч 12 мин звучания, 657 МБ.** Каждая глава — отдельный mp3, 96 кбит/с моно, приведённый к −16 LUFS. В git аудио не входит: дорожки собираются скриптами из текста, кэш синтеза переиспользуется между запусками.
+**34 дорожки, 14 ч 57 мин звучания, 616 МБ.** Каждая глава — отдельный mp3, 96 кбит/с моно, приведённый к −20 LUFS; разброс громкости по тому — от −20,5 до −20,4 LUFS. В git аудио не входит: дорожки собираются скриптами из текста, кэш синтеза переиспользуется между запусками.
 
 <details>
-<summary>Дорожки по главам</summary>
+<summary>Дорожки по главам — ссылки на файлы</summary>
 
 | # | Дорожка | Время |
 |---|---|---|
-| 1 | Введение. Одиннадцать миллиметров | 11 мин |
-| 2 | Глава первая. Ведомость на два лифта | 22 мин |
-| 3 | Глава вторая. Кот не дурак | 28 мин |
-| 4 | Глава третья. Сорок метров вниз | 28 мин |
-| 5 | Глава четвёртая. Не наш Тагил | 29 мин |
-| 6 | Глава пятая. Хлеб без соли | 28 мин |
-| 7 | Глава шестая. Три дня и шесть часов | 27 мин |
-| 8 | Глава седьмая. Метка | 25 мин |
-| 9 | Глава восьмая. Согласование: четыре и две | 25 мин |
-| 10 | Глава девятая. Разговор у бабушки | 27 мин |
-| 11 | Глава десятая. Контракт с приложением | 26 мин |
-| 12 | Глава одиннадцатая. Нулевой километр | 25 мин |
-| 13 | Глава двенадцатая. Ходьба с закрытыми глазами | 26 мин |
-| 14 | Глава тринадцатая. Первый образец | 29 мин |
-| 15 | Глава четырнадцатая. Одиннадцать миллиметров | 28 мин |
-| 16 | Глава пятнадцатая. Боцман | 27 мин |
-| 17 | Глава шестнадцатая. Тонкое место | 28 мин |
-| 18 | Глава семнадцатая. Погоня на той стороне | 28 мин |
-| 19 | Глава восемнадцатая. Лейтенант | 25 мин |
-| 20 | Глава девятнадцатая. Ведомости не врут | 27 мин |
-| 21 | Глава двадцатая. Мухин | 27 мин |
-| 22 | Глава двадцать первая. Караван из трёх | 26 мин |
-| 23 | Глава двадцать вторая. Компас | 26 мин |
-| 24 | Глава двадцать третья. Домой | 26 мин |
-| 25 | Глава двадцать четвёртая. Даша спрашивает | 28 мин |
-| 26 | Глава двадцать пятая. Чужая подпись | 26 мин |
-| 27 | Глава двадцать шестая. Крыша | 28 мин |
-| 28 | Глава двадцать седьмая. Обратный ход | 28 мин |
-| 29 | Глава двадцать восьмая. Своими ногами | 29 мин |
-| 30 | Глава двадцать девятая. Стык закрывает двери | 25 мин |
-| 31 | Глава тридцатая. Кто здесь был | 27 мин |
-| 32 | Глава тридцать первая. Не ты | 28 мин |
-| 33 | Глава тридцать вторая. Щепка, которая держит | 27 мин |
-| 34 | Глава тридцать третья. Тише едешь | 27 мин |
+| 1 | [Введение. Одиннадцать миллиметров](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch00-vvedenie.mp3) | 11:07 |
+| 2 | [Глава первая. Ведомость на два лифта](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch01.mp3) | 21:42 |
+| 3 | [Глава вторая. Кот не дурак](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch02.mp3) | 27:30 |
+| 4 | [Глава третья. Сорок метров вниз](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch03.mp3) | 27:16 |
+| 5 | [Глава четвёртая. Не наш Тагил](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch04.mp3) | 29:27 |
+| 6 | [Глава пятая. Хлеб без соли](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch05.mp3) | 28:07 |
+| 7 | [Глава шестая. Три дня и шесть часов](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch06.mp3) | 26:05 |
+| 8 | [Глава седьмая. Метка](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch07.mp3) | 24:13 |
+| 9 | [Глава восьмая. Согласование: четыре и две](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch08.mp3) | 24:49 |
+| 10 | [Глава девятая. Разговор у бабушки](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch09.mp3) | 26:20 |
+| 11 | [Глава десятая. Контракт с приложением](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch10.mp3) | 26:03 |
+| 12 | [Глава одиннадцатая. Нулевой километр](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch11.mp3) | 27:03 |
+| 13 | [Глава двенадцатая. Ходьба с закрытыми глазами](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch12.mp3) | 27:36 |
+| 14 | [Глава тринадцатая. Первый образец](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch13.mp3) | 28:29 |
+| 15 | [Глава четырнадцатая. Одиннадцать миллиметров](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch14.mp3) | 27:10 |
+| 16 | [Глава пятнадцатая. Боцман](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch15.mp3) | 28:56 |
+| 17 | [Глава шестнадцатая. Тонкое место](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch16.mp3) | 27:30 |
+| 18 | [Глава семнадцатая. Погоня на той стороне](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch17.mp3) | 28:54 |
+| 19 | [Глава восемнадцатая. Лейтенант](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch18.mp3) | 25:21 |
+| 20 | [Глава девятнадцатая. Ведомости не врут](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch19.mp3) | 27:01 |
+| 21 | [Глава двадцатая. Мухин](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch20.mp3) | 27:09 |
+| 22 | [Глава двадцать первая. Караван из трёх](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch21.mp3) | 26:07 |
+| 23 | [Глава двадцать вторая. Компас](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch22.mp3) | 27:21 |
+| 24 | [Глава двадцать третья. Домой](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch23.mp3) | 25:41 |
+| 25 | [Глава двадцать четвёртая. Даша спрашивает](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch24.mp3) | 27:43 |
+| 26 | [Глава двадцать пятая. Чужая подпись](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch25.mp3) | 25:41 |
+| 27 | [Глава двадцать шестая. Крыша](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch26.mp3) | 27:36 |
+| 28 | [Глава двадцать седьмая. Обратный ход](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch27.mp3) | 27:44 |
+| 29 | [Глава двадцать восьмая. Своими ногами](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch28.mp3) | 28:32 |
+| 30 | [Глава двадцать девятая. Стык закрывает двери](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch29.mp3) | 25:05 |
+| 31 | [Глава тридцатая. Кто здесь был](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch30.mp3) | 27:08 |
+| 32 | [Глава тридцать первая. Не ты](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch31.mp3) | 27:41 |
+| 33 | [Глава тридцать вторая. Щепка, которая держит](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch32.mp3) | 26:37 |
+| 34 | [Глава тридцать третья. Тише едешь](https://github.com/rukazax/shov/releases/download/v1.1/shov-ch33.mp3) | 26:37 |
 
 </details>
 
 Подробности конвейера и все команды — [audio/README.md](audio/README.md). Список дорожек с временем — [audio/TRACKS.md](audio/TRACKS.md).
+
+### Озвучка: что мешало
+
+Восемь часов работы ушли не на «поставить голос», а на четыре разные болезни. Если запускать озвучку самому, начни с конца этого списка — эти грабли уже разложены.
+
+1. **Сервис синтеза отдаёт звук через раз.** `edge-tts` на длинных очередях отвечает `NoAudioReceived` примерно в 30 % случаев, и отказы идут волнами. Отсюда терпение в коде: таймаут 25 с на запрос, до шести заходов на главу, пауза 0,15–0,5 с, восемь параллельных потоков, кэш по блокам. Замер: 27 блоков в минуту на четырёх главах сразу — норма, а не сбой.
+2. **Предохранитель душил сам себя.** Он считал отказы *подряд*: при норме 30 % двадцать отказов набегали за десять секунд, и рендер засыпал на две минуты после десяти секунд работы. Темп падал втрое. Теперь считается тишина с последнего **успеха**: пока звук капает — работаем, 45 секунд тишины — пауза 60, 120, 240, 480.
+3. **Роли перепутывались.** Три с половиной тысячи реплик сначала размечались на глазок, и герой говорил бабкиным голосом. Порядок атрибуции пришлось выстроить жёстко: имя в ремарке → глагол речи → оклик как адресат → продолжение предыдущего. Проверка — `cast_audit.py` и медиана основного тона по роли (`voice_probe.py`).
+4. **В паузах гудела подложка.** Низ срезан на 110 Гц, пол паузы замеряется отдельно; иначе ровный гул читается как шум дорожки.
+5. **Движок на Windows-боксе врал двухслойно.** Сторож честно писал «перезапускаю», но поднимал F5-TTS на порту 8767 вместо сервера озвучки на 8765, а таймер с `OnUnitActiveSec` после таймаута вообще переставал назначать следующий запуск. Итог — полтора часа «ПРОБЛЕМА» в логе при живом, но неопрошенном железе. Вылечено адресом и `OnUnitInactiveSec`.
+6. **Публикатор падал на собственной строке.** Перед git-блоком стоит `cd ..`, а путь к логу остался относительным — `logs/publish.log` после перехода в корень тома уже не существовал. Скрипт умирал на первой же записи, systemd поднимал его шестнадцать раз, и ни одного коммита. Лечится одной строкой: `LOG="$PWD/logs/publish.log"`.
+
+Подробнее — раздел «Наблюдение» и «Подводные камни» в [audio/README.md](audio/README.md) и [audio/VOICES.md](audio/VOICES.md).
 
 ## Как делается том
 
@@ -289,7 +304,7 @@ shov/
 
 ## English
 
-<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Download volume one</b></a><br>EPUB · single-file markdown · cover artwork · 627 MB audiobook archive · audio sample</p>
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Download volume one</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Audiobook (34 tracks, 14 h 57 min)</b></a><br>EPUB · single-file markdown · cover artwork · audio in v1.1, 34 separate mp3 files</p>
 
 **The Seam** — a thirty-volume series written in the voice of Mikhail Atamanov's *Distorting Reality* cycle, with a new world, new people and a new plot. Not a work by that author; the style profile was derived from thirteen volumes and stays out of this repository.
 
@@ -305,7 +320,7 @@ Semyon Loskutov, a lift repairman from Nizhny Tagil, climbs into an abandoned mi
 | Chapters | 33 + Introduction |
 | Length | 608 881 characters, 101 695 words |
 | Scenes | 166 |
-| Audiobook | 34 tracks, five synthetic voices |
+| Audiobook | 34 tracks, 14 h 57 min, 616 MB, five synthetic voices — [release v1.1](https://github.com/rukazax/shov/releases/tag/v1.1) |
 | Formats | Markdown in repo, EPUB in Releases |
 
 The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
@@ -313,5 +328,9 @@ The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md). Se
 The production pipeline — foundation, bible, briefs, fan-out, machine gates, assembly, cover, audiobook — is documented step by step in [PRODUCTION.md](PRODUCTION.md).
 
 Everything is reproducible: `python3 BOOK01/build_book.py` assembles the book, `BOOK01/build_epub.sh` produces the EPUB, `./audio/render_book.sh` renders the audiobook chapter by chapter with caching.
+
+**How the audiobook was made.** Five synthetic voices, four beds and six effects, all generated by code — nothing bought or downloaded. The narrator is `ru-RU-DmitryNeural`; the far side speaks with `en-US-BrianMultilingualNeural` and `en-AU-WilliamMultilingualNeural`; the female roles use `ru-RU-SvetlanaNeural`; the Alignment system lines are the narrator through ring modulation.
+
+What actually hurt: the synthesis service drops about 30 % of requests in waves, so the renderer keeps a 25-second timeout, six retries and a block cache (a full chapter re-renders from cache in 20–25 s). The circuit breaker used to count *consecutive* failures and slept two minutes after ten seconds of work — it now watches silence since the last success. Speaker attribution had to be ordered strictly (name in the stage direction → speech verb → vocative → continuation) because the hero kept borrowing his grandmother's voice. The music bed is cut at 110 Hz, otherwise it hums in the pauses. The Windows synthesis box was being "restarted" on the wrong port, and the publisher died on a relative log path — both fixed in the scripts.
 
 `#audiobook #litrpg #series-plan #russian-prose #worldbuilding #tts`
