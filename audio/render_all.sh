@@ -5,13 +5,21 @@
 set -u
 BOOK="${BOOK:-BOOK01}"
 cd "$(dirname "$0")"
+# Тома в разных каталогах: имена глав повторяются от тома к тому.
+if [ "$BOOK" = "BOOK01" ]; then
+  export AUDIO_OUT="${AUDIO_OUT:-out}" AUDIO_CAST="${AUDIO_CAST:-cast}"
+else
+  tag=$(echo "$BOOK" | sed 's/BOOK0*/-t/')
+  export AUDIO_OUT="${AUDIO_OUT:-out$tag}" AUDIO_CAST="${AUDIO_CAST:-cast$tag}"
+fi
+mkdir -p "$AUDIO_OUT" "$AUDIO_CAST"
 STREAMS=${STREAMS:-8}
 export JOBS=${JOBS:-3}
-STAMP=out/.cast-rebuild
+STAMP="$AUDIO_OUT/.cast-rebuild"
 [ -f "$STAMP" ] || touch "$STAMP"
 STAMP_TS=$(stat -c %Y "$STAMP")
 
-fresh() { [ -f "out/$1.mp3" ] && [ "$(stat -c %Y "out/$1.mp3" 2>/dev/null || echo 0)" -gt "$STAMP_TS" ]; }
+fresh() { [ -f "$AUDIO_OUT/$1.mp3" ] && [ "$(stat -c %Y "$AUDIO_OUT/$1.mp3" 2>/dev/null || echo 0)" -gt "$STAMP_TS" ]; }
 
 pending() {
   local n=0
@@ -34,7 +42,7 @@ for round in $(seq 1 40); do
       for f in ../$BOOK/ch*.md; do
         b=$(basename "${f%.md}")
         if fresh "$b"; then continue; fi
-        exec 9>"out/$b.lock" || continue
+        exec 9>"$AUDIO_OUT/$b.lock" || continue
         flock -n 9 || { exec 9>&-; continue; }
         echo "-- $b старт $(date +%H:%M:%S)"
         # упавшая глава не паркуется до конца круга (а круг — это вся книга):

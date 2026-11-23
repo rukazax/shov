@@ -8,6 +8,7 @@
 import glob
 import os
 BOOK = os.environ.get("BOOK", "BOOK01")
+OUT = os.environ.get("AUDIO_OUT", "out")
 import os
 import statistics
 import subprocess
@@ -25,7 +26,7 @@ def duration(path):
 rows = []
 for f in sorted(glob.glob(f"../{BOOK}/ch*.md")):
     stem = os.path.splitext(os.path.basename(f))[0]
-    mp3 = f"out/{stem}.mp3"
+    mp3 = f"{OUT}/{stem}.mp3"
     chars = len(open(f, encoding="utf-8").read())
     if not os.path.exists(mp3):
         rows.append((stem, chars, None, None))

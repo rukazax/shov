@@ -24,8 +24,10 @@ import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 BEDS = os.path.join(HERE, "beds")
 CACHE = os.path.join(HERE, "cache")
-OUTDIR = os.path.join(HERE, "out")
-CASTDIR = os.path.join(HERE, "cast")
+# Тома пишутся в разные каталоги: имена глав совпадают (ch01.md есть в каждом
+# томе), и без разделения разметка и дорожки второго тома затёрли бы первый.
+OUTDIR = os.path.join(HERE, os.environ.get("AUDIO_OUT", "out"))
+CASTDIR = os.path.join(HERE, os.environ.get("AUDIO_CAST", "cast"))
 SR = 44100
 
 # --- голоса ---------------------------------------------------------------
@@ -57,10 +59,24 @@ VOICES = {
     "agrafena":   {"voice": "ru-RU-SvetlanaNeural", "rate": "-13%", "pitch": "-13Hz", "volume": "+0%"},
     "female":     {"voice": "ru-RU-SvetlanaNeural", "rate": "+3%",  "pitch": "+2Hz",  "volume": "+0%"},
     "babka":      {"voice": "ru-RU-SvetlanaNeural", "rate": "-8%",  "pitch": "-9Hz",  "volume": "+1%"},
+
+    # --- том 2 «Ходок» ---------------------------------------------------
+    # Новый состав Стыка и Второй Земли. Тембры те же два, различает манера:
+    # Гущин — медленный и низкий, Сомов — быстрый и ровный (он всегда прав
+    # по бумаге, и голос у него как протокол), Ветров — самый медленный в
+    # книге, Костя — молодой и торопливый, Ковалёва — чёткая, Нина — ребёнок.
+    "gushchin":   {"voice": "ru-RU-DmitryNeural",   "rate": "-10%", "pitch": "-7Hz",  "volume": "+1%"},
+    "somov":      {"voice": "ru-RU-DmitryNeural",   "rate": "+4%",  "pitch": "-4Hz",  "volume": "+0%"},
+    "vetrov":     {"voice": "ru-RU-DmitryNeural",   "rate": "-14%", "pitch": "-14Hz", "volume": "+0%"},
+    "kostya":     {"voice": "ru-RU-DmitryNeural",   "rate": "+12%", "pitch": "+12Hz", "volume": "+1%"},
+    "kovaleva":   {"voice": "ru-RU-SvetlanaNeural", "rate": "+6%",  "pitch": "+6Hz",  "volume": "+0%"},
+    "nina":       {"voice": "ru-RU-SvetlanaNeural", "rate": "+16%", "pitch": "+15Hz", "volume": "+1%"},
 }
 
-FEMALE_ROLES = {"ganna", "dasha", "lida", "pozharskaya", "agrafena", "female", "babka"}
-MALE_ROLES = {"hero", "bocman", "vitya", "muhin", "grisha", "mihalych", "leytenant", "tehnik"}
+FEMALE_ROLES = {"ganna", "dasha", "lida", "pozharskaya", "agrafena", "female", "babka",
+                "kovaleva", "nina"}
+MALE_ROLES = {"hero", "bocman", "vitya", "muhin", "grisha", "mihalych", "leytenant", "tehnik",
+              "gushchin", "somov", "vetrov", "kostya"}
 
 # Стем имени -> роль. Стем, а не полная форма: «Боцману», «Боцманом»,
 # «Боцман» ловятся одним куском, падежные таблицы не нужны.
@@ -81,9 +97,17 @@ CAST = [
     (r"Пожарск", "pozharskaya"),
     (r"(?:Аграфен|Тихоновн)", "agrafena"),
     (r"Юл(?:я|ю|и|е|ей)\b", "female"),
-    (r"(?:Нина Петровна|Ольга Тимуровна)", "female"),
+    (r"Нин[аыуео][йя]?\s+Петровн|Ольга Тимуровна", "babka"),
+    (r"Нин[аыуео][йя]?\b", "nina"),
+    (r"Гущин", "gushchin"),
+    (r"Ковал[её]в", "kovaleva"),
+    (r"Сомов", "somov"),
+    (r"(?:Ветров|Пётр Ильич|Петр Ильич)", "vetrov"),
+    (r"Кост(?:я|ю|е|и|ей)\b|Шмел[её]в|Константин", "kostya"),
+    (r"Семён|Семен\b|Лоскутов", "hero"),
+    (r"смотрител", "vetrov"),
     (r"\bмам[аыуе]\b|\bмать\b|\bматер", "female"),
-    (r"(?:вахтёрш|старух|бабк)", "babka"),
+    (r"(?:вахтёрш|старух|бабк|бабушк|бабул)", "babka"),
     (r"\bженщин", "female"),
 ]
 
@@ -281,20 +305,75 @@ def cast_hit(text):
     return None
 
 
+PRONOUNS = {"я", "он", "она", "оно", "его", "её", "ее", "ему", "ей", "они", "их"}
+
+
+def _remarks(text):
+    """Куски между тире, которые похожи на ремарку, а не на продолжение речи.
+
+    Ремарка стоит после куска, оборванного запятой или многоточием («– Текст,
+    – сказал X»), либо открывает новый кусок после тире, либо начинается с
+    местоимения и прошедшего времени («– Она посмотрела на меня»). Кусок после
+    точки («– Текст. – Новая реплика») ремаркой не считается: это речь.
+    """
+    segs = re.split(r"\s[–—]\s", text)[1:]
+    out = []
+    for i, seg in enumerate(segs):
+        prev = segs[i - 1].rstrip() if i else ""
+        starts_pron = re.match(r"\s*(?:Он|Она|Я)\s+[а-яё]{2,}(?:л|ла|лся|лась)\b", seg, re.I)
+        if i == 0 or prev.endswith((",", "…", ":")) or starts_pron:
+            out.append(seg)
+    return out
+
+
 def tag_cast(text):
-    """Имя в ремарке: «– Ганна Фёдоровна, – лейтенант подошёл ровно, – разрешите вопрос»."""
-    for seg in re.split(r"\s[–—]\s", text)[1:]:
+    """Кто в ремарке: «– Ганна Фёдоровна, – лейтенант подошёл ровно, – …» → лейтенант.
+
+    Имя при глаголе речи — сильное правило; имя в начале ремарки с действием
+    после него («Бабушка помолчала») — слабое. Местоимение в позиции имени
+    («сказал я», «поправил он») имени не даёт: этим занимается remark_pronoun.
+    """
+    remarks = _remarks(text)
+    for seg in remarks:
+        m = ATTR_RE.search(seg)
+        if not m:
+            continue
+        word = (m.group(m.lastindex) or "").strip(",.!?…–—»« ")
+        if word.lower() in PRONOUNS:
+            continue
         hit = cast_hit(seg)
         if hit:
             return hit
+    for seg in remarks:
+        m = re.match(r"\s*([^\s,.;:!?»«–—]+)\s+[а-яё]{2,}(?:л|ла|лся|лась)\b", seg, re.I)
+        if m:
+            hit = cast_hit(m.group(1))
+            if hit:
+                return hit
+    return None
+
+
+def remark_pronoun(text):
+    """Пол по ремарке без имени: «– поправил он», «– Она посмотрела на меня»."""
+    for seg in _remarks(text):
+        m = re.match(r"\s*(Он|Она|Я)\b", seg, re.I)
+        if m:
+            w = m.group(1).lower()
+            return "hero" if w == "я" else ("male_recent" if w == "он" else "female_recent")
+        m = re.search(r"\b[а-яё]{2,}(?:л|ла|лся|лась)\s+(он|она)\b", seg, re.I)
+        if m:
+            return "male_recent" if m.group(1).lower() == "он" else "female_recent"
     return None
 
 
 def attribution_role(text):
-    """Кто говорит по атрибуции внутри реплики: «– сказала бабка», «– сказал техник»."""
+    """Кто говорит по атрибуции внутри реплики: «– сказала бабушка», «– поправил он»."""
     hit = tag_cast(text)
     if hit:
         return hit
+    g = remark_pronoun(text)
+    if g:
+        return g
     m = ATTR_RE.search(text)
     if not m:
         return None
@@ -306,7 +385,14 @@ def attribution_role(text):
     if first in ("он", "его", "ему"):
         return "male_recent"
     window = text[m.start(): m.end() + 45] + " " + text[max(0, m.start() - 30): m.start()]
-    return cast_hit(window)
+    hit = cast_hit(window)
+    if hit:
+        return hit
+    # «сказала вторая», «спросил старший»: имени нет, но род глагола есть
+    verb = re.match(r"[а-яё]+", m.group(0), re.I)
+    if verb:
+        return "female_recent" if verb.group(0).lower().endswith("а") else "male_recent"
+    return None
 
 
 def scene_participants(blocks, idx, span=6):

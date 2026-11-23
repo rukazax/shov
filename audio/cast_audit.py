@@ -15,11 +15,12 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CASTDIR = os.path.join(HERE, "cast")
+CASTDIR = os.path.join(HERE, os.environ.get("AUDIO_CAST", "cast"))
 
 MALE = {"hero", "bocman", "vitya", "muhin", "grisha", "mihalych", "leytenant",
-        "tehnik", "narrator", "system"}
-FEMALE = {"ganna", "dasha", "lida", "pozharskaya", "agrafena", "female", "babka"}
+        "tehnik", "narrator", "system", "gushchin", "somov", "vetrov", "kostya"}
+FEMALE = {"ganna", "dasha", "lida", "pozharskaya", "agrafena", "female", "babka",
+          "kovaleva", "nina"}
 
 # имя -> роль. Нужно только для сверки разметки, голоса берутся из render.py
 NAMES = [
@@ -30,6 +31,10 @@ NAMES = [
     (r"Даш(?:а|у|и|е|ей)\b", "dasha"), (r"девчонк", "dasha"),
     (r"Лид(?:а|у|ы|е)\b", "lida"), (r"Пожарск", "pozharskaya"),
     (r"Аграфен", "agrafena"), (r"бабк|бабул|старух", "babka"),
+    (r"Нин[аыуео][йя]?\s+Петровн", "babka"), (r"Нин[аыуео][йя]?\b", "nina"),
+    (r"Гущин", "gushchin"), (r"Ковал[её]в", "kovaleva"), (r"Сомов", "somov"),
+    (r"Ветров|Пётр Ильич|смотрител", "vetrov"),
+    (r"Кост(?:я|ю|е|и|ей)\b|Шмел[её]в", "kostya"), (r"Семён|Лоскутов", "hero"),
 ]
 
 FEM_VERB = re.compile(r"\b(сказала|ответила|спросила|проговорила|произнесла|добавила|"
