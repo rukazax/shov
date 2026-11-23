@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800" role="img" aria-label="Шов. Книга девятая: Трос — обложка">
+<defs>
+    <linearGradient id="sky9" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04060b"/>
+      <stop offset="0.30" stop-color="#080e16"/>
+      <stop offset="0.62" stop-color="#0c1520"/>
+      <stop offset="1" stop-color="#04070c"/>
+    </linearGradient>
+    <radialGradient id="mouth9" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d8ecff" stop-opacity="0.42"/>
+      <stop offset="0.35" stop-color="#8fc0ea" stop-opacity="0.16"/>
+      <stop offset="0.7" stop-color="#3d5c7c" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#080e16" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wall9" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1b2532"/>
+      <stop offset="0.55" stop-color="#121a25"/>
+      <stop offset="1" stop-color="#0a1019"/>
+    </linearGradient>
+    <linearGradient id="wallR9" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#1b2532"/>
+      <stop offset="0.55" stop-color="#121a25"/>
+      <stop offset="1" stop-color="#0a1019"/>
+    </linearGradient>
+    <linearGradient id="deep9" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f1a29"/>
+      <stop offset="0.45" stop-color="#070d15"/>
+      <stop offset="1" stop-color="#02040a"/>
+    </linearGradient>
+    <linearGradient id="ring9" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8fd2ff" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#cfeaff" stop-opacity="0.85"/>
+      <stop offset="0.5" stop-color="#9ed4ff" stop-opacity="0.95"/>
+      <stop offset="0.9" stop-color="#cfeaff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#6fb6ee" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="lamp9" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd79a" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#ffc274" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#ffb459" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cone9" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffcf8a" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#ffcf8a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cage9" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a2432"/>
+      <stop offset="1" stop-color="#0b1119"/>
+    </linearGradient>
+    <radialGradient id="vignette9" cx="0.5" cy="0.46" r="0.9">
+      <stop offset="0.40" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.89"/>
+    </radialGradient>
+    <filter id="soft9"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="soft9b"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="grain9">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1800" fill="url(#sky9)"/>
+
+  <!-- ствол: две стены, между ними трос и глубина -->
+  <path d="M0 640 L470 700 L470 1800 L0 1800 Z" fill="url(#wall9)"/>
+  <path d="M1200 640 L730 700 L730 1800 L1200 1800 Z" fill="url(#wallR9)"/>
+  <path d="M470 700 L730 700 L730 1800 L470 1800 Z" fill="url(#deep9)"/>
+
+  <!-- швы бетона -->
+  <g stroke="#080d14" stroke-width="3" opacity="0.9">
+    <path d="M0 800 L470 842"/><path d="M0 960 L470 986"/><path d="M0 1120 L470 1130"/>
+    <path d="M0 1290 L470 1280"/><path d="M0 1470 L470 1438"/>
+    <path d="M1200 800 L730 842"/><path d="M1200 960 L730 986"/><path d="M1200 1120 L730 1130"/>
+    <path d="M1200 1290 L730 1280"/><path d="M1200 1470 L730 1438"/>
+  </g>
+  <g stroke="#16202c" stroke-width="2" opacity="0.9">
+    <path d="M140 676 L140 1800"/><path d="M310 690 L310 1800"/>
+    <path d="M1060 676 L1060 1800"/><path d="M890 690 L890 1800"/>
+  </g>
+  <path d="M470 700 L470 1800" stroke="#2b3b4e" stroke-width="3" opacity="0.85"/>
+  <path d="M730 700 L730 1800" stroke="#2b3b4e" stroke-width="3" opacity="0.85"/>
+
+  <!-- устье: откуда выходит трос -->
+  <ellipse cx="600" cy="700" rx="300" ry="86" fill="url(#mouth9)"/>
+
+  <!-- трос: сверху вниз, сквозь площадку, в глубину -->
+  <path d="M600 0 L600 1800" stroke="#0d151f" stroke-width="22"/>
+  <path d="M600 0 L600 1800" stroke="#26364a" stroke-width="13"/>
+  <path d="M600 0 L600 1800" stroke="#8fc4ee" stroke-width="1.4" opacity="0.28"/>
+  <g stroke="#16202c" stroke-width="2.2" opacity="0.85">
+    <path d="M588 80 L612 140"/><path d="M588 220 L612 280"/><path d="M588 360 L612 420"/>
+    <path d="M588 500 L612 560"/><path d="M588 780 L612 840"/><path d="M588 940 L612 1000"/>
+    <path d="M588 1200 L612 1260"/><path d="M588 1400 L612 1460"/><path d="M588 1600 L612 1660"/>
+  </g>
+
+  <!-- площадка на конце троса: настил и ограждение (правый край — у троса) -->
+  <g transform="translate(-150,0)">
+    <rect x="392" y="1030" width="416" height="18" fill="#1b2532"/>
+    <rect x="392" y="1030" width="416" height="18" fill="none" stroke="#2c3d51" stroke-width="2"/>
+    <g stroke="#243343" stroke-width="5" fill="none">
+      <path d="M404 1030 L404 936"/><path d="M796 1030 L796 936"/>
+      <path d="M470 1030 L470 950"/><path d="M730 1030 L730 950"/>
+      <path d="M398 944 L802 944"/><path d="M398 980 L802 980"/>
+    </g>
+    <path d="M398 944 L802 944" stroke="#7fa8cf" stroke-width="2" opacity="0.30"/>
+    <g stroke="#1a2431" stroke-width="6">
+      <path d="M404 1048 L470 1120"/><path d="M796 1048 L730 1120"/>
+    </g>
+    <g stroke="#1a2431" stroke-width="4" opacity="0.9">
+      <path d="M470 1048 L470 1800"/><path d="M700 1048 L700 1800"/>
+    </g>
+  </g>
+
+  <!-- человек в профиль у самого края, рука на тросе -->
+  <g fill="#02050a" transform="translate(668,1030) scale(1.22) translate(-668,-1030)">
+    <ellipse cx="668" cy="1032" rx="54" ry="9" opacity="0.55" fill="#010306" filter="url(#soft9b)"/>
+    <path d="M638 1030 L642 960 L674 960 L678 1030 Z"/>
+    <path d="M640 964 C642 900 668 876 690 882 L700 938 C696 960 686 964 672 966 Z"/>
+    <circle cx="688" cy="862" r="27"/>
+    <path d="M667 846 C673 822 702 822 708 848 Z"/>
+    <path d="M678 904 C666 900 654 898 646 898" stroke="#02050a" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M646 898 L602 898" stroke="#02050a" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M696 914 C706 934 708 950 704 964" stroke="#02050a" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- свет: лампа на стойке и свет из глубины -->
+  <g>
+    <rect x="424" y="952" width="8" height="60" fill="#0b1219"/>
+    <rect x="406" y="1006" width="46" height="11" rx="4" fill="#ffe3b4" opacity="0.92"/>
+    <ellipse cx="429" cy="1016" rx="130" ry="96" fill="url(#lamp9)"/>
+    <path d="M404 1008 L458 1008 L520 1500 L340 1500 Z" fill="url(#cone9)" opacity="0.26" filter="url(#soft9)"/>
+  </g>
+  <ellipse cx="600" cy="1600" rx="240" ry="260" fill="#9ed4ff" opacity="0.10" filter="url(#soft9)"/>
+  <path d="M480 1680 L720 1680" stroke="url(#ring9)" stroke-width="26" filter="url(#soft9)"/>
+  <path d="M486 1680 L714 1680" stroke="#dff2ff" stroke-width="4" opacity="0.35"/>
+  <path d="M470 1700 L730 1700" stroke="#e6f6ff" stroke-width="2" opacity="0.45"/>
+
+  <!-- ================= текст ================= -->
+  <text x="86" y="452" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="240"
+        font-weight="700" letter-spacing="16" fill="#f6faff">ШОВ</text>
+  <text x="98" y="552" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="88"
+        fill="#a7c6ef" letter-spacing="8">Трос</text>
+  <text x="102" y="620" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="28"
+        letter-spacing="6" fill="#5f7ba6">КНИГА ДЕВЯТАЯ</text>
+
+  <rect width="1200" height="1800" fill="url(#vignette9)"/>
+  <rect width="1200" height="1800" filter="url(#grain9)" opacity="0.05"/>
+</svg>

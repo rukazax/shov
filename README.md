@@ -8,10 +8,11 @@
   <img src="assets/cover-tom5.png" alt="Шов. Книга пятая: Двести лет — обложка" width="13%">
   <img src="assets/cover-tom6.png" alt="Шов. Книга шестая: Чужая родня — обложка" width="13%">
   <img src="assets/cover-tom7.png" alt="Шов. Книга седьмая: Стык — обложка" width="13%">
+  <img src="assets/cover-tom8.png" alt="Шов. Книга восьмая: Орбита — обложка" width="13%">
 </p>
 
 <h1 align="center">Шов</h1>
-<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · <b>Книга третья. Мост</b> · <b>Книга четвёртая. Опора</b> · <b>Книга пятая. Двести лет</b> · <b>Книга шестая. Чужая родня</b> · <b>Книга седьмая. Стык</b> · Константин Ерёмин</p>
+<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · <b>Книга третья. Мост</b> · <b>Книга четвёртая. Опора</b> · <b>Книга пятая. Двести лет</b> · <b>Книга шестая. Чужая родня</b> · <b>Книга седьмая. Стык</b> · <b>Книга восьмая. Орбита</b> · Константин Ерёмин</p>
 
 <p align="center">
   <b>RU</b> · <a href="#english">English</a>
@@ -25,20 +26,22 @@
   <img src="https://img.shields.io/badge/том_5_«Двести_лет»-готов-3fb950?style=flat-square" alt="том 5 готов">
   <img src="https://img.shields.io/badge/том_6_«Чужая_родня»-готов-3fb950?style=flat-square" alt="том 6 готов">
   <img src="https://img.shields.io/badge/том_7_«Стык»-готов-3fb950?style=flat-square" alt="том 7 готов">
-  <img src="https://img.shields.io/badge/глав-231_+_7_введений-2f6fed?style=flat-square" alt="231 глава">
-  <img src="https://img.shields.io/badge/объём-4_269_737_знаков-2f6fed?style=flat-square" alt="4 269 737 знаков">
+  <img src="https://img.shields.io/badge/том_8_«Орбита»-готов-3fb950?style=flat-square" alt="том 8 готов">
+  <img src="https://img.shields.io/badge/глав-264_+_8_введений-2f6fed?style=flat-square" alt="264 главы">
+  <img src="https://img.shields.io/badge/объём-4_879_457_знаков-2f6fed?style=flat-square" alt="4 879 457 знаков">
+  <img src="https://img.shields.io/badge/Дальше_по_плану_—_том_девятый-8b949e?style=flat-square" alt="дальше — том девятый">
   <img src="https://img.shields.io/badge/аудио-68_дорожек-8957e5?style=flat-square" alt="68 дорожек">
   <img src="https://img.shields.io/badge/EPUB-в_релизе-8b949e?style=flat-square" alt="EPUB">
   <img src="https://img.shields.io/badge/серия-30_томов-8b949e?style=flat-square" alt="30 томов">
 </p>
 
-**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Том третий](#том-третий-мост) · [Том четвёртый](#том-четвёртый-опора) · [Том пятый](#том-пятый-двести-лет) · [Том шестой](#том-шестой-чужая-родня) · [Том седьмой](#том-седьмой-стык) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
+**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Том третий](#том-третий-мост) · [Том четвёртый](#том-четвёртый-опора) · [Том пятый](#том-пятый-двести-лет) · [Том шестой](#том-шестой-чужая-родня) · [Том седьмой](#том-седьмой-стык) · [Том восьмой](#том-восьмой-орбита) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
 
 ---
 
 ## О книге
 
-<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Том 1 «Щепка»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Аудио тома 1: 34 дорожки, 14 ч 57 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Том 2 «Ходок»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.1"><b>🎧 Аудио тома 2: 34 дорожки, 16 ч 01 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Том 3 «Мост»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Том 4 «Опора»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v5.0"><b>⬇ Том 5 «Двести лет»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v6.0"><b>⬇ Том 6 «Чужая родня»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v7.0"><b>⬇ Том 7 «Стык»</b></a><br>EPUB · единый markdown · обложка · аудио отдельными файлами в релизах v1.1 и v2.1</p>
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Том 1 «Щепка»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Аудио тома 1: 34 дорожки, 14 ч 57 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Том 2 «Ходок»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.1"><b>🎧 Аудио тома 2: 34 дорожки, 16 ч 01 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Том 3 «Мост»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Том 4 «Опора»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v5.0"><b>⬇ Том 5 «Двести лет»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v6.0"><b>⬇ Том 6 «Чужая родня»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v7.0"><b>⬇ Том 7 «Стык»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v8.0"><b>⬇ Том 8 «Орбита»</b></a><br>EPUB · единый markdown · обложка · аудио отдельными файлами в релизах v1.1 и v2.1</p>
 
 Двенадцатого августа 2019 года над Северным Уралом в небе появилась полоса: двенадцать километров длиной, сто пятьдесят метров шириной. Не портал, не дыра и не разлом — **стык двух реальностей с разной геометрией**. Через него сочится чужая геометрия, а иногда просачиваются люди.
 
@@ -81,7 +84,7 @@ graph LR
 | IV. Война за узел | 21–27 | существование всех Земель |
 | V. Финал | 28–30 | чем ты готов быть, чтобы шов держался |
 
-**Готово:** тома 1–7 — «Щепка», «Ходок», «Мост», «Опора», «Двести лет», «Чужая родня», «Стык». Первая часть плана закрыта: своя шкура, работа и дочь отработаны от начала до двери. Вторая часть идёт третьей книгой: жизнь на Второй Земле, служба, которая здесь называется «Сшивка», и история их Шова через документы, а не через лекцию. Шестой том перевёл дверь в почту и выдал герою живую бабушку, мать, которая здесь не уходила, и жену, которая его никогда не встречала. Седьмой поставил его в службу Стыка, между «порядком» и людьми, и забрал право подписи. Дальше по плану — том восьмой.
+**Готово:** тома 1–8 — «Щепка», «Ходок», «Мост», «Опора», «Двести лет», «Чужая родня», «Стык», «Орбита». Первая часть плана закрыта: своя шкура, работа и дочь отработаны от начала до двери. Вторая часть идёт третьей книгой: жизнь на Второй Земле, служба, которая здесь называется «Сшивка», и история их Шова через документы, а не через лекцию. Шестой том перевёл дверь в почту и выдал герою живую бабушку, мать, которая здесь не уходила, и жену, которая его никогда не встречала. Седьмой поставил его в службу Стыка, между «порядком» и людьми, и забрал право подписи. Восьмой нашёл второй выход из шва — вверх, к орбите, — и вернул ему дочь голосом по связи. Дальше по плану — том девятый.
 
 Раскадровка на тридцать томов — [PLAN.md](PLAN.md). Идея мира и правила — [IDEA.md](IDEA.md).
 
@@ -538,6 +541,79 @@ graph LR
 
 Читать целиком: [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v7.0](https://github.com/rukazax/shov/releases/tag/v7.0). Библия тома — [BOOK07/BIBLE.md](BOOK07/BIBLE.md), брифы — [BOOK07/BRIEFS](BOOK07/BRIEFS), спина глав — [BOOK07/SPINE.md](BOOK07/SPINE.md). Озвучки пока нет: пойдёт тем же конвейером, `BOOK=BOOK07 ./audio/render_all.sh`.
 
+## Том восьмой «Орбита»
+
+Ставка тома — вес. Вбок его больше не пускают: приписного дверь не берёт, допуск снят, и он живёт на подъёмные, а к стыку ходит, как в музей. А потом выясняется то, о чём в службе знали всегда, а он не спрашивал: у шва два выхода. Второй ведёт вверх — в той же шахте, где у нас клеть ходит вниз, за водой, у них она ходит вверх, к орбите Второй Земли. Триста километров, шесть часов сорок минут.
+
+Поднимают по весу, а не по родству: капсула берёт четыреста двадцать килограммов, человек с сумкой идёт за двоих, очередь двигается раз в три месяца. Вне очереди поднимают троих — врача, инспектора и сопровождающего, того, кто летит с несовершеннолетним. Семён берёт чужого ребёнка как основание: Тим Сомов, четырнадцать лет, сорок два килограмма, боится высоты и не признаётся. Впервые он не пострадавший в бумаге, а её автор.
+
+Перед подъёмом — четырнадцать суток карантина, и карантин не про заразу: он про то, чтобы человек успел передумать и чтобы служба успела записать, зачем он летит. В журнале одна графа — «цель». Врачи в неё не верят, но пишут.
+
+Наверху шов выходит в пустоту и там не растёт: его держат с двух сторон. Верхний стык — станция из четырёх отсеков, своя опись, свой лист и своя девятая строка, где его имя стоит раньше, чем он его туда вписал. Чем кончается: клеть уходит вниз без него, а по связи он слышит голос Даши — она наверху, но не там, где он искал.
+
+| Параметр | Том 8 | Норма серии |
+|---|---|---|
+| Объём | **609 720 знаков** (15,2 а.л.) | 588–624 тыс. |
+| Без пробелов | 494 411 знаков | — |
+| Глав | 33 + Введение | 26–37 |
+| Средняя глава | 17,9 тыс. знаков | 16–23 тыс. |
+| Слов | 100 251 слово | — |
+| Сцен | 154 (4–5 на главу) | 3–6 на главу |
+| Системных строк | 112 | ~1 на 3,8 тыс. знаков |
+| Диалог | 51 % строк | 30–38 % |
+| Средняя фраза | 8,7 слова | 12–16 |
+
+Где книга вылезает из нормы — честно:
+
+- **диалога больше** (51 % против 30–38 %): половина тома проходит в капсуле, где шесть человек и один кислородный баллон на всех, — там нечего делать, кроме как говорить;
+- **средняя фраза короче** (8,7 против 12–16 слов): в карантине и в клети люди отвечают коротко, потому что время считают по часам, а не по абзацам.
+
+Системных строк 112 — одна на 5,4 тыс. знаков: реже нормы, потому что их место заняли вес, отвес и очередь. Всё остальное в коридоре: объём, число глав, размер главы и сцены.
+
+<details>
+<summary>Оглавление тома 8 — 34 файла, 609 720 знаков</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Четыреста двадцать | 7 тыс. |
+| 1 | Глава первая. «Резерв» | 18 тыс. |
+| 2 | Глава вторая. «Юля идёт сама» | 18 тыс. |
+| 3 | Глава третья. «Ствол» | 19 тыс. |
+| 4 | Глава четвёртая. «Сделка» | 18 тыс. |
+| 5 | Глава пятая. «Очередь» | 19 тыс. |
+| 6 | Глава шестая. «Карантинные сутки» | 19 тыс. |
+| 7 | Глава седьмая. «Тим» | 18 тыс. |
+| 8 | Глава восьмая. «Посадка» | 18 тыс. |
+| 9 | Глава девятая. «Клеть» | 18 тыс. |
+| 10 | Глава десятая. «Книга подъёма» | 18 тыс. |
+| 11 | Глава одиннадцатая. «Остановка на минус двести» | 18 тыс. |
+| 12 | Глава двенадцатая. «Что помнят» | 18 тыс. |
+| 13 | Глава тринадцатая. «Высота» | 18 тыс. |
+| 14 | Глава четырнадцатая. «Карантин до и после» | 19 тыс. |
+| 15 | Глава пятнадцатая. «Зачем карантин» | 19 тыс. |
+| 16 | Глава шестнадцатая. «Стыковка» | 19 тыс. |
+| 17 | Глава семнадцатая. «Первый выход» | 18 тыс. |
+| 18 | Глава восемнадцатая. «Четыре отсека» | 19 тыс. |
+| 19 | Глава девятнадцатая. «Верхняя опись» | 19 тыс. |
+| 20 | Глава двадцатая. «Работа на шве» | 18 тыс. |
+| 21 | Глава двадцать первая. «Смена» | 18 тыс. |
+| 22 | Глава двадцать вторая. «Семён-2» | 19 тыс. |
+| 23 | Глава двадцать третья. «Акт» | 19 тыс. |
+| 24 | Глава двадцать четвёртая. «Цена подписи» | 19 тыс. |
+| 25 | Глава двадцать пятая. «Трос» | 18 тыс. |
+| 26 | Глава двадцать шестая. «Смена, которую он берёт» | 18 тыс. |
+| 27 | Глава двадцать седьмая. «Спуск» | 17 тыс. |
+| 28 | Глава двадцать восьмая. «Сумка» | 18 тыс. |
+| 29 | Глава двадцать девятая. «Журнал» | 18 тыс. |
+| 30 | Глава тридцатая. «Правнучка» | 18 тыс. |
+| 31 | Глава тридцать первая. «Юля по связи» | 18 тыс. |
+| 32 | Глава тридцать вторая. «Девятая строка» | 17 тыс. |
+| 33 | Глава тридцать третья. «Финал» | 18 тыс. |
+
+</details>
+
+Читать целиком: [BOOK08/SHOV-tom8.md](BOOK08/SHOV-tom8.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v8.0](https://github.com/rukazax/shov/releases/tag/v8.0). Библия тома — [BOOK08/BIBLE.md](BOOK08/BIBLE.md), брифы — [BOOK08/BRIEFS](BOOK08/BRIEFS), спина глав — [BOOK08/SPINE.md](BOOK08/SPINE.md). Озвучки пока нет: пойдёт тем же конвейером, `BOOK=BOOK08 ./audio/render_all.sh`.
+
 ## Аудио
 
 Озвучка в духе записей 1С-Паблишинг: рассказчик, отдельные голоса на персонажей, музыкальная подложка с дакингом, эффекты на сценарные границы и системные строки.
@@ -730,7 +806,7 @@ shov/
 
 ## English
 
-<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Volume one</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Audiobook of volume one (34 tracks, 14 h 57 min)</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Volume two</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Volume three</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Volume four</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v5.0"><b>⬇ Volume five</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v6.0"><b>⬇ Volume six</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v7.0"><b>⬇ Volume seven</b></a><br>EPUB · single-file markdown · cover artwork · audio in v1.1, 34 separate mp3 files</p>
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Volume one</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Audiobook of volume one (34 tracks, 14 h 57 min)</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Volume two</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Volume three</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Volume four</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v5.0"><b>⬇ Volume five</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v6.0"><b>⬇ Volume six</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v7.0"><b>⬇ Volume seven</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v8.0"><b>⬇ Volume eight</b></a><br>EPUB · single-file markdown · cover artwork · audio in v1.1, 34 separate mp3 files</p>
 
 **The Seam** — a thirty-volume series written in the voice of Mikhail Atamanov's *Distorting Reality* cycle, with a new world, new people and a new plot. Not a work by that author; the style profile was derived from thirteen volumes and stays out of this repository.
 
@@ -941,7 +1017,81 @@ System lines number 124 — one per 4.9 thousand characters, slightly rarer than
 
 Read in full: [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md) — a single file with a title page and an epigraph. EPUB is in [release v7.0](https://github.com/rukazax/shov/releases/tag/v7.0). The volume bible is [BOOK07/BIBLE.md](BOOK07/BIBLE.md), briefs are [BOOK07/BRIEFS](BOOK07/BRIEFS), the chapter spine is [BOOK07/SPINE.md](BOOK07/SPINE.md). Audio is not rendered yet — the same pipeline, `BOOK=BOOK07 ./audio/render_all.sh`.
 
-The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md), [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md), [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md) and [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
+### Volume eight «Orbit»
+
+The stake of this volume is weight. Sideways he is no longer let through: the door does not take an inscribed man, the clearance is gone, and he lives on odd jobs and visits the junction the way other people visit a museum. Then what the service always knew becomes visible, the thing he never asked about: the seam has two exits. The second one goes up — in the same shaft where our cage descends, for water, theirs ascends, to the orbit of the Second Earth. Three hundred kilometres, six hours and forty minutes.
+
+Lifts are rationed by weight, not kinship: the capsule takes four hundred and twenty kilograms, a man with a bag counts for two, and the queue moves once every three months. Out of turn they lift three people — a doctor, an inspector and a chaperone, whoever flies with a minor. Semyon takes another man's child as his grounds: Tim Somov, fourteen, forty-two kilograms, afraid of heights and not admitting it. For the first time he is not the victim of a form but its author.
+
+Before the ascent there are fourteen days of quarantine, and quarantine is not about infection: it exists so a man has time to change his mind, and so the service has time to write down why he is flying. The journal has one column — "goal". The doctors do not believe it, but they write it.
+
+Up there the seam opens into emptiness and does not grow: it is held from both sides. The upper junction is a station of four compartments, with its own inventory, its own sheet and its own ninth line, where his name stands before he writes it there. How it ends: the cage goes down without him, and over the comms he hears Dasha's voice — she is up here, but not where he was looking.
+
+| Parameter | Volume 8 | Series norm |
+|---|---|---|
+| Length | **609,720 characters** (15.2 author sheets) | 588–624 thousand |
+| Without spaces | 494,411 characters | — |
+| Chapters | 33 + Introduction | 26–37 |
+| Average chapter | 17.9 thousand characters | 16–23 thousand |
+| Words | 100,251 | — |
+| Scenes | 154 (4–5 per chapter) | 3–6 per chapter |
+| System lines | 112 | ~1 per 3.8 thousand characters |
+| Cast | Tim Somov, fourteen, his grounds; quarantine doctor Lida Korolyova and her "goal" journal; Grigory Tseitlin of the lift office; Vera Tyurina, keeper of the upper junction; the second Semyon, now a voice over the comms |
+| Dialogue | 51 % of lines | 30–38 % |
+| Average sentence | 8.7 words | 12–16 |
+
+Where the book leaves the norm, honestly:
+
+- **more dialogue** (51 % against 30–38 %): half the volume happens inside the capsule, where six people share one oxygen cylinder, and there is nothing to do there but talk;
+- **shorter average sentence** (8.7 against 12–16 words): in quarantine and in the cage people answer briefly, because time is counted in hours there, not in paragraphs.
+
+System lines number 112 — one per 5.4 thousand characters, rarer than the norm, because weight, plumb line and queue took their place. Everything else is inside the corridor: length, chapter count, chapter size, scenes.
+
+<details>
+<summary>Volume 8 contents — 34 files, 609,720 characters</summary>
+
+| # | Chapter | Length |
+|---|---|---|
+| 0 | Введение. Четыреста двадцать | 7K |
+| 1 | Глава первая. «Резерв» | 18K |
+| 2 | Глава вторая. «Юля идёт сама» | 18K |
+| 3 | Глава третья. «Ствол» | 19K |
+| 4 | Глава четвёртая. «Сделка» | 18K |
+| 5 | Глава пятая. «Очередь» | 19K |
+| 6 | Глава шестая. «Карантинные сутки» | 19K |
+| 7 | Глава седьмая. «Тим» | 18K |
+| 8 | Глава восьмая. «Посадка» | 18K |
+| 9 | Глава девятая. «Клеть» | 18K |
+| 10 | Глава десятая. «Книга подъёма» | 18K |
+| 11 | Глава одиннадцатая. «Остановка на минус двести» | 18K |
+| 12 | Глава двенадцатая. «Что помнят» | 18K |
+| 13 | Глава тринадцатая. «Высота» | 18K |
+| 14 | Глава четырнадцатая. «Карантин до и после» | 19K |
+| 15 | Глава пятнадцатая. «Зачем карантин» | 19K |
+| 16 | Глава шестнадцатая. «Стыковка» | 19K |
+| 17 | Глава семнадцатая. «Первый выход» | 18K |
+| 18 | Глава восемнадцатая. «Четыре отсека» | 19K |
+| 19 | Глава девятнадцатая. «Верхняя опись» | 19K |
+| 20 | Глава двадцатая. «Работа на шве» | 18K |
+| 21 | Глава двадцать первая. «Смена» | 18K |
+| 22 | Глава двадцать вторая. «Семён-2» | 19K |
+| 23 | Глава двадцать третья. «Акт» | 19K |
+| 24 | Глава двадцать четвёртая. «Цена подписи» | 19K |
+| 25 | Глава двадцать пятая. «Трос» | 18K |
+| 26 | Глава двадцать шестая. «Смена, которую он берёт» | 18K |
+| 27 | Глава двадцать седьмая. «Спуск» | 17K |
+| 28 | Глава двадцать восьмая. «Сумка» | 18K |
+| 29 | Глава двадцать девятая. «Журнал» | 18K |
+| 30 | Глава тридцатая. «Правнучка» | 18K |
+| 31 | Глава тридцать первая. «Юля по связи» | 18K |
+| 32 | Глава тридцать вторая. «Девятая строка» | 17K |
+| 33 | Глава тридцать третья. «Финал» | 18K |
+
+</details>
+
+Read in full: [BOOK08/SHOV-tom8.md](BOOK08/SHOV-tom8.md) — a single file with a title page and an epigraph. EPUB is in [release v8.0](https://github.com/rukazax/shov/releases/tag/v8.0). The volume bible is [BOOK08/BIBLE.md](BOOK08/BIBLE.md), briefs are [BOOK08/BRIEFS](BOOK08/BRIEFS), the chapter spine is [BOOK08/SPINE.md](BOOK08/SPINE.md). Audio is not rendered yet — the same pipeline, `BOOK=BOOK08 ./audio/render_all.sh`.
+
+The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md), [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md), [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md), [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md) and [BOOK08/SHOV-tom8.md](BOOK08/SHOV-tom8.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
 
 The production pipeline — foundation, bible, briefs, fan-out, machine gates, assembly, cover, audiobook — is documented step by step in [PRODUCTION.md](PRODUCTION.md).
 
