@@ -30,6 +30,16 @@ OUTDIR = os.path.join(HERE, os.environ.get("AUDIO_OUT", "out"))
 CASTDIR = os.path.join(HERE, os.environ.get("AUDIO_CAST", "cast"))
 SR = 44100
 
+# Движок синтеза. edge-tts — прежний (два родных русских голоса, чужой
+# endpoint, ~30 % отказов). teratts — TeraTTSv2 на этом хосте: четыре тембра,
+# автоударения, 44,1 кГц, RTF 0,3. Переключается TTS_ENGINE=teratts.
+TTS_ENGINE = os.environ.get("TTS_ENGINE", "edge")
+TTS_JOBS = int(os.environ.get("TTS_JOBS", "2"))
+# Допустимые состояния реплики — четвёртая колонка разметки, текст уходит
+# в пятую: «74<TAB>dialogue<TAB>hero<TAB>tense<TAB>А до меня…». Файл на три
+# колонки читается как раньше, состояние считается нейтральным.
+EMOTION_NAMES = {"calm", "tense", "angry", "joy", "tired", "sad", "whisper", "shout"}
+
 # --- голоса ---------------------------------------------------------------
 
 # role -> базовый тембр и манера. rate/pitch/volume — строки edge-tts,
@@ -501,8 +511,13 @@ def resolve_dialogue(idx, blocks, recent, prev_role, narr_role="narrator", adjac
     return pool[0] if pool else "hero"
 
 
-def prosody(kind, text, role):
-    """Характер реплики поверх тембра: крик, шёпот, вопрос, оборванная фраза."""
+def prosody(kind, text, role, emotion=""):
+    """Характер реплики поверх тембра: крик, шёпот, вопрос, оборванная фраза.
+
+    emotion — состояние из четвёртой колонки разметки (calm/tense/angry/…).
+    Оно живёт поверх просодии от знаков: TeraTTS не принимает эмоцию, поэтому
+    состояние двигает темп, полутоны и уровень (см. teratts_engine.EMOTIONS).
+    """
     base = VOICES[role]
     rate = int(base["rate"].rstrip("%"))
     pitch = int(base["pitch"].rstrip("Hz"))
@@ -540,7 +555,19 @@ def prosody(kind, text, role):
         rate -= 1
 
     spec = {"voice": base["voice"], "rate": f"{rate:+d}%", "pitch": f"{pitch:+d}Hz",
-            "volume": f"{vol:+d}%", "fx": fx}
+            "volume": f"{vol:+d}%", "fx": fx, "role": role, "emotion": emotion,
+            "kind": kind}
+
+    # Движок TeraTTS: ему нужны не абсолютные rate/pitch edge-tts, а дельты
+    # от знаков поверх собственного тембра роли. Считаем их здесь, чтобы
+    # правила просодии остались в одном месте.
+    if TTS_ENGINE == "teratts":
+        import teratts_engine as te
+        b_rate = int(base["rate"].rstrip("%"))
+        b_pitch = int(base["pitch"].rstrip("Hz"))
+        spec["d_rate"], spec["d_pitch"] = rate - b_rate, pitch - b_pitch
+        plan = te.plan(role, spec["d_rate"], spec["d_pitch"], emotion, kind)
+        spec["voice"] = f"teratts:{plan['voice']}:{plan['st']}:{plan['tempo']}"
     if XTTS_URL:
         mood = "tense" if fx == "shout" or t.rstrip().endswith("!") else "calm"
         base_ref = XTTS_REFS.get(role, "hero")
@@ -551,7 +578,8 @@ def prosody(kind, text, role):
 
 
 def cache_key(spec, text):
-    parts = [spec["voice"], spec["rate"], spec["pitch"], spec["volume"], text]
+    parts = [spec["voice"], spec["rate"], spec["pitch"], spec["volume"], text,
+             spec.get("emotion", "")]
     if spec.get("ref"):
         parts += [spec["ref"], str(spec["speed"]), str(spec.get("shift", 0))]
     return hashlib.sha1("|".join(parts).encode()).hexdigest()[:20]
@@ -692,9 +720,22 @@ def synth_xtts(text, spec, path):
     return False
 
 
+def synth_teratts(text, spec, path):
+    """TeraTTSv2 → mp3 по нужному пути. Контракт тот же, что у edge-tts."""
+    import teratts_engine as te
+    wav = te.synth(text, role=spec["role"], rate=spec.get("d_rate", 0),
+                   pitch=spec.get("d_pitch", 0), emotion=spec.get("emotion") or None,
+                   kind=spec.get("kind", "dialogue"))
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", wav, "-ar", str(SR),
+                    "-ac", "1", "-b:a", "128k", path], check=True)
+    return os.path.getsize(path) > 500
+
+
 async def synth_one(text, spec, path):
     if spec.get("ref"):
         return await asyncio.to_thread(synth_xtts, text, spec, path)
+    if TTS_ENGINE == "teratts":
+        return await asyncio.to_thread(synth_teratts, text, spec, path)
     if await synth_try(text, spec, path, 40):
         return True
     return await synth_split(text, spec, path)
@@ -823,7 +864,27 @@ async def synth_split(text, spec, path):
     return os.path.getsize(path) > 500
 
 
+_POOL = None
+
+
+def _teratts_task(arg):
+    import teratts_engine as te
+    text, spec, path = arg
+    te._model()                     # в воркере: грузится один раз
+    return synth_teratts(text, spec, path)
+
+
 async def synth_all(items, jobs=4):
+    if TTS_ENGINE == "teratts":
+        import multiprocessing as mp
+        n = max(1, TTS_JOBS)
+        pool = mp.get_context("fork").Pool(n)
+        try:
+            res = await asyncio.to_thread(pool.map, _teratts_task, items)
+        finally:
+            pool.close()
+            pool.join()
+        return list(res)
     sem = asyncio.Semaphore(jobs)
 
     async def worker(text, spec, path):
@@ -912,6 +973,7 @@ def main():
         print(f"{stem}: разметка → {cast_path}, блоков {len(jobs)}")
         return
 
+    EMO = {}
     if os.path.exists(cast_path):
         roles = {}
         for line in open(cast_path, encoding="utf-8"):
@@ -922,6 +984,10 @@ def main():
                 continue
             try:
                 roles[int(parts[0])] = parts[2].strip()
+                # состояние — четвёртая колонка и только из словаря состояний;
+                # иначе четвёртая колонка это текст, как в старом файле
+                if len(parts) >= 5 and parts[3].strip().lower() in EMOTION_NAMES:
+                    EMO[int(parts[0])] = parts[3].strip().lower()
             except ValueError:
                 continue
         fixed, out = 0, []
@@ -940,7 +1006,7 @@ def main():
     if args.only_text:
         missing = 0
         for i, kind, text, role in jobs:
-            spec = prosody(kind, text, role)
+            spec = prosody(kind, text, role, EMO.get(i, ""))
             mp3 = os.path.join(CACHE, cache_key(spec, cleanup_for_tts(text)) + ".mp3")
             if not (os.path.exists(mp3) and os.path.getsize(mp3) > 500):
                 missing += 1
@@ -954,7 +1020,7 @@ def main():
     tasks, specs = [], {}
     for i, kind, text, role in jobs:
         clean = cleanup_for_tts(text)
-        spec = prosody(kind, text, role)
+        spec = prosody(kind, text, role, EMO.get(i, ""))
         key = cache_key(spec, clean)
         specs[i] = (spec, key)
         path = os.path.join(CACHE, key + ".mp3")

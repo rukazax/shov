@@ -12,3 +12,5 @@ audio/out-*/*.wav
 audio/out-*/*.lock
 audio/out-*/*.mp3
 audio/out-*/.cast-rebuild
+audio/out-*/*/
+audio/out-*/*.json

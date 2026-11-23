@@ -108,9 +108,10 @@ def diarize(x, threshold, num_speakers):
 
 def run_probe(dirpath, threshold, num_speakers, out):
     """Каталог пробных реплик (роль.mp3) → сколько ролей диаризация различает."""
-    files = sorted(glob.glob(os.path.join(dirpath, "*.mp3")))
+    files = sorted(glob.glob(os.path.join(dirpath, "*.mp3"))
+                   + glob.glob(os.path.join(dirpath, "*.wav")))
     if not files:
-        sys.exit(f"в {dirpath} нет mp3 с пробами ролей")
+        sys.exit(f"в {dirpath} нет проб: нужны mp3 или wav с репликами ролей")
     parts, spans, t = [], [], 0.0
     gap = np.zeros(int(0.5 * SR), dtype=np.float32)
     for f in files:
