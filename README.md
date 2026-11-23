@@ -12,10 +12,11 @@
   <img src="assets/cover-tom9.png" alt="Шов. Книга девятая: Трос — обложка" width="13%">
   <img src="assets/cover-tom10.png" alt="Шов. Книга десятая: Узел — обложка" width="13%">
   <img src="assets/cover-tom11.png" alt="Шов. Книга одиннадцатая: Долг — обложка" width="13%">
+  <img src="assets/cover-tom12.png" alt="Шов. Книга двенадцатая: Двое – обложка" width="13%">
 </p>
 
 <h1 align="center">Шов</h1>
-<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · <b>Книга третья. Мост</b> · <b>Книга четвёртая. Опора</b> · <b>Книга пятая. Двести лет</b> · <b>Книга шестая. Чужая родня</b> · <b>Книга седьмая. Стык</b> · <b>Книга восьмая. Орбита</b> · <b>Книга девятая. Трос</b> · <b>Книга десятая. Узел</b> · <b>Книга одиннадцатая. Долг</b> · Константин Ерёмин</p>
+<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · <b>Книга третья. Мост</b> · <b>Книга четвёртая. Опора</b> · <b>Книга пятая. Двести лет</b> · <b>Книга шестая. Чужая родня</b> · <b>Книга седьмая. Стык</b> · <b>Книга восьмая. Орбита</b> · <b>Книга девятая. Трос</b> · <b>Книга десятая. Узел</b> · <b>Книга одиннадцатая. Долг</b> · <b>Книга двенадцатая. Двое</b> · Константин Ерёмин</p>
 
 <p align="center">
   <b>RU</b> · <a href="#english">English</a>
@@ -33,15 +34,16 @@
   <img src="https://img.shields.io/badge/том_9_«Трос»-готов-3fb950?style=flat-square" alt="том 9 готов">
   <img src="https://img.shields.io/badge/том_10_«Узел»-готов-3fb950?style=flat-square" alt="том 10 готов">
   <img src="https://img.shields.io/badge/том_11_«Долг»-готов-3fb950?style=flat-square" alt="том 11 готов">
-  <img src="https://img.shields.io/badge/глав-363_+_11_введений-2f6fed?style=flat-square" alt="363 главы">
-  <img src="https://img.shields.io/badge/объём-6_706_218_знаков-2f6fed?style=flat-square" alt="6 706 218 знаков">
-  <img src="https://img.shields.io/badge/Дальше_по_плану_—_том_двенадцатый-8b949e?style=flat-square" alt="дальше — том двенадцатый">
+  <img src="https://img.shields.io/badge/том_12_«Двое»-готов-3fb950?style=flat-square" alt="том 12 готов">
+  <img src="https://img.shields.io/badge/глав-396_+_12_введений-2f6fed?style=flat-square" alt="396 глав">
+  <img src="https://img.shields.io/badge/объём-7_308_865_знаков-2f6fed?style=flat-square" alt="7 308 865 знаков">
+  <img src="https://img.shields.io/badge/Дальше_по_плану_–_том_тринадцатый-8b949e?style=flat-square" alt="дальше – том тринадцатый">
   <img src="https://img.shields.io/badge/аудио-68_дорожек-8957e5?style=flat-square" alt="68 дорожек">
   <img src="https://img.shields.io/badge/EPUB-в_релизе-8b949e?style=flat-square" alt="EPUB">
   <img src="https://img.shields.io/badge/серия-30_томов-8b949e?style=flat-square" alt="30 томов">
 </p>
 
-**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Том третий](#том-третий-мост) · [Том четвёртый](#том-четвёртый-опора) · [Том пятый](#том-пятый-двести-лет) · [Том шестой](#том-шестой-чужая-родня) · [Том седьмой](#том-седьмой-стык) · [Том восьмой](#том-восьмой-орбита) · [Том девятый](#том-девятый-трос) · [Том десятый](#том-десятый-узел) · [Том одиннадцатый](#том-одиннадцатый-долг) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
+**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Том третий](#том-третий-мост) · [Том четвёртый](#том-четвёртый-опора) · [Том пятый](#том-пятый-двести-лет) · [Том шестой](#том-шестой-чужая-родня) · [Том седьмой](#том-седьмой-стык) · [Том восьмой](#том-восьмой-орбита) · [Том девятый](#том-девятый-трос) · [Том десятый](#том-десятый-узел) · [Том одиннадцатый](#том-одиннадцатый-долг) · [Том двенадцатый](#том-двенадцатый-двое) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
 
 ---
 
@@ -90,7 +92,7 @@ graph LR
 | IV. Война за узел | 21–27 | существование всех Земель |
 | V. Финал | 28–30 | чем ты готов быть, чтобы шов держался |
 
-**Готово:** тома 1–11 — «Щепка», «Ходок», «Мост», «Опора», «Двести лет», «Чужая родня», «Стык», «Орбита», «Трос», «Узел», «Долг». Первая часть плана закрыта: своя шкура, работа и дочь отработаны от начала до двери. Вторая часть идёт третьей книгой: жизнь на Второй Земле, служба, которая здесь называется «Сшивка», и история их Шова через документы, а не через лекцию. Шестой том перевёл дверь в почту и выдал герою живую бабушку, мать, которая здесь не уходила, и жену, которая его никогда не встречала. Седьмой поставил его в службу Стыка, между «порядком» и людьми, и забрал право подписи. Восьмой нашёл второй выход из шва — вверх, к орбите, — и вернул ему дочь голосом по связи. Девятый вывел его на край троса, где шов держат руками и где человек без веса не считается человеком: книга про квоту, табель и то, что остаётся после подписи. Десятый свёл сеть: узлы, геометров, регламент и цену, которая считается временем, а не деньгами. Одиннадцатый посчитал долг: вклад по табелю узла, три перехода и остаток, который нельзя ни отработать, ни выкупить. Двенадцатый в работе.
+**Готово:** тома 1–12 — «Щепка», «Ходок», «Мост», «Опора», «Двести лет», «Чужая родня», «Стык», «Орбита», «Трос», «Узел», «Долг», «Двое». Первая часть плана закрыта: своя шкура, работа и дочь отработаны от начала до двери. Вторая часть идёт третьей книгой: жизнь на Второй Земле, служба, которая здесь называется «Сшивка», и история их Шова через документы, а не через лекцию. Шестой том перевёл дверь в почту и выдал герою живую бабушку, мать, которая здесь не уходила, и жену, которая его никогда не встречала. Седьмой поставил его в службу Стыка, между «порядком» и людьми, и забрал право подписи. Восьмой нашёл второй выход из шва — вверх, к орбите, — и вернул ему дочь голосом по связи. Девятый вывел его на край троса, где шов держат руками и где человек без веса не считается человеком: книга про квоту, табель и то, что остаётся после подписи. Десятый свёл сеть: узлы, геометров, регламент и цену, которая считается временем, а не деньгами. Одиннадцатый посчитал долг: вклад по табелю узла, три перехода и остаток, который нельзя ни отработать, ни выкупить. Двенадцатый закрыл вторую часть: в книге Свода на одну фамилию стоят две строки и один номер узла, и обе настоящие.
 
 Раскадровка на тридцать томов — [PLAN.md](PLAN.md). Идея мира и правила — [IDEA.md](IDEA.md).
 
@@ -836,6 +838,76 @@ graph LR
 
 Читать целиком: [BOOK11/SHOV-tom11.md](BOOK11/SHOV-tom11.md) – единый файл с содержанием и эпиграфом. EPUB – в [релизе v11.0](https://github.com/rukazax/shov/releases/tag/v11.0). Библия тома – [BOOK11/BIBLE.md](BOOK11/BIBLE.md), брифы – [BOOK11/BRIEFS](BOOK11/BRIEFS), спина глав – [BOOK11/SPINE.md](BOOK11/SPINE.md). Озвучки пока нет: пойдёт тем же конвейером, `BOOK=BOOK11 ./audio/render_all.sh`.
 
+## Том двенадцатый. Двое
+
+Ставка тома – вторая строка. В книге Свода на одну фамилию стоят две записи и один номер узла, и обе настоящие: не подделка, не приписка задним числом, не взятый за это рубль. Просто в тысяча девятьсот седьмом году мальчика записали дважды, а через двадцать один год призывная комиссия села решать, что с этим делать, и не решила ничего.
+
+Он приходит в Свод раньше срока и узнаёт, что строка в книге не одна. Потом ему выдают форму «двенадцать-бэ»: три графы, четырнадцать суток и два решения, и второе решение означает гашение узла. А ещё появляется второй – человек с его лицом, его голосом и его памятью, который всё это время шил вместо него и пришёл не спорить: «Я не спорить пришёл. Я пришёл шить».
+
+В узле 4-бис ставят скобу: один остаётся снаружи, второй держит внутри, и шов перестаёт дышать. Снаружи идут шестьдесят суток, внутри – часы, и на шестидесятый день скобу снимают изнутри. Он уходит, а вопрос остаётся открытым: кто кого пережил.
+
+| Параметр | Том 12 | Норма серии |
+|---|---|---|
+| Объём | **602 647 знаков** (15,1 а.л.) | 588–624 тыс. |
+| Без пробелов | 485 919 знаков | – |
+| Глав | 33 + Введение | 26–37 |
+| Средняя глава | 18,0 тыс. знаков | 16–23 тыс. |
+| Слов | 101 363 | – |
+| Сцен | 134 (4 на главу) | 3–6 на главу |
+| Системных строк | 161 (одна на 3,7 тыс. знаков) | ~1 на 3,8 тыс. знаков |
+| Диалог | 53 % строк | 30–38 % |
+| Средняя фраза | 8,6 слова | 12–16 |
+
+Где книга вылезает из нормы – честно:
+
+- **диалога больше** (53 % против 30–38 %): том держится на сверке и на разговоре двух одинаковых людей. Сцену, где оба молчат, читать некому, поэтому они говорят – и говорят помногу;
+- **средняя фраза короче** (8,6 против 12–16 слов): короткая реплика здесь ещё и способ различить двоих. Пока один строит длинное, второй уже ответил;
+- **системных строк в норме** (161, одна на 3,7 тыс. знаков): прибор у тома свой – скоба и её счёт. Он пишет сам и считает вслух.
+
+<details>
+<summary>Оглавление тома 12 – 34 файла, 602 647 знаков</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Две записи | 7 тыс. |
+| 1 | Глава 1. «Две строки» | 19 тыс. |
+| 2 | Глава 2. «Форма двенадцать-бэ» | 18 тыс. |
+| 3 | Глава 3. «Три признака» | 18 тыс. |
+| 4 | Глава 4. «Тысяча девятьсот пятьдесят восемь» | 18 тыс. |
+| 5 | Глава 5. «Проданная квартира» | 18 тыс. |
+| 6 | Глава 6. «Дело о двух Лоскутовых» | 18 тыс. |
+| 7 | Глава 7. «Отпечаток» | 18 тыс. |
+| 8 | Глава 8. «Второй» | 17 тыс. |
+| 9 | Глава 9. «Два ремесла» | 17 тыс. |
+| 10 | Глава 10. «Сшивка» | 17 тыс. |
+| 11 | Глава 11. «Список» | 18 тыс. |
+| 12 | Глава 12. «Табельщица» | 17 тыс. |
+| 13 | Глава 13. «Скоба» | 19 тыс. |
+| 14 | Глава 14. «Наряд» | 19 тыс. |
+| 15 | Глава 15. «Папа был раньше» | 19 тыс. |
+| 16 | Глава 16. «Двое у калитки» | 18 тыс. |
+| 17 | Глава 17. «Долг на двоих» | 19 тыс. |
+| 18 | Глава 18. «Наряд на двоих» | 19 тыс. |
+| 19 | Глава 19. «Кромка» | 18 тыс. |
+| 20 | Глава 20. «Первые сутки» | 18 тыс. |
+| 21 | Глава 21. «Ссора» | 18 тыс. |
+| 22 | Глава 22. «Драка» | 17 тыс. |
+| 23 | Глава 23. «Форма закрывается» | 18 тыс. |
+| 24 | Глава 24. «Шестьдесят суток» | 18 тыс. |
+| 25 | Глава 25. «Зачёркнутые» | 18 тыс. |
+| 26 | Глава 26. «Снять» | 18 тыс. |
+| 27 | Глава 27. «Край» | 18 тыс. |
+| 28 | Глава 28. «Вклад» | 18 тыс. |
+| 29 | Глава 29. «Одна запись» | 19 тыс. |
+| 30 | Глава 30. «Раньше» | 18 тыс. |
+| 31 | Глава 31. «Книга подъёма» | 19 тыс. |
+| 32 | Глава 32. «Выбор» | 18 тыс. |
+| 33 | Глава 33. «Финал» | 17 тыс. |
+
+</details>
+
+Читать целиком: [BOOK12/SHOV-tom12.md](BOOK12/SHOV-tom12.md) – единый файл с содержанием и эпиграфом. EPUB – [dist/shov-tom12.epub](dist/shov-tom12.epub), обложка – [assets/cover-tom12.png](assets/cover-tom12.png) (1200×1800). Библия тома – [BOOK12/BIBLE.md](BOOK12/BIBLE.md), брифы – [BOOK12/BRIEFS](BOOK12/BRIEFS), спина глав – [BOOK12/SPINE.md](BOOK12/SPINE.md). Машинный гейт – [BOOK12/gate.sh](BOOK12/gate.sh): `ГЕЙТЫ: PASS`. Озвучки пока нет: пойдёт тем же конвейером, `BOOK=BOOK12 ./audio/render_all.sh`.
+
 ## Аудио
 
 Озвучка в духе записей 1С-Паблишинг: рассказчик, отдельные голоса на персонажей, музыкальная подложка с дакингом, эффекты на сценарные границы и системные строки.
@@ -1004,6 +1076,7 @@ shov/
 │   ├── build_book.py       сборка и статистика
 │   ├── build_epub.sh       EPUB для читалки
 │   └── gate.sh             машинные гейты тома
+├── BOOK12/                 том 12: библия, брифы, главы, сборка, gate.sh
 ├── audio/
 │   ├── gen_beds.py         подложки и эффекты
 │   ├── render.py           озвучка и сведение
@@ -1409,7 +1482,7 @@ How it differs:
 
 Read in full: [BOOK11/SHOV-tom11.md](BOOK11/SHOV-tom11.md) — a single file with a title page and an epigraph. EPUB is in [release v11.0](https://github.com/rukazax/shov/releases/tag/v11.0). The volume bible is [BOOK11/BIBLE.md](BOOK11/BIBLE.md), briefs are [BOOK11/BRIEFS](BOOK11/BRIEFS), the chapter spine is [BOOK11/SPINE.md](BOOK11/SPINE.md). Audio is not rendered yet — the same pipeline, `BOOK=BOOK11 ./audio/render_all.sh`.
 
-The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md), [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md), [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md), [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md), [BOOK08/SHOV-tom8.md](BOOK08/SHOV-tom8.md), [BOOK09/SHOV-tom9.md](BOOK09/SHOV-tom9.md), [BOOK10/SHOV-tom10.md](BOOK10/SHOV-tom10.md) and [BOOK11/SHOV-tom11.md](BOOK11/SHOV-tom11.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
+The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md), [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md), [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md), [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md), [BOOK08/SHOV-tom8.md](BOOK08/SHOV-tom8.md), [BOOK09/SHOV-tom9.md](BOOK09/SHOV-tom9.md), [BOOK10/SHOV-tom10.md](BOOK10/SHOV-tom10.md), [BOOK11/SHOV-tom11.md](BOOK11/SHOV-tom11.md) and [BOOK12/SHOV-tom12.md](BOOK12/SHOV-tom12.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
 
 The production pipeline — foundation, bible, briefs, fan-out, machine gates, assembly, cover, audiobook — is documented step by step in [PRODUCTION.md](PRODUCTION.md).
 
@@ -1418,6 +1491,33 @@ Everything is reproducible: `python3 BOOK01/build_book.py` assembles the book, `
 **How the audiobook was made.** Five synthetic voices, four beds and six effects, all generated by code — nothing bought or downloaded. The narrator is `ru-RU-DmitryNeural`; the far side speaks with `en-US-BrianMultilingualNeural` and `en-AU-WilliamMultilingualNeural`; the female roles use `ru-RU-SvetlanaNeural`; the Alignment system lines are the narrator through ring modulation.
 
 What actually hurt: the synthesis service drops about 30 % of requests in waves, so the renderer keeps a 25-second timeout, six retries and a block cache (a full chapter re-renders from cache in 20–25 s). The circuit breaker used to count *consecutive* failures and slept two minutes after ten seconds of work — it now watches silence since the last success. Speaker attribution had to be ordered strictly (name in the stage direction → speech verb → vocative → continuation) because the hero kept borrowing his grandmother's voice. The music bed is cut at 110 Hz, otherwise it hums in the pauses. The Windows synthesis box was being "restarted" on the wrong port, and the publisher died on a relative log path — both fixed in the scripts.
+
+### Volume twelve «The Two»
+
+The Junction's book keeps two lines under one surname and one node number, and both are genuine: no forgery, no entry written back-dated, no clerk paid for it. In 1907 a boy was written down twice; twenty-one years later a draft board sat down to decide what to do about it and decided nothing.
+
+He comes to the Junction ahead of his date and learns the line in the book is not alone. Then comes form twelve-b: three columns, fourteen days, two decisions, and the second one means the node is guttered. And a second man appears, with his face, his voice and his memory, who has been sewing in his place all along and did not come to argue: "I did not come to argue. I came to sew."
+
+At node 4-bis a brace goes in: one man stays outside, the other holds from inside, and the seam stops breathing. Outside, sixty days pass; inside, hours. On the sixtieth day the brace comes out from within, and the question stays open: which of the two outlived the other.
+
+| Parameter | Volume 12 | Series norm |
+|---|---|---|
+| Title | *Book Twelve. The Two* (Двое) | – |
+| Length | **602,647 characters** (15.1 author sheets) | 588–624 thousand |
+| Chapters | 33 + Introduction | 26–37 |
+| Words | 101,363 | – |
+| Scenes | 134 (4 per chapter) | 3–6 per chapter |
+| System lines | 161 (one per ~3,700 characters) | ~1 per 3,800 characters |
+| Dialogue | 53 % of lines | 30–38 % |
+| Average sentence | 8.6 words | 12–16 |
+
+How it differs:
+
+- **The double is a colleague, not a copy.** He is not a shadow and not a rival: he has real documents, a trade and a reason. The volume does not ask which one is real, because its first chapter answers "both".
+- **The price is paid in someone else's time.** Nobody in the volume is guilty, and the form has no column for what actually happens out there: sixty days against hours.
+- **The question stays open.** The brace comes out from the inside, and the last line is not an answer but a question.
+
+Read in full: [BOOK12/SHOV-tom12.md](BOOK12/SHOV-tom12.md) – a single file with a title page and an epigraph; EPUB – [dist/shov-tom12.epub](dist/shov-tom12.epub), cover – [assets/cover-tom12.png](assets/cover-tom12.png). The volume bible is [BOOK12/BIBLE.md](BOOK12/BIBLE.md), briefs are [BOOK12/BRIEFS](BOOK12/BRIEFS), the chapter spine is [BOOK12/SPINE.md](BOOK12/SPINE.md). Machine gate – [BOOK12/gate.sh](BOOK12/gate.sh): `ГЕЙТЫ: PASS`. Audio is not rendered yet – the same pipeline, `BOOK=BOOK12 ./audio/render_all.sh`.
 
 ### Rights
 
