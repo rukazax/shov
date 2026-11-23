@@ -327,7 +327,10 @@ def parse_chapter(path):
             if line.startswith("# "):
                 blocks.append(("title", line[2:].strip()))
                 continue
-            if re.fullmatch(r"\*\s*\*\s*\*", line):
+            if re.fullmatch(r"\*\s*\*\s*\*", line) or re.fullmatch(r"[-—–_*\s]{3,}", line):
+                # Разделители вида «---» тоже разрыв сцены: иначе строка уходит
+                # в синтез как текст, сервис отбивает её все 40 попыток, и глава
+                # не собирается никогда (23.11: BOOK04/ch00 и ch33).
                 blocks.append(("scenebreak", ""))
                 continue
             if SYSTEM_RE.match(line) or (line.endswith(".") and SYSTEM_RE.match(line) is None and _is_system(line)):

@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800" role="img" aria-label="Шов. Книга седьмая: Стык — обложка">
+  <defs>
+    <linearGradient id="sky7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04060b"/>
+      <stop offset="0.4" stop-color="#091019"/>
+      <stop offset="0.75" stop-color="#0c141f"/>
+      <stop offset="1" stop-color="#05080e"/>
+    </linearGradient>
+    <linearGradient id="concrete7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a2130"/>
+      <stop offset="0.35" stop-color="#131a26"/>
+      <stop offset="0.75" stop-color="#0e141d"/>
+      <stop offset="1" stop-color="#080d14"/>
+    </linearGradient>
+    <linearGradient id="seam7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fd2ff" stop-opacity="0.05"/>
+      <stop offset="0.3" stop-color="#bfe6ff" stop-opacity="0.55"/>
+      <stop offset="0.7" stop-color="#9ed4ff" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#6fb6ee" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="lamp7" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd79a" stop-opacity="0.95"/>
+      <stop offset="0.3" stop-color="#ffc274" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffb459" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cone7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffcf8a" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ffcf8a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="booth7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1420"/>
+      <stop offset="1" stop-color="#05080d"/>
+    </linearGradient>
+    <radialGradient id="vignette7" cx="0.5" cy="0.46" r="0.78">
+      <stop offset="0.45" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.82"/>
+    </radialGradient>
+    <filter id="soft7"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="soft7b"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="grain7">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1800" fill="url(#sky7)"/>
+
+  <!-- дальний план: только темнота и провода -->
+  <g stroke="#0b121c" stroke-width="3" opacity="0.9">
+    <path d="M0 690 C300 706 900 706 1200 690"/>
+    <path d="M0 736 C320 748 880 748 1200 736"/>
+  </g>
+
+  <!-- бетонная стена завода -->
+  <rect x="0" y="760" width="1200" height="1040" fill="url(#concrete7)"/>
+  <g stroke="#0a1017" stroke-width="2" opacity="0.75">
+    <path d="M0 900 L1200 900"/><path d="M0 1040 L1200 1040"/>
+    <path d="M0 1180 L1200 1180"/><path d="M0 1320 L1200 1320"/>
+    <path d="M0 1460 L1200 1460"/><path d="M0 1600 L1200 1600"/>
+    <path d="M140 760 L140 1800"/><path d="M420 760 L420 1800"/>
+    <path d="M700 760 L700 1800"/><path d="M980 760 L980 1800"/>
+  </g>
+
+  <!-- шов: вертикальная трещина, из неё сочится свет -->
+  <path d="M600 780 L600 1720" stroke="url(#seam7)" stroke-width="26" filter="url(#soft7)"/>
+  <path d="M600 780 L600 1720" stroke="url(#seam7)" stroke-width="9" filter="url(#soft7b)"/>
+  <path d="M600 780 L600 1720" stroke="#e6f6ff" stroke-width="3.2" opacity="0.75"/>
+  <path d="M600 900 L592 1010 L606 1120 L596 1240 L604 1360 L598 1480 L602 1600"
+        stroke="#9ed4ff" stroke-width="2.2" fill="none" opacity="0.5"/>
+  <ellipse cx="600" cy="1240" rx="120" ry="300" fill="#9ed4ff" opacity="0.07" filter="url(#soft7)"/>
+
+  <!-- два фонаря -->
+  <g>
+    <rect x="404" y="826" width="10" height="120" fill="#0b1219"/>
+    <rect x="376" y="944" width="66" height="16" rx="6" fill="#111a24"/>
+    <rect x="392" y="958" width="34" height="10" rx="4" fill="#ffe3b4" opacity="0.9"/>
+    <ellipse cx="409" cy="978" rx="150" ry="120" fill="url(#lamp7)"/>
+    <path d="M362 962 L456 962 L540 1560 L278 1560 Z" fill="url(#cone7)" opacity="0.5" filter="url(#soft7)"/>
+
+    <rect x="786" y="826" width="10" height="120" fill="#0b1219"/>
+    <rect x="758" y="944" width="66" height="16" rx="6" fill="#111a24"/>
+    <rect x="774" y="958" width="34" height="10" rx="4" fill="#ffe3b4" opacity="0.9"/>
+    <ellipse cx="791" cy="978" rx="150" ry="120" fill="url(#lamp7)"/>
+    <path d="M744 962 L838 962 L920 1560 L660 1560 Z" fill="url(#cone7)" opacity="0.5" filter="url(#soft7)"/>
+  </g>
+
+  <!-- будка караула -->
+  <g>
+    <rect x="852" y="1180" width="280" height="380" fill="url(#booth7)"/>
+    <rect x="872" y="1210" width="86" height="72" fill="#ffd79a" opacity="0.75"/>
+    <rect x="872" y="1210" width="86" height="72" fill="none" stroke="#0a0f16" stroke-width="4"/>
+    <rect x="872" y="1300" width="86" height="72" fill="#241a10" opacity="0.85"/>
+    <rect x="872" y="1300" width="86" height="72" fill="none" stroke="#0a0f16" stroke-width="4"/>
+    <path d="M852 1180 L992 1108 L1132 1180 Z" fill="#0a1017"/>
+    <path d="M1046 1490 L1046 1560 L1098 1560 L1098 1490 Z" fill="#05080d"/>
+    <path d="M986 1180 L986 1560" stroke="#0a0f16" stroke-width="3" opacity="0.8"/>
+    <ellipse cx="915" cy="1246" rx="120" ry="120" fill="url(#lamp7)" opacity="0.35"/>
+  </g>
+
+  <!-- очередь: люди стоят к шву -->
+  <g fill="#020509" transform="translate(26,-14)">
+    <!-- тени под ногами -->
+    <g opacity="0.6" fill="#010306" filter="url(#soft7b)">
+      <ellipse cx="250" cy="1662" rx="64" ry="11"/><ellipse cx="360" cy="1668" rx="60" ry="10"/>
+      <ellipse cx="466" cy="1672" rx="52" ry="9"/><ellipse cx="552" cy="1676" rx="42" ry="8"/>
+    </g>
+    <!-- взрослый в куртке, ближе всех -->
+    <g>
+      <path d="M212 1486 C224 1440 276 1440 288 1486 L300 1660 L200 1660 Z"/>
+      <path d="M240 1446 C244 1418 256 1418 260 1446 Z"/>
+      <circle cx="250" cy="1414" r="34"/>
+      <path d="M232 1392 C238 1360 266 1364 270 1394 Z"/>
+      <path d="M212 1512 C202 1544 204 1600 210 1640" stroke="#020509" stroke-width="3" fill="none" opacity="0.8"/>
+    </g>
+    <!-- второй, в шапке -->
+    <g>
+      <path d="M326 1502 C338 1458 384 1458 396 1502 L406 1668 L316 1668 Z"/>
+      <circle cx="361" cy="1436" r="31"/>
+      <path d="M332 1428 C338 1394 384 1394 390 1428 Z"/>
+    </g>
+    <!-- третий, с сумкой -->
+    <g>
+      <path d="M436 1520 C446 1480 488 1480 498 1520 L506 1672 L428 1672 Z"/>
+      <circle cx="467" cy="1458" r="28"/>
+      <path d="M444 1444 C450 1416 484 1416 490 1444 Z" opacity="0.9"/>
+      <rect x="504" y="1552" width="44" height="52" rx="6"/>
+      <path d="M498 1548 L516 1520 L536 1520" stroke="#020509" stroke-width="6" fill="none"/>
+    </g>
+    <!-- ребёнок впереди, у самого шва -->
+    <g>
+      <path d="M530 1560 C536 1536 560 1536 566 1560 L572 1678 L524 1678 Z"/>
+      <circle cx="548" cy="1522" r="21"/>
+      <path d="M534 1506 C538 1486 558 1486 562 1506 Z"/>
+      <path d="M566 1580 C582 1576 590 1586 590 1596" stroke="#020509" stroke-width="9" fill="none"/>
+    </g>
+  </g>
+
+  <!-- свет шва ложится на ребёнка и на бетон перед ним -->
+  <path d="M524 1516 L576 1516 L580 1680 L520 1680 Z" fill="#9ed4ff" opacity="0.22" filter="url(#soft7b)"/>
+  <path d="M546 1450 L556 1450 L600 1800 L500 1800 Z" fill="#9ed4ff" opacity="0.05" filter="url(#soft7)"/>
+
+  <!-- нижняя полоса асфальта: на ней стоят -->
+  <rect x="0" y="1660" width="1200" height="140" fill="#04070c"/>
+  <path d="M0 1660 L1200 1660" stroke="#1b2432" stroke-width="2" opacity="0.8"/>
+  <g opacity="0.5" stroke="#0a1017" stroke-width="2">
+    <path d="M80 1660 L40 1800"/><path d="M300 1660 L290 1800"/>
+    <path d="M640 1660 L660 1800"/><path d="M980 1660 L1020 1800"/>
+  </g>
+
+  <!-- свет из шва на бетон -->
+  <path d="M586 1200 L614 1200 L676 1800 L524 1800 Z" fill="#9ed4ff" opacity="0.06" filter="url(#soft7)"/>
+
+  <!-- ================= текст ================= -->
+  <text x="86" y="500" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="240"
+        font-weight="700" letter-spacing="16" fill="#f4f8ff">ШОВ</text>
+  <text x="98" y="596" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="86"
+        fill="#a7c6ef" letter-spacing="8">Стык</text>
+  <text x="102" y="660" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="28"
+        letter-spacing="6" fill="#5f7ba6">КНИГА СЕДЬМАЯ</text>
+
+  <rect width="1200" height="1800" fill="url(#vignette7)"/>
+  <rect width="1200" height="1800" filter="url(#grain7)" opacity="0.05"/>
+</svg>

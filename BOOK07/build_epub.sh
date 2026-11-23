@@ -10,11 +10,11 @@ mkdir -p ../dist
 pandoc SHOV-tom7.md \
   -o ../dist/shov-tom7.epub \
   --toc --toc-depth=1 --split-level=1 \
-  --metadata title="Шов. Книга шестая: Чужая родня" \
+  --metadata title="Шов. Книга седьмая: Стык" \
   --metadata author="Константин Ерёмин" \
   --metadata lang=ru-RU \
   --metadata date="2026-11-23" \
-  --epub-cover-image=../assets/cover-tom6.png
+  --epub-cover-image=../assets/cover-tom7.png
 
 cp SHOV-tom7.md ../dist/shov-tom7.md
 ls -lh ../dist

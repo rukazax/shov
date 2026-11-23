@@ -1,15 +1,17 @@
 <p align="center"><img src="assets/banner.svg" alt="Шов — серия на 30 томов" width="100%"></p>
 
 <p align="center">
-  <img src="assets/cover-tom1.png" alt="Шов. Книга первая: Щепка — обложка" width="19%">
-  <img src="assets/cover-tom2.png" alt="Шов. Книга вторая: Ходок — обложка" width="19%">
-  <img src="assets/cover-tom3.png" alt="Шов. Книга третья: Мост — обложка" width="19%">
-  <img src="assets/cover-tom4.png" alt="Шов. Книга четвёртая: Опора — обложка" width="19%">
-  <img src="assets/cover-tom5.png" alt="Шов. Книга пятая: Двести лет — обложка" width="19%">
+  <img src="assets/cover-tom1.png" alt="Шов. Книга первая: Щепка — обложка" width="13%">
+  <img src="assets/cover-tom2.png" alt="Шов. Книга вторая: Ходок — обложка" width="13%">
+  <img src="assets/cover-tom3.png" alt="Шов. Книга третья: Мост — обложка" width="13%">
+  <img src="assets/cover-tom4.png" alt="Шов. Книга четвёртая: Опора — обложка" width="13%">
+  <img src="assets/cover-tom5.png" alt="Шов. Книга пятая: Двести лет — обложка" width="13%">
+  <img src="assets/cover-tom6.png" alt="Шов. Книга шестая: Чужая родня — обложка" width="13%">
+  <img src="assets/cover-tom7.png" alt="Шов. Книга седьмая: Стык — обложка" width="13%">
 </p>
 
 <h1 align="center">Шов</h1>
-<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · <b>Книга третья. Мост</b> · <b>Книга четвёртая. Опора</b> · <b>Книга пятая. Двести лет</b> · Константин Ерёмин</p>
+<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · <b>Книга третья. Мост</b> · <b>Книга четвёртая. Опора</b> · <b>Книга пятая. Двести лет</b> · <b>Книга шестая. Чужая родня</b> · <b>Книга седьмая. Стык</b> · Константин Ерёмин</p>
 
 <p align="center">
   <b>RU</b> · <a href="#english">English</a>
@@ -21,20 +23,22 @@
   <img src="https://img.shields.io/badge/том_3_«Мост»-готов-3fb950?style=flat-square" alt="том 3 готов">
   <img src="https://img.shields.io/badge/том_4_«Опора»-готов-3fb950?style=flat-square" alt="том 4 готов">
   <img src="https://img.shields.io/badge/том_5_«Двести_лет»-готов-3fb950?style=flat-square" alt="том 5 готов">
-  <img src="https://img.shields.io/badge/глав-165_+_5_введений-2f6fed?style=flat-square" alt="165 глав">
-  <img src="https://img.shields.io/badge/объём-3_046_213_знаков-2f6fed?style=flat-square" alt="3 046 213 знаков">
+  <img src="https://img.shields.io/badge/том_6_«Чужая_родня»-готов-3fb950?style=flat-square" alt="том 6 готов">
+  <img src="https://img.shields.io/badge/том_7_«Стык»-готов-3fb950?style=flat-square" alt="том 7 готов">
+  <img src="https://img.shields.io/badge/глав-231_+_7_введений-2f6fed?style=flat-square" alt="231 глава">
+  <img src="https://img.shields.io/badge/объём-4_269_578_знаков-2f6fed?style=flat-square" alt="4 269 578 знаков">
   <img src="https://img.shields.io/badge/аудио-68_дорожек-8957e5?style=flat-square" alt="68 дорожек">
   <img src="https://img.shields.io/badge/EPUB-в_релизе-8b949e?style=flat-square" alt="EPUB">
   <img src="https://img.shields.io/badge/серия-30_томов-8b949e?style=flat-square" alt="30 томов">
 </p>
 
-**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Том третий](#том-третий-мост) · [Том четвёртый](#том-четвёртый-опора) · [Том пятый](#том-пятый-двести-лет) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
+**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Том третий](#том-третий-мост) · [Том четвёртый](#том-четвёртый-опора) · [Том пятый](#том-пятый-двести-лет) · [Том шестой](#том-шестой-чужая-родня) · [Том седьмой](#том-седьмой-стык) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
 
 ---
 
 ## О книге
 
-<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Том 1 «Щепка»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Аудио тома 1: 34 дорожки, 14 ч 57 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Том 2 «Ходок»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.1"><b>🎧 Аудио тома 2: 34 дорожки, 16 ч 01 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Том 3 «Мост»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Том 4 «Опора»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v5.0"><b>⬇ Том 5 «Двести лет»</b></a><br>EPUB · единый markdown · обложка · аудио отдельными файлами в релизах v1.1 и v2.1</p>
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Том 1 «Щепка»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Аудио тома 1: 34 дорожки, 14 ч 57 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Том 2 «Ходок»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.1"><b>🎧 Аудио тома 2: 34 дорожки, 16 ч 01 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Том 3 «Мост»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Том 4 «Опора»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v5.0"><b>⬇ Том 5 «Двести лет»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v6.0"><b>⬇ Том 6 «Чужая родня»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v7.0"><b>⬇ Том 7 «Стык»</b></a><br>EPUB · единый markdown · обложка · аудио отдельными файлами в релизах v1.1 и v2.1</p>
 
 Двенадцатого августа 2019 года над Северным Уралом в небе появилась полоса: двенадцать километров длиной, сто пятьдесят метров шириной. Не портал, не дыра и не разлом — **стык двух реальностей с разной геометрией**. Через него сочится чужая геометрия, а иногда просачиваются люди.
 
@@ -77,7 +81,7 @@ graph LR
 | IV. Война за узел | 21–27 | существование всех Земель |
 | V. Финал | 28–30 | чем ты готов быть, чтобы шов держался |
 
-**Готово:** тома 1–5 — «Щепка», «Ходок», «Мост», «Опора», «Двести лет». Первая часть плана закрыта: своя шкура, работа и дочь отработаны от начала до двери. Вторая часть открыта первой книгой: жизнь на Второй Земле, служба, которая здесь называется «Сшивка», и история их Шова через документы, а не через лекцию. Дальше по плану — том шестой «Чужая родня»: он находит свою бабушку живой, в другом городе и с другой судьбой, бывшую жену, которая здесь никогда его не встречала, и разговор с матерью, которой у него не было с детства.
+**Готово:** тома 1–7 — «Щепка», «Ходок», «Мост», «Опора», «Двести лет», «Чужая родня», «Стык». Первая часть плана закрыта: своя шкура, работа и дочь отработаны от начала до двери. Вторая часть идёт третьей книгой: жизнь на Второй Земле, служба, которая здесь называется «Сшивка», и история их Шова через документы, а не через лекцию. Шестой том перевёл дверь в почту и выдал герою живую бабушку, мать, которая здесь не уходила, и жену, которая его никогда не встречала. Седьмой поставил его в службу Стыка, между «порядком» и людьми, и забрал право подписи. Дальше по плану — том восьмой.
 
 Раскадровка на тридцать томов — [PLAN.md](PLAN.md). Идея мира и правила — [IDEA.md](IDEA.md).
 
@@ -387,6 +391,153 @@ graph LR
 
 Читать целиком: [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v5.0](https://github.com/rukazax/shov/releases/tag/v5.0). Библия тома — [BOOK05/BIBLE.md](BOOK05/BIBLE.md), брифы — [BOOK05/BRIEFS](BOOK05/BRIEFS), спина глав — [BOOK05/SPINE.md](BOOK05/SPINE.md).
 
+## Том шестой «Чужая родня»
+
+Ставка тома — родня. Дверь к этому времени уже не открывается и не закрывается: она работает почтой. Наряд, пропуск, окошко, очередь, и первое, что выдают приезжему на той стороне, — не метку, а бланк.
+
+Бюро родства ищет по фамилии, городу и году и находит больше, чем просили. У Семёна там живая бабушка: та же Аграфена Прокопьевна, те же руки, только переулок такой, какого на его стороне нет. Мать, которая дома ушла из его детства, здесь никуда не уходила. Жена, которую он помнит своей, его здесь никогда не встречала.
+
+Каждое родство стоит денег, и цена одна — дом. Не в смысле «где жить», а в смысле «где ты числишься»: приписка, графа, лист. Признать родню — значит вписать себя в чужую книгу и выписаться из своей. Вот только чужой лист держит крепче, чем родная память, и требует подписи.
+
+Чем кончается: девятым листом, графой «цена» и отказом от приписки.
+
+| Параметр | Том 6 | Норма серии |
+|---|---|---|
+| Объём | **610 541 знак** (15,3 а.л.) | 588–624 тыс. |
+| Без пробелов | 496 087 знаков | — |
+| Глав | 33 + Введение | 26–37 |
+| Средняя глава | 18,3 тыс. знаков | 16–23 тыс. |
+| Слов | 100 925 | — |
+| Сцен | 139 (4 на главу) | 3–6 на главу |
+| Системных строк | 68 | ~1 на 3,8 тыс. знаков |
+| Диалог | 50 % строк | 30–38 % |
+| Средняя фраза | 9,1 слова | 12–16 |
+
+Где книга вылезает из нормы — честно:
+
+- **диалога больше** (50 % против 30–38 %): том почти весь на разговорах — бюро, торг, чай у бабушки; родню герой узнаёт языком, а не бумагой;
+- **средняя фраза короче** (9,1 против 12–16 слов): тот же такт серии, абзац-разбор и удар одной строкой, без него голос не звучит;
+- **системных строк меньше** (68 против ~160): систему здесь вытеснили бумаги — бланк, лист, графа. Справку выдаёт ведомость, а не игровая строка.
+
+Всё остальное в коридоре: объём, число глав, размер главы и сцены.
+
+<details>
+<summary>Оглавление тома 6 — 34 файла, 610 541 знак</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Отказ Аграфены Прокопьевны | 7 тыс. |
+| 1 | Глава первая. Почта | 19 тыс. |
+| 2 | Глава вторая. Бюро | 19 тыс. |
+| 3 | Глава третья. Первый отказ | 19 тыс. |
+| 4 | Глава четвёртая. Цена приближения | 18 тыс. |
+| 5 | Глава пятая. Заявление принято | 18 тыс. |
+| 6 | Глава шестая. Торг | 18 тыс. |
+| 7 | Глава седьмая. Сборы | 17 тыс. |
+| 8 | Глава восьмая. Адрес, которого нет | 17 тыс. |
+| 9 | Глава девятая. Переулок | 19 тыс. |
+| 10 | Глава десятая. Первое окно | 19 тыс. |
+| 11 | Глава одиннадцатая. Три дня отказов | 18 тыс. |
+| 12 | Глава двенадцатая. Право на визит | 18 тыс. |
+| 13 | Глава тринадцатая. Доказательства | 18 тыс. |
+| 14 | Глава четырнадцатая. Валентина Петровна | 18 тыс. |
+| 15 | Глава пятнадцатая. Разговор | 18 тыс. |
+| 16 | Глава шестнадцатая. Она не уходила | 18 тыс. |
+| 17 | Глава семнадцатая. Чай у бабушки | 19 тыс. |
+| 18 | Глава восемнадцатая. Цена визита | 19 тыс. |
+| 19 | Глава девятнадцатая. Теплосеть | 19 тыс. |
+| 20 | Глава двадцатая. Аркадий Ткач | 18 тыс. |
+| 21 | Глава двадцать первая. Отказ в родстве | 18 тыс. |
+| 22 | Глава двадцать вторая. Список | 19 тыс. |
+| 23 | Глава двадцать третья. Письмо | 18 тыс. |
+| 24 | Глава двадцать четвёртая. Даша | 18 тыс. |
+| 25 | Глава двадцать пятая. Бланк приписного | 18 тыс. |
+| 26 | Глава двадцать шестая. Признание | 18 тыс. |
+| 27 | Глава двадцать седьмая. Просьба | 19 тыс. |
+| 28 | Глава двадцать восьмая. Две бабушки | 18 тыс. |
+| 29 | Глава двадцать девятая. Письмо без веса | 19 тыс. |
+| 30 | Глава тридцатая. Полоса | 19 тыс. |
+| 31 | Глава тридцать первая. Отказ от приписки | 19 тыс. |
+| 32 | Глава тридцать вторая. Графа «цена» | 19 тыс. |
+| 33 | Глава тридцать третья. Девятый лист | 16 тыс. |
+
+</details>
+
+Читать целиком: [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v6.0](https://github.com/rukazax/shov/releases/tag/v6.0). Библия тома — [BOOK06/BIBLE.md](BOOK06/BIBLE.md), брифы — [BOOK06/BRIEFS](BOOK06/BRIEFS), спина глав — [BOOK06/SPINE.md](BOOK06/SPINE.md). Озвучки пока нет: пойдёт тем же конвейером, `BOOK=BOOK06 ./audio/render_all.sh`.
+
+## Том седьмой «Стык»
+
+Ставка тома — подпись. Семён уже не гость и не ходок: у него допуск, смена и служба, которая называется Стык. У службы две фракции, и обе по-своему правы: «порядок» считает дверь объектом, а у объекта есть регламент и одиннадцать часов на закрытие; «люди» считают фамилии в листе ожидания, а за дверью на той стороне стоит четырнадцать человек.
+
+Дальше том идёт, как приёмка: лист, приёмка, протокол, акт. Каждый документ честен по отдельности, и вместе они дают приказ закрыть дверь на одиннадцать часов — ровно тогда, когда на той стороне четырнадцать. Подписать — значит согласиться, что четырнадцать подождут. Не подписать — значит потерять право подписи и допуск, то есть работу, которой он и стал нужен.
+
+Он не подписывает. Служба забирает подпись, потом допуск; фракции меняются местами в своих правах, а очередь у двери становится короче на четырнадцать фамилий, и это не победа, а бумага.
+
+Чем кончается: через стык проходит его дочь.
+
+| Параметр | Том 7 | Норма серии |
+|---|---|---|
+| Объём | **612 983 знака** (15,3 а.л.) | 588–624 тыс. |
+| Без пробелов | 498 355 знака | — |
+| Глав | 33 + Введение | 26–37 |
+| Средняя глава | 18,3 тыс. знаков | 16–23 тыс. |
+| Слов | 100 145 | — |
+| Сцен | 162 (5 на главу) | 3–6 на главу |
+| Системных строк | 124 | ~1 на 3,8 тыс. знаков |
+| Диалог | 49 % строк | 30–38 % |
+| Средняя фраза | 8,7 слова | 12–16 |
+
+Где книга вылезает из нормы — честно:
+
+- **диалога больше** (49 % против 30–38 %): служба говорит приказами, протоколами и приёмкой, а герой отвечает вслух, потому что подпись молча не ставится;
+- **средняя фраза короче** (8,7 против 12–16 слов): такт серии держится, удар одной строкой здесь короче обычного.
+
+Системных строк 124 — одна на 4,9 тыс. знаков: чуть реже нормы, потому что их место заняли приказы. Всё остальное в коридоре: объём, число глав, размер главы и сцены.
+
+<details>
+<summary>Оглавление тома 7 — 34 файла, 612 983 знака</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Одиннадцать часов | 8 тыс. |
+| 1 | Глава первая. «Шаг» | 18 тыс. |
+| 2 | Глава вторая. «Лицо» | 18 тыс. |
+| 3 | Глава третья. «Перевод» | 18 тыс. |
+| 4 | Глава четвёртая. «Присяга» | 18 тыс. |
+| 5 | Глава пятая. «Лист» | 19 тыс. |
+| 6 | Глава шестая. «Приёмка» | 18 тыс. |
+| 7 | Глава седьмая. «Где ты живёшь» | 17 тыс. |
+| 8 | Глава восьмая. «Журнал» | 18 тыс. |
+| 9 | Глава девятая. «Будка» | 18 тыс. |
+| 10 | Глава десятая. «Список Пожарской» | 18 тыс. |
+| 11 | Глава одиннадцатая. «Цена часов» | 19 тыс. |
+| 12 | Глава двенадцатая. «Лист ожидания» | 19 тыс. |
+| 13 | Глава тринадцатая. «Сшились не туда» | 19 тыс. |
+| 14 | Глава четырнадцатая. «Он не тот» | 18 тыс. |
+| 15 | Глава пятнадцатая. «Кто платит» | 18 тыс. |
+| 16 | Глава шестнадцатая. «Записки» | 18 тыс. |
+| 17 | Глава семнадцатая. «Ночная смена» | 18 тыс. |
+| 18 | Глава восемнадцатая. «Сколкова» | 19 тыс. |
+| 19 | Глава девятнадцатая. «Приказ на закрытие» | 19 тыс. |
+| 20 | Глава двадцатая. «Ночь перед» | 18 тыс. |
+| 21 | Глава двадцать первая. «Протокол» | 19 тыс. |
+| 22 | Глава двадцать вторая. «Его подпись» | 19 тыс. |
+| 23 | Глава двадцать третья. «Отказ» | 18 тыс. |
+| 24 | Глава двадцать четвёртая. «Голос за дверью» | 18 тыс. |
+| 25 | Глава двадцать пятая. «Исполнение» | 19 тыс. |
+| 26 | Глава двадцать шестая. «Право подписи» | 18 тыс. |
+| 27 | Глава двадцать седьмая. «Разбор» | 18 тыс. |
+| 28 | Глава двадцать восьмая. «Очередь стала короче» | 19 тыс. |
+| 29 | Глава двадцать девятая. «Даша у стыка» | 18 тыс. |
+| 30 | Глава тридцатая. «Наша бабушка» | 18 тыс. |
+| 31 | Глава тридцать первая. «Восемь фигур» | 18 тыс. |
+| 32 | Глава тридцать вторая. «Сорок седьмой лист» | 18 тыс. |
+| 33 | Глава тридцать третья. «Порог» | 18 тыс. |
+
+</details>
+
+Читать целиком: [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v7.0](https://github.com/rukazax/shov/releases/tag/v7.0). Библия тома — [BOOK07/BIBLE.md](BOOK07/BIBLE.md), брифы — [BOOK07/BRIEFS](BOOK07/BRIEFS), спина глав — [BOOK07/SPINE.md](BOOK07/SPINE.md). Озвучки пока нет: пойдёт тем же конвейером, `BOOK=BOOK07 ./audio/render_all.sh`.
+
 ## Аудио
 
 Озвучка в духе записей 1С-Паблишинг: рассказчик, отдельные голоса на персонажей, музыкальная подложка с дакингом, эффекты на сценарные границы и системные строки.
@@ -579,7 +730,7 @@ shov/
 
 ## English
 
-<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Volume one</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Audiobook of volume one (34 tracks, 14 h 57 min)</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Volume two</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Volume three</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Volume four</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v5.0"><b>⬇ Volume five</b></a><br>EPUB · single-file markdown · cover artwork · audio in v1.1, 34 separate mp3 files</p>
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Volume one</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Audiobook of volume one (34 tracks, 14 h 57 min)</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Volume two</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Volume three</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Volume four</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v5.0"><b>⬇ Volume five</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v6.0"><b>⬇ Volume six</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v7.0"><b>⬇ Volume seven</b></a><br>EPUB · single-file markdown · cover artwork · audio in v1.1, 34 separate mp3 files</p>
 
 **The Seam** — a thirty-volume series written in the voice of Mikhail Atamanov's *Distorting Reality* cycle, with a new world, new people and a new plot. Not a work by that author; the style profile was derived from thirteen volumes and stays out of this repository.
 
@@ -641,7 +792,154 @@ Semyon Loskutov, a lift repairman from Nizhny Tagil, climbs into an abandoned mi
 | Audiobook | not rendered yet — the same pipeline, `BOOK=BOOK05 ./audio/render_all.sh` |
 | Formats | Markdown in repo, EPUB in [release v5.0](https://github.com/rukazax/shov/releases/tag/v5.0) |
 
-The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md) and [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
+### Volume six «Alien Kin»
+
+The stake of this volume is kin. By now the door neither opens nor closes: it works as mail. A work order, a pass, a window, a queue — and the first thing a visitor is handed on the far side is not a mark but a form.
+
+The kinship bureau searches by surname, city and year, and finds more than was asked for. Semyon's grandmother is alive over there: the same Agraphena Prokopyevna, the same hands, only in a lane that does not exist on his side. The mother who walked out of his childhood here never left. The wife he remembers as his own has never met him.
+
+Every kinship has a price, and the price is the same — home. Not "where you live" but "where you are listed": an entry, a column, a sheet. To acknowledge kin is to write yourself into someone else's book and out of your own. The other side's sheet holds harder than your own memory, and it asks for a signature.
+
+How it ends: with the ninth sheet, a column headed "price", and a refusal to be entered.
+
+| Parameter | Volume 6 | Series norm |
+|---|---|---|
+| Length | **610,541 characters** (15.3 author sheets) | 588–624 thousand |
+| Without spaces | 496,087 characters | — |
+| Chapters | 33 + Introduction | 26–37 |
+| Average chapter | 18.3 thousand characters | 16–23 thousand |
+| Words | 100,925 | — |
+| Scenes | 139 (4 per chapter) | 3–6 per chapter |
+| System lines | 68 | ~1 per 3.8 thousand characters |
+| Dialogue | 50 % of lines | 30–38 % |
+| Average sentence | 9.1 words | 12–16 |
+
+Where the book leaves the norm, honestly:
+
+- **more dialogue** (50 % against 30–38 %): the volume lives on conversations — the bureau, the bargaining, tea at his grandmother's; he learns his kin by talking, not by paperwork;
+- **shorter average sentence** (9.1 against 12–16 words): the series cadence holds — a paragraph of reckoning, then one line as a blow; without it the voice is not the voice;
+- **fewer system lines** (68 against ~160): paper pushed the system out here — a form, a sheet, a column. The registry gives the reference, not a game line.
+
+Everything else is inside the corridor: length, chapter count, chapter size, scenes.
+
+<details>
+<summary>Volume 6 contents — 34 files, 610,541 characters</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Отказ Аграфены Прокопьевны | 7 тыс. |
+| 1 | Глава первая. Почта | 19 тыс. |
+| 2 | Глава вторая. Бюро | 19 тыс. |
+| 3 | Глава третья. Первый отказ | 19 тыс. |
+| 4 | Глава четвёртая. Цена приближения | 18 тыс. |
+| 5 | Глава пятая. Заявление принято | 18 тыс. |
+| 6 | Глава шестая. Торг | 18 тыс. |
+| 7 | Глава седьмая. Сборы | 17 тыс. |
+| 8 | Глава восьмая. Адрес, которого нет | 17 тыс. |
+| 9 | Глава девятая. Переулок | 19 тыс. |
+| 10 | Глава десятая. Первое окно | 19 тыс. |
+| 11 | Глава одиннадцатая. Три дня отказов | 18 тыс. |
+| 12 | Глава двенадцатая. Право на визит | 18 тыс. |
+| 13 | Глава тринадцатая. Доказательства | 18 тыс. |
+| 14 | Глава четырнадцатая. Валентина Петровна | 18 тыс. |
+| 15 | Глава пятнадцатая. Разговор | 18 тыс. |
+| 16 | Глава шестнадцатая. Она не уходила | 18 тыс. |
+| 17 | Глава семнадцатая. Чай у бабушки | 19 тыс. |
+| 18 | Глава восемнадцатая. Цена визита | 19 тыс. |
+| 19 | Глава девятнадцатая. Теплосеть | 19 тыс. |
+| 20 | Глава двадцатая. Аркадий Ткач | 18 тыс. |
+| 21 | Глава двадцать первая. Отказ в родстве | 18 тыс. |
+| 22 | Глава двадцать вторая. Список | 19 тыс. |
+| 23 | Глава двадцать третья. Письмо | 18 тыс. |
+| 24 | Глава двадцать четвёртая. Даша | 18 тыс. |
+| 25 | Глава двадцать пятая. Бланк приписного | 18 тыс. |
+| 26 | Глава двадцать шестая. Признание | 18 тыс. |
+| 27 | Глава двадцать седьмая. Просьба | 19 тыс. |
+| 28 | Глава двадцать восьмая. Две бабушки | 18 тыс. |
+| 29 | Глава двадцать девятая. Письмо без веса | 19 тыс. |
+| 30 | Глава тридцатая. Полоса | 19 тыс. |
+| 31 | Глава тридцать первая. Отказ от приписки | 19 тыс. |
+| 32 | Глава тридцать вторая. Графа «цена» | 19 тыс. |
+| 33 | Глава тридцать третья. Девятый лист | 16 тыс. |
+
+</details>
+
+Read in full: [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md) — a single file with a title page and an epigraph. EPUB is in [release v6.0](https://github.com/rukazax/shov/releases/tag/v6.0). The volume bible is [BOOK06/BIBLE.md](BOOK06/BIBLE.md), briefs are [BOOK06/BRIEFS](BOOK06/BRIEFS), the chapter spine is [BOOK06/SPINE.md](BOOK06/SPINE.md). The Russian text is the book itself; chapter titles are listed untranslated. Audio is not rendered yet — the same pipeline, `BOOK=BOOK06 ./audio/render_all.sh`.
+
+### Volume seven «The Junction»
+
+The stake of this volume is a signature. Semyon is no longer a guest or a walker: he has a clearance, a shift and a service called the Junction. The service has two factions, and both are right in their own way. "Order" treats the door as an object, and an object has a regulation and eleven hours to be closed. "People" count the names on the waiting list, and on the far side fourteen of them are standing behind the door.
+
+After that the volume moves like an acceptance procedure: sheet, intake, protocol, act. Each document is honest on its own, and together they produce an order to close the door for eleven hours — exactly when fourteen people are on the other side. To sign is to agree that fourteen can wait. Not to sign is to lose the right to sign and the clearance itself, that is, the job he has become necessary for.
+
+He does not sign. The service takes the signature, then the clearance; the factions swap places in their own rights, and the queue at the door gets fourteen names shorter, which is not a victory but paperwork.
+
+How it ends: his daughter walks through the junction.
+
+| Parameter | Volume 7 | Series norm |
+|---|---|---|
+| Length | **612,824 characters** (15.3 author sheets) | 588–624 thousand |
+| Without spaces | 498,222 characters | — |
+| Chapters | 33 + Introduction | 26–37 |
+| Average chapter | 18.3 thousand characters | 16–23 thousand |
+| Words | 100,123 | — |
+| Scenes | 162 (5 per chapter) | 3–6 per chapter |
+| System lines | 124 | ~1 per 3.8 thousand characters |
+| Dialogue | 49 % of lines | 30–38 % |
+| Average sentence | 8.7 words | 12–16 |
+
+Where the book leaves the norm, honestly:
+
+- **more dialogue** (49 % against 30–38 %): the service speaks in orders, protocols and intake forms, and the hero answers out loud, because a signature is never made in silence;
+- **shorter average sentence** (8.7 against 12–16 words): the series cadence holds; the one-line blow is shorter than usual here.
+
+System lines number 124 — one per 4.9 thousand characters, slightly rarer than the norm, because orders took their place. Everything else is inside the corridor: length, chapter count, chapter size, scenes.
+
+<details>
+<summary>Volume 7 contents — 34 files, 612,824 characters</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Одиннадцать часов | 8 тыс. |
+| 1 | Глава первая. «Шаг» | 18 тыс. |
+| 2 | Глава вторая. «Лицо» | 18 тыс. |
+| 3 | Глава третья. «Перевод» | 18 тыс. |
+| 4 | Глава четвёртая. «Присяга» | 18 тыс. |
+| 5 | Глава пятая. «Лист» | 19 тыс. |
+| 6 | Глава шестая. «Приёмка» | 18 тыс. |
+| 7 | Глава седьмая. «Где ты живёшь» | 17 тыс. |
+| 8 | Глава восьмая. «Журнал» | 18 тыс. |
+| 9 | Глава девятая. «Будка» | 18 тыс. |
+| 10 | Глава десятая. «Список Пожарской» | 18 тыс. |
+| 11 | Глава одиннадцатая. «Цена часов» | 19 тыс. |
+| 12 | Глава двенадцатая. «Лист ожидания» | 19 тыс. |
+| 13 | Глава тринадцатая. «Сшились не туда» | 19 тыс. |
+| 14 | Глава четырнадцатая. «Он не тот» | 18 тыс. |
+| 15 | Глава пятнадцатая. «Кто платит» | 18 тыс. |
+| 16 | Глава шестнадцатая. «Записки» | 18 тыс. |
+| 17 | Глава семнадцатая. «Ночная смена» | 18 тыс. |
+| 18 | Глава восемнадцатая. «Сколкова» | 19 тыс. |
+| 19 | Глава девятнадцатая. «Приказ на закрытие» | 19 тыс. |
+| 20 | Глава двадцатая. «Ночь перед» | 18 тыс. |
+| 21 | Глава двадцать первая. «Протокол» | 19 тыс. |
+| 22 | Глава двадцать вторая. «Его подпись» | 19 тыс. |
+| 23 | Глава двадцать третья. «Отказ» | 18 тыс. |
+| 24 | Глава двадцать четвёртая. «Голос за дверью» | 18 тыс. |
+| 25 | Глава двадцать пятая. «Исполнение» | 19 тыс. |
+| 26 | Глава двадцать шестая. «Право подписи» | 18 тыс. |
+| 27 | Глава двадцать седьмая. «Разбор» | 18 тыс. |
+| 28 | Глава двадцать восьмая. «Очередь стала короче» | 19 тыс. |
+| 29 | Глава двадцать девятая. «Даша у стыка» | 18 тыс. |
+| 30 | Глава тридцатая. «Наша бабушка» | 18 тыс. |
+| 31 | Глава тридцать первая. «Восемь фигур» | 18 тыс. |
+| 32 | Глава тридцать вторая. «Сорок седьмой лист» | 18 тыс. |
+| 33 | Глава тридцать третья. «Порог» | 18 тыс. |
+
+</details>
+
+Read in full: [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md) — a single file with a title page and an epigraph. EPUB is in [release v7.0](https://github.com/rukazax/shov/releases/tag/v7.0). The volume bible is [BOOK07/BIBLE.md](BOOK07/BIBLE.md), briefs are [BOOK07/BRIEFS](BOOK07/BRIEFS), the chapter spine is [BOOK07/SPINE.md](BOOK07/SPINE.md). Audio is not rendered yet — the same pipeline, `BOOK=BOOK07 ./audio/render_all.sh`.
+
+The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md) , [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md), [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md) and [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
 
 The production pipeline — foundation, bible, briefs, fan-out, machine gates, assembly, cover, audiobook — is documented step by step in [PRODUCTION.md](PRODUCTION.md).
 
