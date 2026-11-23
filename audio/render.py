@@ -87,6 +87,14 @@ VOICES = {
     "teacher":      {"voice": "ru-RU-SvetlanaNeural", "rate": "+7%",  "pitch": "-6Hz",  "volume": "+0%"},
     "dyakov":       {"voice": "ru-RU-DmitryNeural",   "rate": "-6%",  "pitch": "+3Hz",  "volume": "+0%"},
     "pankratov":    {"voice": "ru-RU-DmitryNeural",   "rate": "+8%",  "pitch": "-15Hz", "volume": "+1%"},
+
+    # --- том 4 «Опора» ---------------------------------------------------
+    # Сколков — самый старый голос книги: медленный, низкий, с паузами
+    # (он говорит пословицами и не спешит). Ткачук — сейсмолог: ровно, по
+    # цифрам, чуть быстрее среднего. Кабанов — военный: коротко, без эмоций.
+    "skolkov":      {"voice": "ru-RU-DmitryNeural",   "rate": "-18%", "pitch": "-17Hz", "volume": "+0%"},
+    "tkachuk":      {"voice": "ru-RU-SvetlanaNeural", "rate": "+5%",  "pitch": "-2Hz",  "volume": "+0%"},
+    "kabanov":      {"voice": "ru-RU-DmitryNeural",   "rate": "+7%",  "pitch": "-9Hz",  "volume": "+1%"},
 }
 
 FEMALE_ROLES = {"ganna", "dasha", "lida", "pozharskaya", "agrafena", "female", "babka",
@@ -102,6 +110,10 @@ CAST = [
     (r"Мухин", "muhin"),
     (r"Гриш(?:а|у|и|е|ей)\b", "grisha"),
     # --- том 3 «Мост»: свои имена раньше общих шаблонов ---------------
+    # --- том 4 «Опора» ---------------------------------------------------
+    (r"Сколков|Макар Тимофеевич|Макар", "skolkov"),
+    (r"Ткачук|Ася Гурьевна", "tkachuk"),
+    (r"Кабанов|Игорь Валерьевич", "kabanov"),
     (r"Кержак", "kerzhak"),
     (r"Веретенников|Аристарх", "veretennikov"),
     (r"Дорохов", "dorohov"),

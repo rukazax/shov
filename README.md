@@ -1,12 +1,14 @@
 <p align="center"><img src="assets/banner.svg" alt="Шов — серия на 30 томов" width="100%"></p>
 
 <p align="center">
-  <img src="assets/cover-tom1.png" alt="Шов. Книга первая: Щепка — обложка" width="38%">
-  <img src="assets/cover-tom2.png" alt="Шов. Книга вторая: Ходок — обложка" width="38%">
+  <img src="assets/cover-tom1.png" alt="Шов. Книга первая: Щепка — обложка" width="24%">
+  <img src="assets/cover-tom2.png" alt="Шов. Книга вторая: Ходок — обложка" width="24%">
+  <img src="assets/cover-tom3.png" alt="Шов. Книга третья: Мост — обложка" width="24%">
+  <img src="assets/cover-tom4.png" alt="Шов. Книга четвёртая: Опора — обложка" width="24%">
 </p>
 
 <h1 align="center">Шов</h1>
-<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · Константин Ерёмин</p>
+<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · <b>Книга третья. Мост</b> · <b>Книга четвёртая. Опора</b> · Константин Ерёмин</p>
 
 <p align="center">
   <b>RU</b> · <a href="#english">English</a>
@@ -15,20 +17,22 @@
 <p align="center">
   <img src="https://img.shields.io/badge/том_1_«Щепка»-готов-3fb950?style=flat-square" alt="том 1 готов">
   <img src="https://img.shields.io/badge/том_2_«Ходок»-готов-3fb950?style=flat-square" alt="том 2 готов">
-  <img src="https://img.shields.io/badge/глав-66_+_2_введения-2f6fed?style=flat-square" alt="66 глав">
-  <img src="https://img.shields.io/badge/объём-1_228_917_знаков-2f6fed?style=flat-square" alt="1 228 917 знаков">
+  <img src="https://img.shields.io/badge/том_3_«Мост»-готов-3fb950?style=flat-square" alt="том 3 готов">
+  <img src="https://img.shields.io/badge/том_4_«Опора»-готов-3fb950?style=flat-square" alt="том 4 готов">
+  <img src="https://img.shields.io/badge/глав-132_+_4_введения-2f6fed?style=flat-square" alt="132 главы">
+  <img src="https://img.shields.io/badge/объём-2_438_685_знаков-2f6fed?style=flat-square" alt="2 438 685 знаков">
   <img src="https://img.shields.io/badge/аудио-68_дорожек-8957e5?style=flat-square" alt="68 дорожек">
   <img src="https://img.shields.io/badge/EPUB-в_релизе-8b949e?style=flat-square" alt="EPUB">
   <img src="https://img.shields.io/badge/серия-30_томов-8b949e?style=flat-square" alt="30 томов">
 </p>
 
-**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
+**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио тома 1](https://github.com/rukazax/shov/releases/tag/v1.1) · [🎧 Аудио тома 2](https://github.com/rukazax/shov/releases/tag/v2.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Том третий](#том-третий-мост) · [Том четвёртый](#том-четвёртый-опора) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
 
 ---
 
 ## О книге
 
-<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Том 1 «Щепка»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Аудио тома 1: 34 дорожки, 14 ч 57 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Том 2 «Ходок»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.1"><b>🎧 Аудио тома 2: 34 дорожки, 16 ч 01 мин</b></a><br>EPUB · единый markdown · обложка · аудио отдельными файлами в релизах v1.1 и v2.1</p>
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Том 1 «Щепка»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Аудио тома 1: 34 дорожки, 14 ч 57 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Том 2 «Ходок»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.1"><b>🎧 Аудио тома 2: 34 дорожки, 16 ч 01 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Том 3 «Мост»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Том 4 «Опора»</b></a><br>EPUB · единый markdown · обложка · аудио отдельными файлами в релизах v1.1 и v2.1</p>
 
 Двенадцатого августа 2019 года над Северным Уралом в небе появилась полоса: двенадцать километров длиной, сто пятьдесят метров шириной. Не портал, не дыра и не разлом — **стык двух реальностей с разной геометрией**. Через него сочится чужая геометрия, а иногда просачиваются люди.
 
@@ -71,7 +75,7 @@ graph LR
 | IV. Война за узел | 21–27 | существование всех Земель |
 | V. Финал | 28–30 | чем ты готов быть, чтобы шов держался |
 
-**Готово:** том 1 «Щепка» и том 2 «Ходок». Дальше по плану — том 3 «Мост»: Екатеринбург, Стык-офис, контрабандный маршрут и встреча с Семёном-2, который просит закрыть Шов с их стороны.
+**Готово:** тома 1–4 — «Щепка», «Ходок», «Мост», «Опора». Первая часть плана закрыта: своя шкура, работа и дочь отработаны от начала до двери. Дальше по плану — том пятый «Двести лет»: жизнь на Второй Земле, служба, которая здесь называется «Сшивка», и история их Шова через документы, а не через лекцию.
 
 Раскадровка на тридцать томов — [PLAN.md](PLAN.md). Идея мира и правила — [IDEA.md](IDEA.md).
 
@@ -212,6 +216,116 @@ graph LR
 Читать целиком: [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v2.0](https://github.com/rukazax/shov/releases/tag/v2.0). Библия тома — [BOOK02/BIBLE.md](BOOK02/BIBLE.md), брифы — [BOOK02/BRIEFS](BOOK02/BRIEFS).
 
 
+
+## Том третий «Мост»
+
+Ставка тома — должность. «Мост» здесь не сооружение и не метафора, а место работы: человек, который переводит людей и грузы через Шов и отвечает за них головой. Семёну её предлагают после первого каравана — и предлагают так, что отказаться неудобно, а согласиться нельзя.
+
+Дальше том идёт двумя линиями, как рельсы. В управлении — медкомиссия, допуск, ведомость на караван и три окна согласования в день: бумага решает больше, чем смелость. С той стороны — человек в форме, который знает про Семёна больше, чем сам Семён. У него своя бумага, свой срок в четыре года и просьба: не открывать, а закрыть. В обмен он даёт то, чего здесь не дают: ответ про прадеда, цифры, которые не сходятся, и год, который обещали.
+
+К середине становится ясно, что решают не инженеры и не начальство, а тот, кто поставит подпись. Вот только подпись ищет хозяина.
+
+**Что внутри:** 609 337 знаков, 99 117 слов, 15,2 а.л.; 34 главы (Введение + 33); 181 сцена; 74 системные строки — одна на 8,2 тыс. знаков; диалог 64 % строк, средняя фраза 7,2 слова.
+
+<details>
+<summary>Оглавление тома 3 — 34 файла, 609 337 знаков</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Стекло толщиной в палец | 7 тыс. |
+| 1 | Глава первая. Допуск | 18 тыс. |
+| 2 | Глава вторая. Согласование у секретаря | 18 тыс. |
+| 3 | Глава третья. Ведомость на караван | 19 тыс. |
+| 4 | Глава четвёртая. Седьмой | 19 тыс. |
+| 5 | Глава пятая. Письмо в столбе | 19 тыс. |
+| 6 | Глава шестая. Первый класс | 17 тыс. |
+| 7 | Глава седьмая. Три окна | 17 тыс. |
+| 8 | Глава восьмая. Мост | 17 тыс. |
+| 9 | Глава девятая. Нулевой километр | 19 тыс. |
+| 10 | Глава десятая. Тишина вместо дыры | 18 тыс. |
+| 11 | Глава одиннадцатая. Та сторона | 19 тыс. |
+| 12 | Глава двенадцатая. Нина | 18 тыс. |
+| 13 | Глава тринадцатая. Груз | 19 тыс. |
+| 14 | Глава четырнадцатая. Поломка | 19 тыс. |
+| 15 | Глава пятнадцатая. Человек в форме | 18 тыс. |
+| 16 | Глава шестнадцатая. Водонапорная | 18 тыс. |
+| 17 | Глава семнадцатая. Обратный ход | 17 тыс. |
+| 18 | Глава восемнадцатая. Отчёт | 18 тыс. |
+| 19 | Глава девятнадцатая. Прецедент | 18 тыс. |
+| 20 | Глава двадцатая. Кержак | 18 тыс. |
+| 21 | Глава двадцать первая. Жетон | 19 тыс. |
+| 22 | Глава двадцать вторая. Дома | 18 тыс. |
+| 23 | Глава двадцать третья. Три подписи | 18 тыс. |
+| 24 | Глава двадцать четвёртая. Щепка или мост | 19 тыс. |
+| 25 | Глава двадцать пятая. Вода в стене | 19 тыс. |
+| 26 | Глава двадцать шестая. Расчёт | 18 тыс. |
+| 27 | Глава двадцать седьмая. Список | 18 тыс. |
+| 28 | Глава двадцать восьмая. Второй караван | 19 тыс. |
+| 29 | Глава двадцать девятая. Гость | 19 тыс. |
+| 30 | Глава тридцатая. Кто подпишет | 18 тыс. |
+| 31 | Глава тридцать первая. Приказ | 18 тыс. |
+| 32 | Глава тридцать вторая. Ночь в управлении | 17 тыс. |
+| 33 | Глава тридцать третья. Мост держит | 16 тыс. |
+
+</details>
+
+Читать целиком: [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v3.0](https://github.com/rukazax/shov/releases/tag/v3.0). Библия тома — [BOOK03/BIBLE.md](BOOK03/BIBLE.md), брифы — [BOOK03/BRIEFS](BOOK03/BRIEFS).
+
+## Том четвёртый «Опора»
+
+Ставка тома — ремесло. Закрытие назначено, и назначил его не тот, кто мог. Приказ, который Семён отказался подписывать, подписал кто-то другой — и вышло хуже отказа: город отселяют по расписанию, а в сводках пишут «оползневые явления техногенного характера» вместо «шов тянет неровно».
+
+Город трясёт с марта. Сейсмолог Ася Ткачук приносит цифру, которой нет в сводках: 4,6 вместо 3,2. Кержак говорит, что штольня дышит. Бабушка — что дом держит, пока в нём кто-то спит. А с той стороны приходит старик по фамилии Сколков, последний сшивальщик, который умеет не вязать узлы, а держать шов собой. Скобу варит сварщик, нить считает геометр, а держит человек — и держит не силой, а тем, что не уходит.
+
+Восемь глав подряд никто не побеждает: все учатся. За это том платит дорого — толчком в четыре минуты, списком из четырнадцати фамилий и одной парой рук, которая после пробы перестаёт слушаться.
+
+Чем кончается: дверью. Шов не закрылся и не открылся — он встал между автобусной остановкой и столбом, и его видно с улицы. У двери стоит ребёнок и держит ладонь там, где должна быть ручка. С той стороны стучат.
+
+**Что внутри:** 600 431 знак, 97 166 слов, 15,0 а.л.; 34 главы (Введение + 33); 149 сцен; 162 системные строки — одна на 3,7 тыс. знаков; диалог 62 % строк, средняя фраза 7,5 слова.
+
+<details>
+<summary>Оглавление тома 4 — 34 файла, 600 431 знак</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Шесть человек и один шов | 7 тыс. |
+| 1 | Глава первая. Подпись | 18 тыс. |
+| 2 | Глава вторая. Кто подписал | 18 тыс. |
+| 3 | Глава третья. Первый толчок | 17 тыс. |
+| 4 | Глава четвёртая. Сводка | 18 тыс. |
+| 5 | Глава пятая. Плановое отселение | 19 тыс. |
+| 6 | Глава шестая. Дверь | 18 тыс. |
+| 7 | Глава седьмая. Штольня дышит | 19 тыс. |
+| 8 | Глава восьмая. Гость в гражданском | 18 тыс. |
+| 9 | Глава девятая. Мастер | 19 тыс. |
+| 10 | Глава десятая. Скоба | 18 тыс. |
+| 11 | Глава одиннадцатая. Два прибора | 18 тыс. |
+| 12 | Глава двенадцатая. Два рисунка | 18 тыс. |
+| 13 | Глава тринадцатая. Седьмой | 18 тыс. |
+| 14 | Глава четырнадцатая. Мёртвый край | 18 тыс. |
+| 15 | Глава пятнадцатая. Руки мастера | 18 тыс. |
+| 16 | Глава шестнадцатая. Сомов узнаёт | 18 тыс. |
+| 17 | Глава семнадцатая. Пока не поздно | 19 тыс. |
+| 18 | Глава восемнадцатая. Толчок | 18 тыс. |
+| 19 | Глава девятнадцатая. Список | 18 тыс. |
+| 20 | Глава двадцатая. Виноватые | 18 тыс. |
+| 21 | Глава двадцать первая. Очередь | 19 тыс. |
+| 22 | Глава двадцать вторая. Даша уезжает | 17 тыс. |
+| 23 | Глава двадцать третья. Дом держит | 18 тыс. |
+| 24 | Глава двадцать четвёртая. Последняя партия | 19 тыс. |
+| 25 | Глава двадцать пятая. Держать собой | 18 тыс. |
+| 26 | Глава двадцать шестая. Приказ об опоре | 17 тыс. |
+| 27 | Глава двадцать седьмая. Ночь перед | 18 тыс. |
+| 28 | Глава двадцать восьмая. Сшивка | 17 тыс. |
+| 29 | Глава двадцать девятая. Три секунды | 17 тыс. |
+| 30 | Глава тридцатая. Первая минута | 17 тыс. |
+| 31 | Глава тридцать первая. Вторая минута | 18 тыс. |
+| 32 | Глава тридцать вторая. Дверь осталась | 17 тыс. |
+| 33 | Глава тридцать третья. Стук | 17 тыс. |
+
+</details>
+
+Читать целиком: [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v4.0](https://github.com/rukazax/shov/releases/tag/v4.0). Библия тома — [BOOK04/BIBLE.md](BOOK04/BIBLE.md), брифы — [BOOK04/BRIEFS](BOOK04/BRIEFS), спина глав — [BOOK04/SPINE.md](BOOK04/SPINE.md).
 
 ## Аудио
 
@@ -405,7 +519,7 @@ shov/
 
 ## English
 
-<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Volume one</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Audiobook of volume one (34 tracks, 14 h 57 min)</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Volume two</b></a><br>EPUB · single-file markdown · cover artwork · audio in v1.1, 34 separate mp3 files</p>
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Volume one</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Audiobook of volume one (34 tracks, 14 h 57 min)</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Volume two</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v3.0"><b>⬇ Volume three</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v4.0"><b>⬇ Volume four</b></a><br>EPUB · single-file markdown · cover artwork · audio in v1.1, 34 separate mp3 files</p>
 
 **The Seam** — a thirty-volume series written in the voice of Mikhail Atamanov's *Distorting Reality* cycle, with a new world, new people and a new plot. Not a work by that author; the style profile was derived from thirteen volumes and stays out of this repository.
 
@@ -434,7 +548,29 @@ Semyon Loskutov, a lift repairman from Nizhny Tagil, climbs into an abandoned mi
 | Audiobook | not rendered yet — the same pipeline, `BOOK=BOOK02 ./audio/render_all.sh` |
 | Formats | Markdown in repo, EPUB in [release v2.0](https://github.com/rukazax/shov/releases/tag/v2.0) |
 
-The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md) and [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
+| Volume 3 | Value |
+|---|---|
+| Title | *Bridge* (Мост) |
+| Chapters | 33 + Introduction |
+| Length | 609,337 characters, 99,117 words, 15.2 author sheets |
+| Scenes | 181 |
+| System lines | 74 |
+| Cast | a man in uniform from the far side who knows more about Semyon than Semyon does; Katts of the relocation office; smuggler Kerzhak; the second Semyon |
+| Audiobook | not rendered yet — the same pipeline, `BOOK=BOOK03 ./audio/render_all.sh` |
+| Formats | Markdown in repo, EPUB in [release v3.0](https://github.com/rukazax/shov/releases/tag/v3.0) |
+
+| Volume 4 | Value |
+|---|---|
+| Title | *Support* (Опора) |
+| Chapters | 33 + Introduction |
+| Length | 600,431 characters, 97,166 words, 15.0 author sheets |
+| Scenes | 149 |
+| System lines | 162 |
+| Cast | Skolkov, the last seam-keeper; seismologist Tkachuk; the second Semyon; the same city, now on a schedule |
+| Audiobook | not rendered yet — the same pipeline, `BOOK=BOOK04 ./audio/render_all.sh` |
+| Formats | Markdown in repo, EPUB in [release v4.0](https://github.com/rukazax/shov/releases/tag/v4.0) |
+
+The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md) and [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
 
 The production pipeline — foundation, bible, briefs, fan-out, machine gates, assembly, cover, audiobook — is documented step by step in [PRODUCTION.md](PRODUCTION.md).
 
