@@ -140,17 +140,17 @@ python3 audio/gen_beds.py
 
 Каждый блок кэшируется отдельным файлом по хешу текста и голоса. Шесть попыток на блок с коротким бэкоффом: сервис синтеза регулярно отбивает часть запросов, и без ретраев треть дорожек выходит обрезанной.
 
-**7.4. Сведение.** Голос + подложка + эффекты: музыка дакается по огибающей голоса (до −78 % под речью), эффекты садятся на сценарные границы и системные строки, в конце `loudnorm=I=-16:TP=-1.5:LRA=11` — те же −16 LUFS, что у магазинных аудиокниг.
+**7.4. Сведение.** Голос + подложка + эффекты: музыка дакается по огибающей голоса (до −78 % под речью), эффекты садятся на сценарные границы и системные строки, в конце громкость правится статичной поправкой по замеру EBU R128 до **−20 LUFS** (эталон 1С — −21,5; −20 — компромисс с телефоном): однопроходный `loudnorm` подтягивает каждый блок отдельно, и чтение начинает звучать ровно-механически.
 
 **7.5. Пакетный рендер и приёмка.**
 
 ```bash
-./audio/render_book.sh      # все главы, готовые пропускаются
+STREAMS=8 JOBS=3 ./audio/render_all.sh   # весь том: потоки по главам, метка пересбора
 python3 audio/check_out.py  # длительность против объёма текста
 python3 audio/tracks.py     # TRACKS.md со временем и размером
 ```
 
-`render_book.sh` берёт главы по диапазонам, каждая под `flock`, готовые дорожки пропускает — можно запускать в четыре воркера и добивать с места обрыва. `check_out.py` считает ожидаемую длительность по замеренному темпу **12 знаков в секунду** и ругается, если файл ушёл от неё больше чем на 12 %.
+`render_all.sh` держит восемь потоков, каждый берёт самую младшую несобранную главу и пропускает занятые по `flock`; дорожка новее метки `out/.cast-rebuild` считается готовой, поэтому повторный запуск добирает только отставшие. `check_out.py` считает ожидаемую длительность по медианному темпу собранных дорожек (**11,3 знака в секунду**) и ругается, если файл ушёл от неё больше чем на 12 %.
 
 ## Этап 8. Публикация
 
@@ -194,7 +194,7 @@ One pipeline for all thirty volumes: foundation → bible → briefs → chapter
 
 **Cover.** Hand-written SVG on a 1200×1800 canvas (2:3), layered: gradients → geometry of the mine shaft → light and the crack → typography → grain. Rasterised with headless Chrome, then the header and footer are cropped and inspected visually — overflow is obvious to the eye and invisible to a formula.
 
-**Audiobook.** `gen_beds.py` synthesises four music beds and six sound effects with numpy — no downloaded samples, no music licensing. `render.py` parses a chapter into title / scene break / system / dialogue / narration blocks, assigns one of five voices (each with its own rate and pitch), caches every block by text hash, retries six times with a short backoff because the synthesis service drops requests, then mixes: music ducked by up to 78 % under speech, effects on scene boundaries and system lines, `loudnorm=I=-16:TP=-1.5:LRA=11`. `render_book.sh` renders ranges under `flock` and skips finished tracks, so four workers can pick up where they stopped; `check_out.py` compares each track's duration against the measured 12 characters per second and fails on a deviation above 12 %.
+**Audiobook.** `gen_beds.py` synthesises four music beds and six sound effects with numpy — no downloaded samples, no music licensing. `render.py` parses a chapter into title / scene break / system / dialogue / narration blocks, assigns one of five voices (each with its own rate and pitch), caches every block by text hash, retries six times with a short backoff because the synthesis service drops requests, then mixes: music ducked by up to 78 % under speech, effects on scene boundaries and system lines, and applies a static EBU R128 gain to **−20 LUFS** (a one-pass `loudnorm` corrects every block separately and makes the reading sound mechanically flat). `render_all.sh` keeps eight streams, each taking the lowest unfinished chapter and skipping busy ones through `flock`; a track newer than the `out/.cast-rebuild` stamp counts as done, so a rerun only picks up the stragglers. `check_out.py` compares each track's duration against the median measured rate (11.3 characters per second) and fails on a deviation above 12 %.
 
 **Release.** Text and planning documents in a private repo on `main`; EPUB and markdown as release assets; audio stays out of git — thirty-four tracks are hundreds of megabytes and add nothing to a diff.
 

@@ -109,7 +109,7 @@
 | `NoAudioReceived: No audio was received` | сервис отбивает запрос; текст, темп и тон ни при чём | повторять: отказ приходит за 2–4 с, успех — за 1–2 с |
 | один и тот же текст проходит 6/6, а десять новых — 2/10 | у сервиса кэш своих синтезов, «новое» упирается в деградацию | повторять, пока не попадёт в окно; не верить единичному замеру |
 | процесс жив, CPU 0 %, кэш не растёт | запрос повис без ответа | таймаут 25 с на запрос (`render.py`) |
-| глава не собралась после всех повторов | волна отказов длиннее пяти минут | `render_book.sh` делает до шести заходов на главу с паузой 2 минуты |
+| глава не собралась после всех повторов | волна отказов длиннее пяти минут | `render.py` делает до шести заходов на блок; `render_all.sh` крутит до 40 кругов и отдаёт отставшую главу следующему свободному потоку |
 | рендер идёт 4 блока в минуту | один поток против волн отказов | восемь параллельных потоков дают 36 блоков в минуту |
 | мужские реплики отбиваются, женские проходят | голоса деградируют **по отдельности**: в один замер Dmitry дал 1/6, Svetlana 5/6 | ждать своё окно по каждому голосу; замерять их раздельно, а не «синтез вообще» |
 
@@ -130,11 +130,8 @@ python3 voice_probe.py                 # таблица ролей с замер
 # одна глава
 python3 render.py ../BOOK01/ch01.md
 
-# вся книга: четыре потока по диапазонам глав
-FORCE=1 JOBS=2 ./render_book.sh 0 8    &
-FORCE=1 JOBS=2 ./render_book.sh 9 16   &
-FORCE=1 JOBS=2 ./render_book.sh 17 24  &
-FORCE=1 JOBS=2 ./render_book.sh 25 33  &
+# вся книга: надзиратель берёт самую младшую несобранную главу и добирает отставшие
+STREAMS=8 JOBS=3 ./render_all.sh
 
 python3 check_out.py                   # длительность, громкость, пик, битрейт
 ```
@@ -142,9 +139,9 @@ python3 check_out.py                   # длительность, громко�
 Что важно знать перед запуском:
 
 - `cache/` хранит блоки по ключу «голос, темп, тон, громкость, текст». Любая правка этих полей убивает кэш — синтез пойдёт заново на весь том, это ожидаемо и закладывается временем.
-- `FORCE=1` нужен, если файлы в `out/` новее текста глав, а переозвучить всё равно надо.
+- Готовность считается по метке `out/.cast-rebuild`: дорожка новее неё — собрана. Переозвучить том после правки каста или просодии — `touch out/.cast-rebuild`, отдельный `FORCE` не нужен (он остался у `render_book.sh` для выборочного перегона).
 - `JOBS` — число одновременных запросов внутри главы. Выше трёх бесполезно, а на волнах отказов даже вредно: узкое место не в нас.
-- Каждая глава пишется под `flock`, поэтому несколько `render_book.sh` можно гонять параллельно по непересекающимся диапазонам.
+- Каждая глава пишется под `flock`, поэтому несколько запусков (`render_all.sh` и `render_book.sh`) не мешают друг другу и не синтезируют одну главу дважды.
 - Рендер всей книги — это часы, а не минуты. Кэш делает повторный запуск почти бесплатным: синтезируется только недостающее.
 
 Выход: `out/chNN.mp3`, моно, 44,1 кГц, 96 кбит/с, −20 LUFS, каждый файл проверяется `check_out.py` по длительности, громкости и битрейту.
@@ -252,7 +249,7 @@ Speech synthesis is an external service and it behaves unevenly. Everything belo
 | `NoAudioReceived: No audio was received` | the service drops the request; text, rate and pitch are not to blame | retry: a failure comes back in 2–4 s, a success in 1–2 s |
 | the same text passes 6/6 while ten new ones pass 2/10 | the service caches its own synthesis; "new" hits degradation | retry until it lands in a good window; never trust a single measurement |
 | the process is alive, CPU 0 %, the cache stops growing | a request hung with no answer | a 25 s timeout per request (`render.py`) |
-| a chapter will not assemble after all retries | the failure wave outlasts five minutes | `render_book.sh` makes up to six passes per chapter with a 2-minute pause |
+| a chapter will not assemble after all retries | the failure wave outlasts five minutes | `render.py` makes up to six passes per block; `render_all.sh` runs up to 40 rounds and hands the straggler to the next free stream |
 | the render runs at 4 blocks a minute | one stream against failure waves | eight parallel streams give 36 blocks a minute |
 | male lines are dropped while female ones pass | voices degrade **individually**: in one measurement Dmitry gave 1/6, Svetlana 5/6 | wait for each voice's own window; measure them separately, not "synthesis in general" |
 
@@ -273,11 +270,8 @@ python3 voice_probe.py                 # the role table with measured fundamenta
 # one chapter
 python3 render.py ../BOOK01/ch01.md
 
-# the whole book: four streams over chapter ranges
-FORCE=1 JOBS=2 ./render_book.sh 0 8    &
-FORCE=1 JOBS=2 ./render_book.sh 9 16   &
-FORCE=1 JOBS=2 ./render_book.sh 17 24  &
-FORCE=1 JOBS=2 ./render_book.sh 25 33  &
+# the whole book: the supervisor takes the lowest unfinished chapter and keeps coming back
+STREAMS=8 JOBS=3 ./render_all.sh
 
 python3 check_out.py                   # duration, loudness, peak, bitrate
 ```
@@ -285,9 +279,9 @@ python3 check_out.py                   # duration, loudness, peak, bitrate
 Worth knowing before launching:
 
 - `cache/` keys blocks by "voice, rate, pitch, volume, text". Any edit to those fields wipes the cache — synthesis restarts for the whole volume, expected and budgeted in time.
-- `FORCE=1` is needed when `out/` is newer than the chapter text and you still want to re-voice.
+- Readiness is decided by the `out/.cast-rebuild` stamp: a track newer than it counts as done. To re-voice the volume after a cast or prosody change, `touch out/.cast-rebuild` — no separate `FORCE` needed (it stays with `render_book.sh` for selective reruns).
 - `JOBS` is the number of concurrent requests inside a chapter. Above three it is useless, and during failure waves it is actively counter-productive: the bottleneck is not on our side.
-- Every chapter is written under `flock`, so several `render_book.sh` runs can work disjoint ranges in parallel.
+- Every chapter is written under `flock`, so several runs (`render_all.sh` and `render_book.sh`) never collide or synthesize the same chapter twice.
 - A full-book render is hours, not minutes. The cache makes a re-run nearly free: only what is missing gets synthesized.
 
 Output: `out/chNN.mp3`, mono, 44.1 kHz, 96 kbps, −20 LUFS, each file verified by `check_out.py` for duration, loudness and bitrate.
