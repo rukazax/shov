@@ -8,11 +8,13 @@ cd "$(dirname "$0")/.."
 VOL="${VOL:?укажи VOL=N}"
 say() { printf '\n== %s\n' "$*"; }
 
+BOOK="BOOK$(printf '%02d' "$VOL")"
+export BOOK
 say "ждать дорожки тома $VOL"
-BOOK="BOOK$(printf '%02d' "$VOL")" ./audio/publish_when_done.sh || { echo "дорого не собрались"; exit 1; }
+./audio/publish_when_done.sh || { echo "дорого не собрались"; exit 1; }
 
 say "ноты релиза по замеру"
-BOOK="$BOOK" VOL="$VOL" python3 - <<'PYEOF'
+VOL="$VOL" python3 - <<'PYEOF'
 import glob, os, subprocess
 BOOK, VOL = os.environ["BOOK"], os.environ["VOL"]
 OUT = f"audio/out-t{VOL}"
