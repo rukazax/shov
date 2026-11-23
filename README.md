@@ -26,7 +26,7 @@
   <img src="https://img.shields.io/badge/том_6_«Чужая_родня»-готов-3fb950?style=flat-square" alt="том 6 готов">
   <img src="https://img.shields.io/badge/том_7_«Стык»-готов-3fb950?style=flat-square" alt="том 7 готов">
   <img src="https://img.shields.io/badge/глав-231_+_7_введений-2f6fed?style=flat-square" alt="231 глава">
-  <img src="https://img.shields.io/badge/объём-4_269_578_знаков-2f6fed?style=flat-square" alt="4 269 578 знаков">
+  <img src="https://img.shields.io/badge/объём-4_269_737_знаков-2f6fed?style=flat-square" alt="4 269 737 знаков">
   <img src="https://img.shields.io/badge/аудио-68_дорожек-8957e5?style=flat-square" alt="68 дорожек">
   <img src="https://img.shields.io/badge/EPUB-в_релизе-8b949e?style=flat-square" alt="EPUB">
   <img src="https://img.shields.io/badge/серия-30_томов-8b949e?style=flat-square" alt="30 томов">
@@ -393,9 +393,9 @@ graph LR
 
 ## Том шестой «Чужая родня»
 
-Ставка тома — родня. Дверь к этому времени уже не открывается и не закрывается: она работает почтой. Наряд, пропуск, окошко, очередь, и первое, что выдают приезжему на той стороне, — не метку, а бланк.
+Ставка тома — родня. Дверь к этому времени уже не открывается и не закрывается: она работает почтой. Наряд, пропуск, окошко, очередь. И первое, что выдают приезжему на той стороне, — не метку, а бланк.
 
-Бюро родства ищет по фамилии, городу и году и находит больше, чем просили. У Семёна там живая бабушка: та же Аграфена Прокопьевна, те же руки, только переулок такой, какого на его стороне нет. Мать, которая дома ушла из его детства, здесь никуда не уходила. Жена, которую он помнит своей, его здесь никогда не встречала.
+Бюро родства ищет по фамилии, городу и году — и находит больше, чем просили. У Семёна там живая бабушка: та же Аграфена Прокопьевна, те же руки, только переулок такой, какого на его стороне нет. Мать, которая дома ушла из его детства, здесь никуда не уходила. Жена, которую он помнит своей, его здесь никогда не встречала.
 
 Каждое родство стоит денег, и цена одна — дом. Не в смысле «где жить», а в смысле «где ты числишься»: приписка, графа, лист. Признать родню — значит вписать себя в чужую книгу и выписаться из своей. Вот только чужой лист держит крепче, чем родная память, и требует подписи.
 
@@ -811,6 +811,7 @@ How it ends: with the ninth sheet, a column headed "price", and a refusal to be 
 | Words | 100,925 | — |
 | Scenes | 139 (4 per chapter) | 3–6 per chapter |
 | System lines | 68 | ~1 per 3.8 thousand characters |
+| Cast | his grandmother, alive in a lane that does not exist on this side; his mother, who here never left; his wife, who has never met him; the kinship bureau and its forms |
 | Dialogue | 50 % of lines | 30–38 % |
 | Average sentence | 9.1 words | 12–16 |
 
@@ -878,13 +879,14 @@ How it ends: his daughter walks through the junction.
 
 | Parameter | Volume 7 | Series norm |
 |---|---|---|
-| Length | **612,824 characters** (15.3 author sheets) | 588–624 thousand |
-| Without spaces | 498,222 characters | — |
+| Length | **612,983 characters** (15.3 author sheets) | 588–624 thousand |
+| Without spaces | 498,355 characters | — |
 | Chapters | 33 + Introduction | 26–37 |
 | Average chapter | 18.3 thousand characters | 16–23 thousand |
-| Words | 100,123 | — |
+| Words | 100,145 | — |
 | Scenes | 162 (5 per chapter) | 3–6 per chapter |
 | System lines | 124 | ~1 per 3.8 thousand characters |
+| Cast | the Junction service and its two factions, "order" and "people"; the waiting list; his daughter Dasha |
 | Dialogue | 49 % of lines | 30–38 % |
 | Average sentence | 8.7 words | 12–16 |
 
@@ -896,50 +898,50 @@ Where the book leaves the norm, honestly:
 System lines number 124 — one per 4.9 thousand characters, slightly rarer than the norm, because orders took their place. Everything else is inside the corridor: length, chapter count, chapter size, scenes.
 
 <details>
-<summary>Volume 7 contents — 34 files, 612,824 characters</summary>
+<summary>Volume 7 contents — 34 files, 612,983 characters</summary>
 
-| # | Глава | Объём |
+| # | Chapter | Length |
 |---|---|---|
-| 0 | Введение. Одиннадцать часов | 8 тыс. |
-| 1 | Глава первая. «Шаг» | 18 тыс. |
-| 2 | Глава вторая. «Лицо» | 18 тыс. |
-| 3 | Глава третья. «Перевод» | 18 тыс. |
-| 4 | Глава четвёртая. «Присяга» | 18 тыс. |
-| 5 | Глава пятая. «Лист» | 19 тыс. |
-| 6 | Глава шестая. «Приёмка» | 18 тыс. |
-| 7 | Глава седьмая. «Где ты живёшь» | 17 тыс. |
-| 8 | Глава восьмая. «Журнал» | 18 тыс. |
-| 9 | Глава девятая. «Будка» | 18 тыс. |
-| 10 | Глава десятая. «Список Пожарской» | 18 тыс. |
-| 11 | Глава одиннадцатая. «Цена часов» | 19 тыс. |
-| 12 | Глава двенадцатая. «Лист ожидания» | 19 тыс. |
-| 13 | Глава тринадцатая. «Сшились не туда» | 19 тыс. |
-| 14 | Глава четырнадцатая. «Он не тот» | 18 тыс. |
-| 15 | Глава пятнадцатая. «Кто платит» | 18 тыс. |
-| 16 | Глава шестнадцатая. «Записки» | 18 тыс. |
-| 17 | Глава семнадцатая. «Ночная смена» | 18 тыс. |
-| 18 | Глава восемнадцатая. «Сколкова» | 19 тыс. |
-| 19 | Глава девятнадцатая. «Приказ на закрытие» | 19 тыс. |
-| 20 | Глава двадцатая. «Ночь перед» | 18 тыс. |
-| 21 | Глава двадцать первая. «Протокол» | 19 тыс. |
-| 22 | Глава двадцать вторая. «Его подпись» | 19 тыс. |
-| 23 | Глава двадцать третья. «Отказ» | 18 тыс. |
-| 24 | Глава двадцать четвёртая. «Голос за дверью» | 18 тыс. |
-| 25 | Глава двадцать пятая. «Исполнение» | 19 тыс. |
-| 26 | Глава двадцать шестая. «Право подписи» | 18 тыс. |
-| 27 | Глава двадцать седьмая. «Разбор» | 18 тыс. |
-| 28 | Глава двадцать восьмая. «Очередь стала короче» | 19 тыс. |
-| 29 | Глава двадцать девятая. «Даша у стыка» | 18 тыс. |
-| 30 | Глава тридцатая. «Наша бабушка» | 18 тыс. |
-| 31 | Глава тридцать первая. «Восемь фигур» | 18 тыс. |
-| 32 | Глава тридцать вторая. «Сорок седьмой лист» | 18 тыс. |
-| 33 | Глава тридцать третья. «Порог» | 18 тыс. |
+| 0 | Введение. Одиннадцать часов | 8K |
+| 1 | Глава первая. «Шаг» | 18K |
+| 2 | Глава вторая. «Лицо» | 18K |
+| 3 | Глава третья. «Перевод» | 18K |
+| 4 | Глава четвёртая. «Присяга» | 18K |
+| 5 | Глава пятая. «Лист» | 19K |
+| 6 | Глава шестая. «Приёмка» | 18K |
+| 7 | Глава седьмая. «Где ты живёшь» | 17K |
+| 8 | Глава восьмая. «Журнал» | 18K |
+| 9 | Глава девятая. «Будка» | 18K |
+| 10 | Глава десятая. «Список Пожарской» | 18K |
+| 11 | Глава одиннадцатая. «Цена часов» | 19K |
+| 12 | Глава двенадцатая. «Лист ожидания» | 19K |
+| 13 | Глава тринадцатая. «Сшились не туда» | 19K |
+| 14 | Глава четырнадцатая. «Он не тот» | 18K |
+| 15 | Глава пятнадцатая. «Кто платит» | 18K |
+| 16 | Глава шестнадцатая. «Записки» | 18K |
+| 17 | Глава семнадцатая. «Ночная смена» | 18K |
+| 18 | Глава восемнадцатая. «Сколкова» | 19K |
+| 19 | Глава девятнадцатая. «Приказ на закрытие» | 19K |
+| 20 | Глава двадцатая. «Ночь перед» | 18K |
+| 21 | Глава двадцать первая. «Протокол» | 19K |
+| 22 | Глава двадцать вторая. «Его подпись» | 19K |
+| 23 | Глава двадцать третья. «Отказ» | 18K |
+| 24 | Глава двадцать четвёртая. «Голос за дверью» | 18K |
+| 25 | Глава двадцать пятая. «Исполнение» | 19K |
+| 26 | Глава двадцать шестая. «Право подписи» | 18K |
+| 27 | Глава двадцать седьмая. «Разбор» | 18K |
+| 28 | Глава двадцать восьмая. «Очередь стала короче» | 19K |
+| 29 | Глава двадцать девятая. «Даша у стыка» | 18K |
+| 30 | Глава тридцатая. «Наша бабушка» | 18K |
+| 31 | Глава тридцать первая. «Восемь фигур» | 18K |
+| 32 | Глава тридцать вторая. «Сорок седьмой лист» | 18K |
+| 33 | Глава тридцать третья. «Порог» | 18K |
 
 </details>
 
 Read in full: [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md) — a single file with a title page and an epigraph. EPUB is in [release v7.0](https://github.com/rukazax/shov/releases/tag/v7.0). The volume bible is [BOOK07/BIBLE.md](BOOK07/BIBLE.md), briefs are [BOOK07/BRIEFS](BOOK07/BRIEFS), the chapter spine is [BOOK07/SPINE.md](BOOK07/SPINE.md). Audio is not rendered yet — the same pipeline, `BOOK=BOOK07 ./audio/render_all.sh`.
 
-The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md) , [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md), [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md) and [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
+The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md), [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md), [BOOK03/SHOV-tom3.md](BOOK03/SHOV-tom3.md), [BOOK04/SHOV-tom4.md](BOOK04/SHOV-tom4.md), [BOOK05/SHOV-tom5.md](BOOK05/SHOV-tom5.md), [BOOK06/SHOV-tom6.md](BOOK06/SHOV-tom6.md) and [BOOK07/SHOV-tom7.md](BOOK07/SHOV-tom7.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
 
 The production pipeline — foundation, bible, briefs, fan-out, machine gates, assembly, cover, audiobook — is documented step by step in [PRODUCTION.md](PRODUCTION.md).
 
