@@ -71,6 +71,20 @@ VOICES = {
     "kostya":     {"voice": "ru-RU-DmitryNeural",   "rate": "+12%", "pitch": "+12Hz", "volume": "+1%"},
     "kovaleva":   {"voice": "ru-RU-SvetlanaNeural", "rate": "+6%",  "pitch": "+6Hz",  "volume": "+0%"},
     "nina":       {"voice": "ru-RU-SvetlanaNeural", "rate": "+16%", "pitch": "+15Hz", "volume": "+1%"},
+
+    # --- том 3 «Мост» ----------------------------------------------------
+    # Управление и дорога. Кац — процедура в человеческом лице: ровно, без
+    # подъёма. Веретенников — самый медленный и низкий мужской тембр в книге
+    # (он решает судьбы фразами из трёх слов). Кержак — обычный темп, но
+    # низкая посадка: человек, который говорит мало и по делу. Семён-2 —
+    # на четыре герца ниже героя и медленнее: тот же голос, другая жизнь.
+    "kac":          {"voice": "ru-RU-SvetlanaNeural", "rate": "+2%",  "pitch": "-3Hz",  "volume": "+0%"},
+    "veretennikov": {"voice": "ru-RU-DmitryNeural",   "rate": "-20%", "pitch": "-13Hz", "volume": "+0%"},
+    "kerzhak":      {"voice": "ru-RU-DmitryNeural",   "rate": "+2%",  "pitch": "-12Hz", "volume": "+0%"},
+    "semyon2":      {"voice": "ru-RU-DmitryNeural",   "rate": "-4%",  "pitch": "-2Hz",  "volume": "+0%"},
+    "dorohov":      {"voice": "ru-RU-DmitryNeural",   "rate": "+6%",  "pitch": "-8Hz",  "volume": "+0%"},
+    "tarasov":      {"voice": "ru-RU-DmitryNeural",   "rate": "+11%", "pitch": "-1Hz",  "volume": "+1%"},
+    "teacher":      {"voice": "ru-RU-SvetlanaNeural", "rate": "+7%",  "pitch": "-6Hz",  "volume": "+0%"},
 }
 
 FEMALE_ROLES = {"ganna", "dasha", "lida", "pozharskaya", "agrafena", "female", "babka",
