@@ -291,6 +291,8 @@ shov/
 │   ├── render.py           озвучка и сведение
 │   ├── render_all.sh      надзиратель: потоки по главам
 │   ├── publish_when_done.sh приёмка, README, git
+│   ├── eq_curve.json       кривая EQ под эталон 1С (правит eq_calibrate.py)
+│   ├── VOICES.md           тембры, калибровка, подводные камни
 │   ├── check_out.py        приёмка готовых дорожек
 │   └── out/                mp3 по главам (в git не входят)
 ├── IDEA.md                 идея серии: мир, механика, ставки

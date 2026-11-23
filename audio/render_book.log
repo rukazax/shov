@@ -1,8 +1,0 @@
-== ch01
-[in#0 @ 0x5c15a5e88c80] Error opening input: No such file or directory
-Error opening input file /srv/apps/dsh/workspaces/My books/novels/SHOV/audio/out/ch01.wav.
-Error opening input files: No such file or directory
-
-ch01: блоков 184, синтез новых 184
-FAIL ch01
-== ch02
