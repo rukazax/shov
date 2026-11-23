@@ -1,9 +1,12 @@
 <p align="center"><img src="assets/banner.svg" alt="Шов — серия на 30 томов" width="100%"></p>
 
-<p align="center"><img src="assets/cover-tom1.png" alt="Шов. Книга первая: Щепка — обложка" width="42%"></p>
+<p align="center">
+  <img src="assets/cover-tom1.png" alt="Шов. Книга первая: Щепка — обложка" width="38%">
+  <img src="assets/cover-tom2.png" alt="Шов. Книга вторая: Ходок — обложка" width="38%">
+</p>
 
 <h1 align="center">Шов</h1>
-<p align="center"><b>Книга первая. Щепка</b> · Константин Ерёмин</p>
+<p align="center"><b>Книга первая. Щепка</b> · <b>Книга вторая. Ходок</b> · Константин Ерёмин</p>
 
 <p align="center">
   <b>RU</b> · <a href="#english">English</a>
@@ -11,20 +14,21 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/том_1_«Щепка»-готов-3fb950?style=flat-square" alt="том 1 готов">
-  <img src="https://img.shields.io/badge/глав-33_+_Введение-2f6fed?style=flat-square" alt="33 главы">
-  <img src="https://img.shields.io/badge/объём-608_881_знак-2f6fed?style=flat-square" alt="608 881 знак">
+  <img src="https://img.shields.io/badge/том_2_«Ходок»-готов-3fb950?style=flat-square" alt="том 2 готов">
+  <img src="https://img.shields.io/badge/глав-66_+_2_введения-2f6fed?style=flat-square" alt="66 глав">
+  <img src="https://img.shields.io/badge/объём-1_228_917_знаков-2f6fed?style=flat-square" alt="1 228 917 знаков">
   <img src="https://img.shields.io/badge/аудио-34_дорожки-8957e5?style=flat-square" alt="34 дорожки">
   <img src="https://img.shields.io/badge/EPUB-в_релизе-8b949e?style=flat-square" alt="EPUB">
   <img src="https://img.shields.io/badge/серия-30_томов-8b949e?style=flat-square" alt="30 томов">
 </p>
 
-**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио-релиз](https://github.com/rukazax/shov/releases/tag/v1.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
+**Разделы:** [⬇ Скачать](https://github.com/rukazax/shov/releases/tag/v1.0) · [🎧 Аудио-релиз](https://github.com/rukazax/shov/releases/tag/v1.1) · [О книге](#о-книге) · [Как устроен мир](#как-устроен-мир) · [План серии](#план-серии) · [Том первый](#том-первый-щепка) · [Том второй](#том-второй-ходок) · [Оглавление](#оглавление) · [Аудио](#аудио) · [Как делается том](#как-делается-том) · [Сборка](#сборка) · [Структура](#структура) · [English](#english)
 
 ---
 
 ## О книге
 
-<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Скачать том 1 «Щепка»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Аудио: 34 дорожки, 14 ч 57 мин</b></a><br>EPUB · единый markdown · обложка · аудио отдельными файлами в релизе v1.1</p>
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Том 1 «Щепка»</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Аудио тома 1: 34 дорожки, 14 ч 57 мин</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Том 2 «Ходок»</b></a><br>EPUB · единый markdown · обложка · аудио отдельными файлами в релизе v1.1</p>
 
 Двенадцатого августа 2019 года над Северным Уралом в небе появилась полоса: двенадцать километров длиной, сто пятьдесят метров шириной. Не портал, не дыра и не разлом — **стык двух реальностей с разной геометрией**. Через него сочится чужая геометрия, а иногда просачиваются люди.
 
@@ -66,6 +70,8 @@ graph LR
 | III. Сеть стыков | 13–20 | галактика, долг, ремесло |
 | IV. Война за узел | 21–27 | существование всех Земель |
 | V. Финал | 28–30 | чем ты готов быть, чтобы шов держался |
+
+**Готово:** том 1 «Щепка» и том 2 «Ходок». Дальше по плану — том 3 «Мост»: Екатеринбург, Стык-офис, контрабандный маршрут и встреча с Семёном-2, который просит закрыть Шов с их стороны.
 
 Раскадровка на тридцать томов — [PLAN.md](PLAN.md). Идея мира и правила — [IDEA.md](IDEA.md).
 
@@ -137,6 +143,76 @@ graph LR
 
 Читать целиком: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md) — единый файл с содержанием и эпиграфом. EPUB для читалки — в [релизе](https://github.com/rukazax/shov/releases).
 
+## Том второй «Ходок»
+
+Ставка тома — люди в караване. Скоба на «Капитальной» поставлена и тянет; город начинает мелко ломаться (лифты, вода, часы). Из-за плёнки стучат, Стык отправляет группу на контакт — и операция проваливается: напарник гибнет, караван разбегается, Семён выводит троих своим ходом. Компас, который на той стороне показывал тонкость, дома впервые оживает — и показывает на Дашу.
+
+| Параметр | Том 2 | Норма серии |
+|---|---|---|
+| Объём | **620 036 знаков** (15,5 а.л.) | 588–624 тыс. |
+| Без пробелов | 499 137 знаков | — |
+| Глав | 33 + Введение | 26–37 |
+| Средняя глава | 18,2 тыс. знаков | 16–23 тыс. |
+| Слов | 101 885 | — |
+| Сцен | 173 (5 на главу) | 3–6 на главу |
+| Системных строк | 23 | ~1 на 4 тыс. знаков |
+| Диалог | 61 % строк | 30–38 % |
+| Средняя фраза | 7,0 слова | 12–16 |
+
+Где том вылезает из нормы — честно:
+
+- **диалога ещё больше, чем в первом** (61 % против 50 %): задача тома была «человечнее», и половина сцен держится на разговоре — в шахте, в лесу, на кухне;
+- **средняя фраза короче** (7,0): тот же такт «абзац-разбор → удар одной строкой»;
+- **системных строк меньше** (23): справку по-прежнему выдаёт Стык и только за поступок.
+
+Что нового в томе: смотритель края «4-бис» Пётр Ильич Ветров (он же голос Введения и главы восемнадцатой — единственный чужой POV), старший сержант Тимур Гущин, геометр Ирина Ковалёва, наблюдатель Кирилл Сомов. Гибнет не «кто-то», а человек с именем, женой и восьмимесячной дочерью — и том помнит об этом до последней главы.
+
+<details>
+<summary>Оглавление тома 2 — 34 файла, 620 036 знаков</summary>
+
+| # | Глава | Объём |
+|---|---|---|
+| 0 | Введение. Стекло толщиной в палец | 8 тыс. |
+| 1 | Глава первая. Скоба | 21 тыс. |
+| 2 | Глава вторая. Лифт идёт не туда | 18 тыс. |
+| 3 | Глава третья. Ведомость на скобу | 17 тыс. |
+| 4 | Глава четвёртая. Три удара | 19 тыс. |
+| 5 | Глава пятая. Кто там | 17 тыс. |
+| 6 | Глава шестая. Сборы | 18 тыс. |
+| 7 | Глава седьмая. Нулевой километр | 19 тыс. |
+| 8 | Глава восьмая. Перед броском | 18 тыс. |
+| 9 | Глава девятая. Переход в группе | 18 тыс. |
+| 10 | Глава десятая. Чужой наряд | 20 тыс. |
+| 11 | Глава одиннадцатая. Смотритель | 19 тыс. |
+| 12 | Глава двенадцатая. Разговор через плёнку | 18 тыс. |
+| 13 | Глава тринадцатая. Приказ | 17 тыс. |
+| 14 | Глава четырнадцатая. Образец | 17 тыс. |
+| 15 | Глава пятнадцатая. Погоня | 18 тыс. |
+| 16 | Глава шестнадцатая. Гущин | 17 тыс. |
+| 17 | Глава семнадцатая. Трое | 18 тыс. |
+| 18 | Глава восемнадцатая. Смотритель | 19 тыс. |
+| 19 | Глава девятнадцатая. Обратный ход | 20 тыс. |
+| 20 | Глава двадцатая. Скоба треснула | 17 тыс. |
+| 21 | Глава двадцать первая. Вышли | 19 тыс. |
+| 22 | Глава двадцать вторая. Ведомость на троих | 17 тыс. |
+| 23 | Глава двадцать третья. Разбор | 17 тыс. |
+| 24 | Глава двадцать четвёртая. Даша | 17 тыс. |
+| 25 | Глава двадцать пятая. Хранилище | 17 тыс. |
+| 26 | Глава двадцать шестая. Указатель | 17 тыс. |
+| 27 | Глава двадцать седьмая. Тонкое место | 18 тыс. |
+| 28 | Глава двадцать восьмая. Садик | 17 тыс. |
+| 29 | Глава двадцать девятая. Бабушка знает | 17 тыс. |
+| 30 | Глава тридцатая. Фотография | 21 тыс. |
+| 31 | Глава тридцать первая. Приказ на Дашу | 20 тыс. |
+| 32 | Глава тридцать вторая. Не отдам | 19 тыс. |
+| 33 | Глава тридцать третья. Ходок | 17 тыс. |
+
+</details>
+
+Читать целиком: [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md) — единый файл с содержанием и эпиграфом. EPUB — в [релизе v2.0](https://github.com/rukazax/shov/releases/tag/v2.0). Библия тома — [BOOK02/BIBLE.md](BOOK02/BIBLE.md), брифы — [BOOK02/BRIEFS](BOOK02/BRIEFS).
+
+
+
 ## Аудио
 
 Озвучка в духе записей 1С-Паблишинг: рассказчик, отдельные голоса на персонажей, музыкальная подложка с дакингом, эффекты на сценарные границы и системные строки.
@@ -144,6 +220,8 @@ graph LR
 > **Слушать:** [релиз v1.1 — 34 дорожки, 14 ч 57 мин, 616 МБ](https://github.com/rukazax/shov/releases/tag/v1.1). Каждая глава — отдельный mp3, ссылки в таблице ниже. Прежний каст лежит архивом в [v1.0](https://github.com/rukazax/shov/releases/tag/v1.0) и больше не актуален.
 >
 > **Как доводили звучание:** образцы новых голосов (минута, все тембры), замеры по эталонам 1С и отвергнутые движки — [audio/VOICES.md](audio/VOICES.md).
+>
+> **Том 2 пока без озвучки:** текст собран и выложен, звук — следующим шагом тем же конвейером (`BOOK=BOOK02 ./audio/render_all.sh`). Обещать «скоро» не буду: рендер тома — это несколько часов синтеза и монтажа.
 
 | Слой | Как сделано |
 |---|---|
@@ -258,16 +336,24 @@ cd shov
 
 # текст: все главы в один файл + метрики в консоль
 python3 BOOK01/build_book.py
+python3 BOOK02/build_book.py
+
+# машинные гейты тома 2 (объём, диалог, сцены, типографика, полнота)
+BOOK02/gate.sh
 
 # читательский дистрибутив: EPUB и единый markdown в dist/
 BOOK01/build_epub.sh
+BOOK02/build_epub.sh
 
 # аудио: подложки и эффекты (один раз, ~2 минуты)
 python3 audio/gen_beds.py
 
 # аудио: одна глава или вся книга — кэш синтеза переиспользуется
 python3 audio/render.py BOOK01/ch01.md
-STREAMS=8 JOBS=3 ./audio/render_all.sh   # весь том, добьёт недостающие дорожки
+STREAMS=8 JOBS=3 ./audio/render_all.sh   # том 1, добьёт недостающие дорожки
+
+# том 2 озвучивается тем же конвейером: BOOK=BOOK02
+BOOK=BOOK02 STREAMS=8 JOBS=3 ./audio/render_all.sh
 ```
 
 Проверка готовности озвучки: `python3 audio/check_out.py` — длительности, тишина по краям, громкость, битрейт.
@@ -278,7 +364,8 @@ STREAMS=8 JOBS=3 ./audio/render_all.sh   # весь том, добьёт нед�
 shov/
 ├── assets/
 │   ├── banner.svg          баннер серии
-│   └── cover-tom1.png      обложка тома 1 (и .svg-исходник)
+│   ├── cover-tom1.png      обложка тома 1 (и .svg-исходник)
+│   └── cover-tom2.png      обложка тома 2 (и .svg-исходник)
 ├── BOOK01/
 │   ├── BIBLE.md            библия тома: люди, правила, каркас
 │   ├── BRIEF.md            брифы глав 2–33
@@ -286,6 +373,14 @@ shov/
 │   ├── SHOV-tom1.md        собранный текст
 │   ├── build_book.py       сборка и статистика
 │   └── build_epub.sh       EPUB для читалки
+├── BOOK02/
+│   ├── BIBLE.md            библия тома: мир, новые люди, каркас
+│   ├── BRIEFS/chNN.md      брифы всех 33 глав
+│   ├── ch00…ch33.md        главы
+│   ├── SHOV-tom2.md        собранный текст
+│   ├── build_book.py       сборка и статистика
+│   ├── build_epub.sh       EPUB для читалки
+│   └── gate.sh             машинные гейты тома
 ├── audio/
 │   ├── gen_beds.py         подложки и эффекты
 │   ├── render.py           озвучка и сведение
@@ -307,7 +402,7 @@ shov/
 
 ## English
 
-<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Download volume one</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Audiobook (34 tracks, 14 h 57 min)</b></a><br>EPUB · single-file markdown · cover artwork · audio in v1.1, 34 separate mp3 files</p>
+<p align="center"><a href="https://github.com/rukazax/shov/releases/tag/v1.0"><b>⬇ Volume one</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v1.1"><b>🎧 Audiobook of volume one (34 tracks, 14 h 57 min)</b></a> · <a href="https://github.com/rukazax/shov/releases/tag/v2.0"><b>⬇ Volume two</b></a><br>EPUB · single-file markdown · cover artwork · audio in v1.1, 34 separate mp3 files</p>
 
 **The Seam** — a thirty-volume series written in the voice of Mikhail Atamanov's *Distorting Reality* cycle, with a new world, new people and a new plot. Not a work by that author; the style profile was derived from thirteen volumes and stays out of this repository.
 
@@ -326,7 +421,17 @@ Semyon Loskutov, a lift repairman from Nizhny Tagil, climbs into an abandoned mi
 | Audiobook | 34 tracks, 14 h 57 min, 616 MB, five synthetic voices — [release v1.1](https://github.com/rukazax/shov/releases/tag/v1.1) |
 | Formats | Markdown in repo, EPUB in Releases |
 
-The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
+| Volume 2 | Value |
+|---|---|
+| Title | *Walker* (Ходок) |
+| Chapters | 33 + Introduction |
+| Length | 620 036 characters, 101 885 words |
+| Scenes | 173 |
+| Cast | the keeper of edge 4-bis (his own POV in the Introduction and chapter 18), sergeant Gushchin, surveyor Kovalyova, observer Somov |
+| Audiobook | not rendered yet — the same pipeline, `BOOK=BOOK02 ./audio/render_all.sh` |
+| Formats | Markdown in repo, EPUB in [release v2.0](https://github.com/rukazax/shov/releases/tag/v2.0) |
+
+The full text is in Russian only: [BOOK01/SHOV-tom1.md](BOOK01/SHOV-tom1.md) and [BOOK02/SHOV-tom2.md](BOOK02/SHOV-tom2.md). Series plan, world rules and the style bible are in [PLAN.md](PLAN.md), [IDEA.md](IDEA.md) and [BOOK01/BIBLE.md](BOOK01/BIBLE.md) — also Russian.
 
 The production pipeline — foundation, bible, briefs, fan-out, machine gates, assembly, cover, audiobook — is documented step by step in [PRODUCTION.md](PRODUCTION.md).
 

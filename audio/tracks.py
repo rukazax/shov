@@ -2,10 +2,12 @@
 """Собирает TRACKS.md: что озвучено, сколько звучит, где лежит."""
 import glob, os, subprocess
 
+BOOK = os.environ.get("BOOK", "BOOK01")
+
 rows = []
 for mp3 in sorted(glob.glob('out/ch*.mp3')):
     stem = os.path.splitext(os.path.basename(mp3))[0]
-    md = f'../BOOK01/{stem}.md'
+    md = f'../{BOOK}/{stem}.md'
     title = open(md, encoding='utf-8').readline().lstrip('# ').strip() if os.path.exists(md) else stem
     d = float(subprocess.run(['ffprobe', '-v', 'quiet', '-show_entries', 'format=duration',
                               '-of', 'csv=p=0', mp3], capture_output=True, text=True).stdout.strip() or 0)

@@ -3,6 +3,7 @@
 # Держит STREAMS потоков по главам, пока каждая дорожка не станет новее метки сборки.
 # Метка out/.cast-rebuild = «дорогие mp3, собранные до неё, считаются старыми».
 set -u
+BOOK="${BOOK:-BOOK01}"
 cd "$(dirname "$0")"
 STREAMS=${STREAMS:-8}
 export JOBS=${JOBS:-3}
@@ -14,7 +15,7 @@ fresh() { [ -f "out/$1.mp3" ] && [ "$(stat -c %Y "out/$1.mp3" 2>/dev/null || ech
 
 pending() {
   local n=0
-  for f in ../BOOK01/ch*.md; do
+  for f in ../$BOOK/ch*.md; do
     b=$(basename "${f%.md}")
     fresh "$b" || n=$((n+1))
   done
@@ -30,7 +31,7 @@ for round in $(seq 1 40); do
     (
       # порядок строго по номеру главы: свободный поток берёт САМУЮ МЛАДШУЮ
       # несобранную дорожку (занятые пропускаем по flock), а не «свою» по остатку
-      for f in ../BOOK01/ch*.md; do
+      for f in ../$BOOK/ch*.md; do
         b=$(basename "${f%.md}")
         if fresh "$b"; then continue; fi
         exec 9>"out/$b.lock" || continue

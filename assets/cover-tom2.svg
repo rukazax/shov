@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800" role="img" aria-label="Шов. Книга вторая: Ходок — обложка">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#05070d"/>
+      <stop offset="0.4" stop-color="#0b1420"/>
+      <stop offset="0.72" stop-color="#101b28"/>
+      <stop offset="1" stop-color="#070b12"/>
+    </linearGradient>
+    <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1119"/>
+      <stop offset="0.18" stop-color="#1a2838"/>
+      <stop offset="0.45" stop-color="#2b3d55"/>
+      <stop offset="1" stop-color="#0d1521"/>
+    </linearGradient>
+    <linearGradient id="seamGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4f7cff" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#8cc0ff"/>
+      <stop offset="0.5" stop-color="#f0f7ff"/>
+      <stop offset="0.8" stop-color="#8cc0ff"/>
+      <stop offset="1" stop-color="#4f7cff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="trail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9d3ee" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#b9d3ee" stop-opacity="0.04"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd48a" stop-opacity="0.85"/>
+      <stop offset="0.35" stop-color="#ffbe62" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffbe62" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="filmGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#dceaff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#dceaff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-60%" y="-30%" width="220%" height="160%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="tiny" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="lower"><rect x="0" y="700" width="1200" height="1100"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="1800" fill="url(#sky)"/>
+
+  <!-- звёзды -->
+  <g fill="#bcd6ff">
+    <circle cx="90" cy="120" r="1.5" opacity="0.4"/><circle cx="250" cy="70" r="1.1" opacity="0.3"/>
+    <circle cx="430" cy="150" r="1.3" opacity="0.32"/><circle cx="640" cy="60" r="1.6" opacity="0.45"/>
+    <circle cx="820" cy="130" r="1.2" opacity="0.3"/><circle cx="980" cy="80" r="1.5" opacity="0.4"/>
+    <circle cx="1120" cy="150" r="1.1" opacity="0.28"/><circle cx="190" cy="220" r="1" opacity="0.2"/>
+    <circle cx="760" cy="210" r="1.2" opacity="0.24"/><circle cx="520" cy="240" r="1" opacity="0.18"/>
+  </g>
+
+  <!-- шов висит над лесом, на горизонте -->
+  <g filter="url(#soft)" opacity="0.85">
+    <path d="M10 706 L150 698 L290 710 L430 694 L570 708 L710 692 L850 706 L990 690 L1130 704 L1195 696"
+          fill="none" stroke="url(#seamGlow)" stroke-width="10"/>
+  </g>
+  <path d="M10 706 L150 698 L290 710 L430 694 L570 708 L710 692 L850 706 L990 690 L1130 704 L1195 696"
+        fill="none" stroke="url(#seamGlow)" stroke-width="2.8"/>
+
+  <!-- горизонт: полоса леса -->
+  <g clip-path="url(#lower)">
+    <rect x="0" y="700" width="1200" height="1100" fill="url(#snow)"/>
+
+    <!-- дальний лес -->
+    <g fill="#0b131d" opacity="0.9"><path d="M0 800 L19 751 L39 800 L59 757 L80 800 L95 726 L111 800 L127 737 L143 800 L166 757 L190 800 L219 728 L248 800 L265 758 L283 800 L298 733 L314 800 L335 756 L356 800 L374 755 L392 800 L415 733 L438 800 L453 753 L468 800 L486 757 L504 800 L527 735 L551 800 L566 746 L581 800 L596 752 L611 800 L630 734 L649 800 L665 726 L682 800 L698 741 L714 800 L737 749 L760 800 L776 748 L792 800 L812 754 L832 800 L855 756 L878 800 L901 757 L925 800 L949 747 L973 800 L995 726 L1017 800 L1038 740 L1059 800 L1080 731 L1102 800 L1122 741 L1142 800 L1160 749 L1178 800 L1203 745 L1229 800 L1200 920 L1200 920 L0 920 Z"/></g>
+    <g fill="#0e1a26" opacity="0.9"><path d="M0 905 L21 823 L42 905 L70 826 L98 905 L132 838 L166 905 L198 841 L231 905 L251 852 L272 905 L306 833 L341 905 L364 838 L388 905 L411 828 L434 905 L465 857 L497 905 L517 824 L538 905 L574 839 L611 905 L640 815 L669 905 L698 821 L728 905 L762 822 L796 905 L829 855 L862 905 L883 842 L904 905 L937 815 L971 905 L991 856 L1012 905 L1040 818 L1068 905 L1104 816 L1141 905 L1173 841 L1206 905 L1200 1025 L1200 1025 L0 1025 Z"/></g>
+
+    <!-- плёнка в глубине тропы -->
+    <g filter="url(#soft)">
+      <ellipse cx="640" cy="905" rx="150" ry="140" fill="url(#filmGlow)"/>
+    </g>
+    <g stroke="#dbeaff" stroke-opacity="0.55" stroke-width="1.8" fill="none" stroke-linecap="round">
+      <path d="M596 812 C582 850 604 878 590 916"/>
+      <path d="M676 806 C692 846 668 880 684 918"/>
+      <path d="M612 872 C630 884 648 886 664 874" opacity="0.6"/>
+    </g>
+
+    <!-- тропа -->
+    <path d="M430 1600 C500 1400 560 1200 610 1010 C620 975 660 975 672 1010
+             C720 1200 780 1400 860 1600 Z" fill="url(#trail)"/>
+
+    <!-- следы -->
+    <g fill="#0c1520" opacity="0.35">
+      <ellipse cx="572" cy="1500" rx="15" ry="7"/><ellipse cx="616" cy="1452" rx="14" ry="6"/>
+      <ellipse cx="596" cy="1400" rx="13" ry="6"/><ellipse cx="634" cy="1348" rx="12" ry="5"/>
+      <ellipse cx="612" cy="1296" rx="11" ry="5"/><ellipse cx="646" cy="1244" rx="10" ry="5"/>
+      <ellipse cx="626" cy="1192" rx="10" ry="4"/><ellipse cx="654" cy="1142" rx="9" ry="4"/>
+      <ellipse cx="634" cy="1092" rx="8" ry="4"/><ellipse cx="660" cy="1044" rx="7" ry="3"/>
+    </g>
+
+    <!-- близкий лес: слева -->
+    <g fill="#04080e">
+      <path d="M0 1800 L0 980 L60 1040 L30 1050 L96 1120 L58 1132 L140 1210 L96 1224 L190 1320
+               L140 1336 L250 1450 L196 1470 L0 1620 Z" opacity="0.96"/>
+      <path d="M120 1800 L150 1500 L190 1800 Z" opacity="0.9"/>
+    </g>
+    <!-- близкий лес: справа -->
+    <g fill="#04080e">
+      <path d="M1200 1800 L1200 1000 L1140 1060 L1174 1072 L1104 1146 L1146 1160 L1058 1240
+               L1104 1256 L1006 1352 L1058 1370 L944 1482 L1000 1500 L1200 1640 Z" opacity="0.96"/>
+      <path d="M1070 1800 L1040 1520 L1000 1800 Z" opacity="0.9"/>
+    </g>
+
+    <!-- снежные сугробы -->
+    <g fill="#c9dcef" opacity="0.1">
+      <ellipse cx="330" cy="1660" rx="260" ry="70"/>
+      <ellipse cx="880" cy="1690" rx="300" ry="80"/>
+    </g>
+
+    <!-- фигура с фонарём -->
+    <g transform="translate(700 1265) scale(0.62)">
+      <g filter="url(#soft)" opacity="0.9">
+        <circle cx="-34" cy="0" r="110" fill="url(#lamp)"/>
+      </g>
+      <!-- туловище -->
+      <path d="M0 0 C-10 -38 -8 -80 2 -104 C10 -124 34 -124 42 -102 C52 -76 56 -34 46 2 Z" fill="#04070c"/>
+      <!-- голова в капюшоне -->
+      <path d="M6 -118 C10 -140 36 -142 40 -118 C42 -104 36 -96 24 -95 C12 -94 4 -104 6 -118 Z" fill="#04070c"/>
+      <!-- рука с фонарём -->
+      <path d="M4 -74 L-24 -52" stroke="#04070c" stroke-width="14" stroke-linecap="round"/>
+      <circle cx="-32" cy="-46" r="9" fill="#ffd48a"/>
+      <circle cx="-32" cy="-46" r="16" fill="#ffd48a" opacity="0.25" filter="url(#tiny)"/>
+      <!-- ноги -->
+      <path d="M10 0 L2 46 M32 0 L40 44" stroke="#04070c" stroke-width="13" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- текст -->
+  <text x="96" y="196" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="28"
+        letter-spacing="9" fill="#7d9bc6">КОНСТАНТИН ЕРЁМИН</text>
+  <text x="86" y="500" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="240"
+        font-weight="700" letter-spacing="16" fill="#f4f8ff">ШОВ</text>
+  <text x="98" y="596" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="86"
+        fill="#a7c6ef" letter-spacing="8">Ходок</text>
+  <text x="102" y="652" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="28"
+        letter-spacing="6" fill="#5f7ba6">КНИГА ВТОРАЯ</text>
+
+  <!-- нижняя плашка -->
+  <rect x="0" y="1600" width="1200" height="200" fill="#04070c" opacity="0.82"/>
+  <line x1="96" y1="1642" x2="1104" y2="1642" stroke="#2a4568" stroke-width="1.5"/>
+  <text x="96" y="1690" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="42"
+        fill="#dbe8fa">Стучат, чтобы услышали.</text>
+  <text x="96" y="1748" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="24"
+        letter-spacing="4" fill="#63799b">СЕВЕРНЫЙ УРАЛ · ПЕРЕВАЛЫ ШОВА · 2029</text>
+
+  <rect width="1200" height="1800" filter="url(#grain)" opacity="0.05"/>
+</svg>
