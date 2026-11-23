@@ -31,7 +31,8 @@ for f in mp3s:
             try: lufs.append(float(s.split()[1]))
             except ValueError: pass
 h, m = divmod(round(dur / 60), 60)
-titles = {"1": ("Щепка", "v1.0"), "2": ("Ходок", "v2.0"), "3": ("Мост", "v3.0")}
+titles = {"1": ("Щепка", "v1.0"), "2": ("Ходок", "v2.0"), "3": ("Мост", "v3.0"),
+          "4": ("Опора", "v4.0"), "5": ("Двести лет", "v5.0"), "6": ("Чужая родня", "v6.0")}
 name, text_tag = titles.get(VOL, (f"том {VOL}", ""))
 body = f"""**Аудиоверсия тома {VOL} «{name}»: {len(mp3s)} дорожек, {h} ч {m:02d} мин, {size/2**20:.0f} МБ.**
 

@@ -1,0 +1,342 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800" role="img" aria-label="Шов. Книга шестая: Чужая родня — обложка">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04060b"/>
+      <stop offset="0.35" stop-color="#0a121c"/>
+      <stop offset="0.72" stop-color="#0f1826"/>
+      <stop offset="1" stop-color="#04070c"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1520"/>
+      <stop offset="0.2" stop-color="#080f18"/>
+      <stop offset="0.55" stop-color="#0d1723"/>
+      <stop offset="1" stop-color="#060b12"/>
+    </linearGradient>
+    <linearGradient id="warmRoom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a5f2c"/>
+      <stop offset="0.35" stop-color="#c8944c"/>
+      <stop offset="0.7" stop-color="#e8b872"/>
+      <stop offset="1" stop-color="#b9863f"/>
+    </linearGradient>
+    <radialGradient id="lampIn" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffe0a4" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#ffd48a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffbe62" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lamp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd48a" stop-opacity="0.9"/>
+      <stop offset="0.35" stop-color="#ffbe62" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#ffbe62" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="spill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd48a" stop-opacity="0.5"/>
+      <stop offset="0.55" stop-color="#e2a85f" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#8a5f2c" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="counterFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a3018"/>
+      <stop offset="0.4" stop-color="#241608"/>
+      <stop offset="1" stop-color="#0c0805"/>
+    </linearGradient>
+    <linearGradient id="glassCold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dbe9ff" stop-opacity="0.16"/>
+      <stop offset="0.5" stop-color="#9cc6f5" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#dbe9ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="coolRim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9cc6f5" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#9cc6f5" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="warmRim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd48a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffd48a" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="innerTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#160d04" stop-opacity="0.72"/>
+      <stop offset="0.45" stop-color="#160d04" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#160d04" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="innerBottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#160d04" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#160d04" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#160d04" stop-opacity="0.5"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.45" r="0.78">
+      <stop offset="0.5" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.6"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd48a" stop-opacity="0.26"/>
+      <stop offset="0.5" stop-color="#c08a45" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#0a1421" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-60%" y="-40%" width="220%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="soft6" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="tiny" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1800" fill="url(#sky)"/>
+
+  <!-- ================= фасад: вечерняя улица ================= -->
+  <rect x="0" y="740" width="1200" height="1060" fill="url(#wall)"/>
+  <!-- швы и разводы штукатурки -->
+  <g stroke="#050a12" stroke-width="2" opacity="0.55">
+    <path d="M0 786 L1200 786"/>
+    <path d="M0 1622 L1200 1622"/>
+  </g>
+  <g stroke="#16232f" stroke-width="1.5" opacity="0.4">
+    <path d="M0 788 L1200 788"/>
+    <path d="M0 1624 L1200 1624"/>
+  </g>
+  <!-- сандрик над окном -->
+  <rect x="196" y="806" width="848" height="34" fill="#0e1a27"/>
+  <rect x="196" y="806" width="848" height="3" fill="#44637f" opacity="0.5"/>
+  <!-- подоконник -->
+  <rect x="186" y="1502" width="868" height="30" fill="#16232f"/>
+  <rect x="186" y="1502" width="868" height="4" fill="#cfe2ff" opacity="0.22"/>
+  <rect x="206" y="1532" width="828" height="10" fill="#0a131e"/>
+
+  <!-- холодный вечер по стене и тротуару -->
+  <ellipse cx="1050" cy="980" rx="380" ry="420" fill="#9cc6f5" opacity="0.07" filter="url(#soft)"/>
+  <ellipse cx="120" cy="1180" rx="300" ry="520" fill="#7fa5d0" opacity="0.06" filter="url(#soft)"/>
+  <rect x="0" y="740" width="1200" height="1060" fill="#0a1a2c" opacity="0.22"/>
+
+  <!-- ================= окно аптеки ================= -->
+  <!-- рама -->
+  <rect x="230" y="840" width="780" height="690" fill="#0b1520" stroke="#22384f" stroke-width="2"/>
+  <rect x="230" y="840" width="780" height="690" fill="url(#warmRoom)" opacity="0.18"/>
+  <!-- свет изнутри выбегает за раму -->
+  <ellipse cx="620" cy="1160" rx="470" ry="470" fill="url(#halo)"/>
+
+  <!-- стекло: нутро -->
+  <g>
+    <rect x="266" y="876" width="708" height="624" fill="#a9762f"/>
+    <rect x="266" y="876" width="708" height="624" fill="url(#warmRoom)"/>
+    <!-- лампа под потолком внутри -->
+    <g opacity="0.85">
+      <ellipse cx="600" cy="985" rx="360" ry="250" fill="url(#lampIn)"/>
+      <path d="M600 876 L600 908" stroke="#3a2812" stroke-width="3"/>
+      <path d="M566 944 L634 944 L620 908 L580 908 Z" fill="#3a2812"/>
+      <path d="M580 908 L620 908" stroke="#e0b06a" stroke-width="2" opacity="0.6"/>
+      <ellipse cx="600" cy="946" rx="34" ry="7" fill="#ffe6b8"/>
+      <ellipse cx="600" cy="952" rx="96" ry="30" fill="#ffe0a4" opacity="0.4" filter="url(#soft6)"/>
+      <ellipse cx="600" cy="1000" rx="240" ry="150" fill="#ffe0a4" opacity="0.18" filter="url(#soft)"/>
+    </g>
+
+    <!-- полки сзади: мягкая тень, на которой читается белый халат -->
+    <g opacity="0.62">
+      <rect x="560" y="1040" width="404" height="300" fill="#412a13"/>
+      <rect x="560" y="1040" width="404" height="300" fill="#2a1a0b" opacity="0.35"/>
+      <g stroke="#8a5f2c" stroke-width="2" opacity="0.6">
+        <path d="M560 1116 L964 1116"/><path d="M560 1212 L964 1212"/><path d="M560 1308 L964 1308"/>
+      </g>
+      <g fill="#d09a4c" opacity="0.4">
+        <rect x="586" y="1078" width="14" height="36"/><rect x="606" y="1070" width="12" height="44"/>
+        <rect x="625" y="1080" width="16" height="34"/><rect x="650" y="1072" width="11" height="42"/>
+        <rect x="586" y="1170" width="13" height="40"/><rect x="607" y="1178" width="15" height="32"/>
+        <rect x="684" y="1074" width="15" height="38"/><rect x="705" y="1066" width="12" height="46"/>
+        <rect x="724" y="1078" width="17" height="34"/><rect x="750" y="1070" width="13" height="42"/>
+        <rect x="684" y="1166" width="13" height="42"/><rect x="703" y="1174" width="16" height="34"/>
+        <rect x="726" y="1164" width="11" height="44"/>
+        <rect x="684" y="1262" width="17" height="42"/><rect x="708" y="1268" width="12" height="36"/>
+      </g>
+      <rect x="560" y="1040" width="404" height="300" fill="#1a0f05" opacity="0.18" filter="url(#soft6)"/>
+    </g>
+    <!-- тень под потолком и на полу: глубина -->
+    <rect x="266" y="876" width="708" height="220" fill="url(#innerTop)"/>
+    <rect x="266" y="1290" width="708" height="210" fill="url(#innerBottom)"/>
+
+    <!-- прилавок -->
+    <g>
+      <rect x="286" y="1364" width="668" height="20" fill="#a2712f"/>
+      <rect x="286" y="1364" width="668" height="4" fill="#ffe0a4" opacity="0.75"/>
+      <rect x="286" y="1384" width="668" height="116" fill="url(#counterFace)"/>
+      <g stroke="#7c5222" stroke-width="1.5" opacity="0.35">
+        <path d="M286 1384 L954 1384"/>
+        <path d="M420 1392 L420 1500"/><path d="M620 1392 L620 1500"/><path d="M820 1392 L820 1500"/>
+      </g>
+      <!-- блик лампы на столешнице -->
+      <rect x="470" y="1366" width="300" height="14" fill="#ffe0a4" opacity="0.3" filter="url(#soft6)"/>
+    </g>
+
+    <!-- пожилая женщина в белом халате, без лица -->
+    <g>
+      <ellipse cx="760" cy="1360" rx="64" ry="10" fill="#2a1a0b" opacity="0.45"/>
+      <!-- халат: узкие плечи, чуть сутулые -->
+      <path d="M760 1196
+               C746 1196 734 1204 727 1218
+               C718 1240 710 1284 706 1326 C704 1348 703 1360 703 1368
+               L817 1368
+               C817 1360 816 1348 814 1326
+               C810 1284 802 1240 793 1218
+               C786 1204 774 1196 760 1196 Z" fill="#e7dcc6"/>
+      <!-- правая половина в полутени -->
+      <path d="M760 1196 C774 1196 786 1204 793 1218 C802 1240 810 1284 814 1326
+               C816 1348 817 1360 817 1368 L789 1368 C791 1340 792 1304 788 1270
+               C785 1240 776 1214 760 1196 Z" fill="#b9a377" opacity="0.55"/>
+      <path d="M703 1368 L817 1368 L817 1354 L703 1354 Z" fill="#8a7444" opacity="0.3"/>
+      <!-- рукава: два узких, вдоль тела -->
+      <path d="M727 1214 C718 1246 712 1296 710 1340 C710 1350 712 1356 716 1358
+               L729 1358 C724 1346 722 1332 723 1318 C726 1284 731 1248 738 1224 Z"
+            fill="#d5c7a8"/>
+      <path d="M793 1214 C802 1246 808 1296 810 1336 C810 1346 808 1352 804 1354
+               L791 1354 C796 1342 798 1330 797 1318 C794 1286 789 1250 782 1226 Z"
+            fill="#c8b894"/>
+      <path d="M729 1218 C722 1252 717 1298 715 1340" stroke="#b9a983" stroke-width="1.4" fill="none" opacity="0.6"/>
+      <path d="M791 1218 C798 1252 803 1298 805 1338" stroke="#a8926a" stroke-width="1.4" fill="none" opacity="0.5"/>
+      <!-- воротник и застёжка -->
+      <path d="M737 1204 L760 1224 L783 1204" stroke="#f9f2e0" stroke-width="3" fill="none" opacity="0.95"/>
+      <path d="M760 1226 L760 1354" stroke="#cdbf9e" stroke-width="1.4" opacity="0.4"/>
+      <circle cx="760" cy="1276" r="3" fill="#cdbf9e" opacity="0.5"/>
+      <circle cx="760" cy="1316" r="3" fill="#cdbf9e" opacity="0.5"/>
+      <!-- голова с пучком, лица нет -->
+      <ellipse cx="758" cy="1166" rx="21" ry="25" fill="#2b1d10"/>
+      <ellipse cx="774" cy="1150" rx="11" ry="10" fill="#22160a"/>
+      <path d="M737 1168 C737 1146 748 1138 760 1140" stroke="#3a2814" stroke-width="3" fill="none" opacity="0.7"/>
+      <!-- рука на прилавке -->
+      <ellipse cx="731" cy="1354" rx="11" ry="6" fill="#dccbab"/>
+    </g>
+
+    <!-- аптечные весы -->
+    <g>
+      <ellipse cx="508" cy="1360" rx="34" ry="5" fill="#3a2410" opacity="0.5"/>
+      <path d="M504 1306 L512 1306 L513 1360 L503 1360 Z" fill="#241708"/>
+      <path d="M416 1306 L600 1306" stroke="#241708" stroke-width="3.5"/>
+      <path d="M456 1306 L456 1330 M560 1306 L560 1330" stroke="#241708" stroke-width="1.6"/>
+      <!-- чашки весов -->
+      <path d="M434 1330 A 22 18 0 0 0 478 1330 Z" fill="#3d2611"/>
+      <path d="M538 1330 A 22 18 0 0 0 582 1330 Z" fill="#3d2611"/>
+      <path d="M434 1330 A 22 18 0 0 0 478 1330" fill="none" stroke="#e8bd78" stroke-width="1.6" opacity="0.7"/>
+      <path d="M538 1330 A 22 18 0 0 0 582 1330" fill="none" stroke="#e8bd78" stroke-width="1.6" opacity="0.7"/>
+      <!-- стрелка и грузик -->
+      <path d="M508 1306 L508 1288" stroke="#241708" stroke-width="2"/>
+      <path d="M503 1292 L508 1284 L513 1292 Z" fill="#241708"/>
+      <circle cx="478" cy="1318" r="4" fill="#e6b872" opacity="0.85"/>
+    </g>
+
+    <!-- чашка -->
+    <g>
+      <path d="M644 1318 L644 1352 C644 1360 650 1364 658 1364 L678 1364 C686 1364 692 1360 692 1352 L692 1318 Z"
+            fill="#e8dcc2"/>
+      <path d="M692 1324 C706 1324 710 1338 700 1346" stroke="#e8dcc2" stroke-width="6" fill="none"/>
+      <ellipse cx="668" cy="1318" rx="24" ry="6" fill="#6a4a24"/>
+      <ellipse cx="668" cy="1318" rx="20" ry="4" fill="#3d2a16"/>
+      <path d="M648 1322 L648 1350" stroke="#fff6e2" stroke-width="3" opacity="0.55"/>
+    </g>
+
+    <!-- глубина: тень у потолка и по краям -->
+    <rect x="266" y="876" width="708" height="56" fill="#0a0603" opacity="0.55"/>
+    <rect x="266" y="876" width="34" height="624" fill="#0a0603" opacity="0.35"/>
+    <rect x="940" y="876" width="34" height="624" fill="#0a0603" opacity="0.35"/>
+
+    <!-- стекло и отражения -->
+    <rect x="266" y="876" width="708" height="624" fill="url(#glassCold)"/>
+    <g fill="#dbe9ff" opacity="0.07">
+      <path d="M300 1500 L520 876 L576 876 L356 1500 Z"/>
+      <path d="M620 1500 L792 876 L820 876 L648 1500 Z"/>
+    </g>
+    <g stroke="#7fa5d0" stroke-width="1" opacity="0.22">
+      <path d="M300 1500 L520 876"/><path d="M356 1500 L576 876"/>
+      <path d="M648 1500 L820 876"/><path d="M700 1500 L860 876"/>
+    </g>
+    <!-- картонка «ушла на минуту» на стекле -->
+    <g transform="rotate(-4 450 994)">
+      <rect x="352" y="948" width="196" height="96" fill="#000000" opacity="0.45" filter="url(#soft6)" transform="translate(9 11)"/>
+      <rect x="352" y="948" width="196" height="96" fill="#d8c7a2"/>
+      <rect x="352" y="948" width="196" height="96" fill="none" stroke="#8a7654" stroke-width="2"/>
+      <rect x="352" y="1036" width="196" height="8" fill="#b8a682"/>
+      <g fill="#cfc0a0" opacity="0.8">
+        <rect x="376" y="938" width="56" height="17" transform="rotate(-8 404 946)"/>
+        <rect x="470" y="1036" width="50" height="15" transform="rotate(-6 495 1043)"/>
+      </g>
+      <text x="450" y="990" text-anchor="middle"
+            font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="27" font-weight="700"
+            letter-spacing="2" fill="#241a0e">УШЛА</text>
+      <text x="450" y="1028" text-anchor="middle"
+            font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="27" font-weight="700"
+            letter-spacing="1" fill="#241a0e">НА МИНУТУ</text>
+    </g>
+  </g>
+
+  <!-- блик на стекле сверху -->
+  <path d="M266 876 L974 876 L974 940 L266 940 Z" fill="#ffe0a4" opacity="0.12"/>
+
+  <!-- свет из окна на тротуар -->
+  <path d="M266 1530 L974 1530 L1080 1800 L170 1800 Z" fill="url(#spill)" opacity="0.75" filter="url(#soft6)"/>
+  <path d="M330 1530 L910 1530 L980 1800 L280 1800 Z" fill="url(#spill)" opacity="0.6" filter="url(#soft)"/>
+
+  <!-- ================= человек в пальто, спиной ================= -->
+  <g>
+    <!-- тень на тротуаре: падает к нам, от окна -->
+    <path d="M330 1694 C392 1696 470 1748 496 1800 L188 1800 C232 1738 282 1696 330 1694 Z"
+          fill="#02050a" opacity="0.5" filter="url(#soft6)"/>
+    <ellipse cx="330" cy="1712" rx="54" ry="10" fill="#02050a" opacity="0.8" filter="url(#soft6)"/>
+
+    <!-- ноги -->
+    <path d="M306 1480 L305 1692 L327 1692 L327 1480 Z" fill="#02050a"/>
+    <path d="M333 1480 L333 1692 L355 1692 L354 1480 Z" fill="#02050a"/>
+    <!-- ботинки -->
+    <path d="M299 1684 L299 1712 L329 1712 L328 1684 Z" fill="#010307"/>
+    <path d="M332 1684 L333 1712 L363 1712 L362 1684 Z" fill="#010307"/>
+
+    <!-- голова вросла в плечи -->
+    <ellipse cx="330" cy="1154" rx="20" ry="25" fill="#02050a"/>
+    <path d="M320 1176 L340 1176 L340 1192 L320 1192 Z" fill="#02050a"/>
+
+    <!-- пальто: покатые плечи, полы до колена -->
+    <path d="M330 1186
+             C322 1186 314 1188 306 1194
+             C294 1202 285 1212 282 1226
+             C280 1262 279 1320 278 1380
+             L277 1478 C277 1488 281 1492 291 1492
+             L369 1492 C379 1492 383 1488 383 1478
+             L382 1380
+             C381 1320 380 1262 378 1226
+             C375 1212 366 1202 354 1194
+             C346 1188 338 1186 330 1186 Z" fill="#02050a"/>
+    <!-- лопатка, швы рукавов, подол с вытачкой -->
+    <path d="M330 1200 L330 1490" stroke="#0a1421" stroke-width="2" opacity="0.5"/>
+    <path d="M299 1218 C295 1290 293 1390 293 1488" stroke="#0b1824" stroke-width="2" opacity="0.6"/>
+    <path d="M361 1218 C365 1290 367 1390 367 1488" stroke="#0b1824" stroke-width="2" opacity="0.5"/>
+    <path d="M277 1478 L383 1478" stroke="#050b12" stroke-width="3" opacity="0.55"/>
+    <path d="M330 1478 L330 1492" stroke="#050b12" stroke-width="2" opacity="0.5"/>
+    <!-- тень под воротником: голова отделяется от пальто -->
+    <path d="M312 1190 L348 1190" stroke="#0a1421" stroke-width="4" opacity="0.9"/>
+    <path d="M316 1196 C322 1202 338 1202 344 1196" stroke="#0a1421" stroke-width="3" fill="none" opacity="0.7"/>
+    <!-- контур: тёплый справа от окна, холодный слева -->
+    <path d="M382 1236 C381 1292 380 1360 380 1424" stroke="#ffd48a" stroke-width="1.8" fill="none" opacity="0.32"/>
+    <path d="M283 1236 C281 1292 280 1360 280 1424" stroke="#dbe9ff" stroke-width="1.4" fill="none" opacity="0.22"/>
+  </g>
+
+  <!-- тротуар плиткой и кромка -->
+  <g stroke="#0e1a27" stroke-width="2" opacity="0.8">
+    <path d="M0 1622 L1200 1622"/>
+    <path d="M0 1700 L1200 1700"/>
+    <path d="M60 1622 L20 1800"/><path d="M320 1622 L300 1800"/><path d="M620 1622 L630 1800"/>
+    <path d="M900 1622 L940 1800"/>
+  </g>
+  <g stroke="#08111b" stroke-width="2" opacity="0.6">
+    <path d="M0 1748 L1200 1748"/>
+  </g>
+
+  <!-- ================= текст ================= -->
+  <text x="86" y="500" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="240"
+        font-weight="700" letter-spacing="16" fill="#f4f8ff">ШОВ</text>
+  <text x="98" y="596" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="86"
+        fill="#a7c6ef" letter-spacing="8">Чужая родня</text>
+  <text x="102" y="660" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="28"
+        letter-spacing="6" fill="#5f7ba6">КНИГА ШЕСТАЯ</text>
+
+  <rect width="1200" height="1800" fill="url(#vignette)"/>
+  <rect width="1200" height="1800" filter="url(#grain)" opacity="0.05"/>
+</svg>
