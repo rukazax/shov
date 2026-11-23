@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800" role="img" aria-label="Шов. Книга восьмая: Орбита — обложка">
+  <defs>
+    <linearGradient id="sky8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04060b"/>
+      <stop offset="0.30" stop-color="#080e16"/>
+      <stop offset="0.62" stop-color="#0c1520"/>
+      <stop offset="1" stop-color="#04070c"/>
+    </linearGradient>
+    <radialGradient id="mouth8" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d8ecff" stop-opacity="0.42"/>
+      <stop offset="0.35" stop-color="#8fc0ea" stop-opacity="0.16"/>
+      <stop offset="0.7" stop-color="#3d5c7c" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#080e16" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wall8" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1b2532"/>
+      <stop offset="0.55" stop-color="#121a25"/>
+      <stop offset="1" stop-color="#0a1018"/>
+    </linearGradient>
+    <linearGradient id="wallR8" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#1b2532"/>
+      <stop offset="0.55" stop-color="#121a25"/>
+      <stop offset="1" stop-color="#0a1018"/>
+    </linearGradient>
+    <linearGradient id="deep8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f1a28"/>
+      <stop offset="0.45" stop-color="#070d15"/>
+      <stop offset="1" stop-color="#02040a"/>
+    </linearGradient>
+    <linearGradient id="ring8" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8fd2ff" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#cfeaff" stop-opacity="0.85"/>
+      <stop offset="0.5" stop-color="#9ed4ff" stop-opacity="0.95"/>
+      <stop offset="0.8" stop-color="#cfeaff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#6fb6ee" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="lamp8" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd79a" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#ffc274" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#ffb459" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cone8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffcf8a" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#ffcf8a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cage8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a2432"/>
+      <stop offset="1" stop-color="#0b1119"/>
+    </linearGradient>
+    <radialGradient id="vignette8" cx="0.5" cy="0.46" r="0.8">
+      <stop offset="0.40" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.88"/>
+    </radialGradient>
+    <filter id="soft8"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="soft8b"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="grain8">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1800" fill="url(#sky8)"/>
+
+  <!-- устье ствола: свет из верхней дыры, вокруг него крутится орбита -->
+  <ellipse cx="600" cy="900" rx="520" ry="230" fill="url(#mouth8)"/>
+  <ellipse cx="600" cy="900" rx="356" ry="140" fill="none" stroke="#26374a" stroke-width="4" opacity="0.95"/>
+  <ellipse cx="600" cy="900" rx="300" ry="116" fill="none" stroke="#1b2836" stroke-width="3" opacity="0.9"/>
+  <ellipse cx="600" cy="900" rx="240" ry="92" fill="none" stroke="#141d29" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- орбита: три витка, свет идёт по каждому -->
+  <g fill="none">
+    <ellipse cx="600" cy="846" rx="430" ry="132" stroke="url(#ring8)" stroke-width="8"
+             transform="rotate(-7 600 846)"/>
+    <ellipse cx="600" cy="846" rx="430" ry="132" stroke="#f2faff" stroke-width="1.8"
+             transform="rotate(-7 600 846)" opacity="0.35"/>
+    <ellipse cx="600" cy="884" rx="376" ry="112" stroke="url(#ring8)" stroke-width="5"
+             transform="rotate(5 600 884)" opacity="0.8"/>
+    <ellipse cx="600" cy="922" rx="322" ry="94" stroke="#a8d4f5" stroke-width="2.2"
+             transform="rotate(12 600 922)" opacity="0.45"/>
+  </g>
+
+  <!-- шахта: две бетонные стены, между ними глубина -->
+  <path d="M0 900 C240 940 380 960 470 966 L470 1800 L0 1800 Z" fill="url(#wall8)"/>
+  <path d="M1200 900 C960 940 820 960 730 966 L730 1800 L1200 1800 Z" fill="url(#wallR8)"/>
+  <path d="M470 966 L470 1800" stroke="#2b3b4e" stroke-width="3" opacity="0.85"/>
+  <path d="M730 966 L730 1800" stroke="#2b3b4e" stroke-width="3" opacity="0.85"/>
+
+  <!-- швы бетона -->
+  <g stroke="#080d14" stroke-width="3" opacity="0.9">
+    <path d="M0 1040 L470 1064"/><path d="M0 1200 L470 1206"/><path d="M0 1370 L470 1358"/>
+    <path d="M0 1540 L470 1516"/><path d="M0 1710 L470 1680"/>
+    <path d="M1200 1040 L730 1064"/><path d="M1200 1200 L730 1206"/><path d="M1200 1370 L730 1358"/>
+    <path d="M1200 1540 L730 1516"/><path d="M1200 1710 L730 1680"/>
+  </g>
+  <g stroke="#16202c" stroke-width="2" opacity="0.9">
+    <path d="M130 918 L130 1800"/><path d="M300 940 L300 1800"/>
+    <path d="M1070 918 L1070 1800"/><path d="M900 940 L900 1800"/>
+  </g>
+
+  <!-- глубина -->
+  <path d="M470 966 L730 966 L730 1800 L470 1800 Z" fill="url(#deep8)"/>
+
+  <!-- клеть: поднимается по стволу, снизу её держит свет -->
+  <g transform="translate(600,1290)">
+    <path d="M0 -150 L0 -520" stroke="#2a3a4d" stroke-width="7"/>
+    <path d="M-112 -150 L-112 -430" stroke="#1e2a38" stroke-width="5"/>
+    <path d="M112 -150 L112 -430" stroke="#1e2a38" stroke-width="5"/>
+    <rect x="-112" y="-150" width="224" height="292" fill="url(#cage8)"/>
+    <rect x="-112" y="-150" width="224" height="292" fill="none" stroke="#2b3c50" stroke-width="6"/>
+    <g stroke="#22303f" stroke-width="3.5">
+      <path d="M-75 -150 L-75 142"/><path d="M-38 -150 L-38 142"/><path d="M0 -150 L0 142"/>
+      <path d="M38 -150 L38 142"/><path d="M75 -150 L75 142"/>
+      <path d="M-112 -76 L112 -76"/><path d="M-112 -6 L112 -6"/><path d="M-112 66 L112 66"/>
+    </g>
+    <rect x="-112" y="-150" width="224" height="16" fill="#2b3c50"/>
+    <rect x="-112" y="126" width="224" height="16" fill="#2b3c50"/>
+    <g fill="#2b3c50" opacity="0.95">
+      <path d="M-112 -150 L-86 -150 L-112 -112 Z"/><path d="M112 -150 L86 -150 L112 -112 Z"/>
+      <path d="M-112 142 L-86 142 L-112 104 Z"/><path d="M112 142 L86 142 L112 104 Z"/>
+    </g>
+    <path d="M-112 -150 L-112 142" stroke="#7fa8cf" stroke-width="2" opacity="0.35"/>
+    <path d="M112 -150 L112 142" stroke="#7fa8cf" stroke-width="2" opacity="0.35"/>
+    <!-- лампа в клети и двое у окна -->
+    <rect x="-66" y="-58" width="132" height="94" fill="#ffe3b4" opacity="0.82"/>
+    <rect x="-66" y="-58" width="132" height="94" fill="none" stroke="#0a0f16" stroke-width="5"/>
+    <g fill="#0a0f16" opacity="0.88">
+      <path d="M-44 36 C-40 6 -16 6 -12 36 Z"/><circle cx="-28" cy="1" r="11"/>
+      <path d="M12 36 C16 4 40 4 44 36 Z"/><circle cx="28" cy="-2" r="11"/>
+    </g>
+    <ellipse cx="0" cy="-10" rx="300" ry="260" fill="url(#lamp8)" opacity="0.5"/>
+    <path d="M-120 10 L120 10 L250 760 L-250 760 Z" fill="url(#cone8)" opacity="0.22" filter="url(#soft8)"/>
+  </g>
+
+  <!-- два фонаря на стенах -->
+  <g>
+    <rect x="330" y="1090" width="10" height="110" fill="#0b1219"/>
+    <rect x="300" y="1192" width="70" height="16" rx="6" fill="#111a24"/>
+    <rect x="316" y="1206" width="36" height="10" rx="4" fill="#ffe3b4" opacity="0.92"/>
+    <ellipse cx="335" cy="1230" rx="145" ry="120" fill="url(#lamp8)"/>
+    <path d="M286 1210 L384 1210 L470 1720 L212 1720 Z" fill="url(#cone8)" opacity="0.34" filter="url(#soft8)"/>
+
+    <rect x="860" y="1090" width="10" height="110" fill="#0b1219"/>
+    <rect x="830" y="1192" width="70" height="16" rx="6" fill="#111a24"/>
+    <rect x="846" y="1206" width="36" height="10" rx="4" fill="#ffe3b4" opacity="0.92"/>
+    <ellipse cx="865" cy="1230" rx="145" ry="120" fill="url(#lamp8)"/>
+    <path d="M816 1210 L914 1210 L1000 1720 L742 1720 Z" fill="url(#cone8)" opacity="0.34" filter="url(#soft8)"/>
+  </g>
+
+  <!-- шов: светящаяся трещина между бетоном и глубиной -->
+  <path d="M600 1500 L600 1790" stroke="url(#ring8)" stroke-width="34" filter="url(#soft8)"/>
+  <path d="M600 1560 L594 1640 L604 1710" stroke="#bfe6ff" stroke-width="1.6" fill="none" opacity="0.22"/>
+  <ellipse cx="600" cy="1660" rx="170" ry="200" fill="#9ed4ff" opacity="0.06" filter="url(#soft8)"/>
+
+  <!-- человек у края ствола, спиной, с фонарём -->
+  <g fill="#02050a">
+    <ellipse cx="238" cy="1676" rx="82" ry="12" opacity="0.55" fill="#010306" filter="url(#soft8b)"/>
+    <path d="M186 1440 C202 1372 274 1372 290 1440 L306 1676 L170 1676 Z"/>
+    <path d="M222 1384 C228 1344 244 1344 250 1384 Z"/>
+    <circle cx="236" cy="1336" r="42"/>
+    <path d="M212 1306 C220 1264 256 1268 262 1308 Z"/>
+    <path d="M186 1476 C172 1516 176 1592 184 1650" stroke="#02050a" stroke-width="4" fill="none" opacity="0.85"/>
+    <path d="M290 1470 C312 1490 324 1524 322 1556" stroke="#02050a" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <circle cx="330" cy="1562" r="11" fill="#ffd79a"/>
+    <ellipse cx="330" cy="1562" rx="72" ry="64" fill="url(#lamp8)" opacity="0.8"/>
+  </g>
+
+  <!-- пол -->
+  <rect x="0" y="1676" width="1200" height="124" fill="#04070c"/>
+  <path d="M0 1676 L1200 1676" stroke="#1d2734" stroke-width="2" opacity="0.85"/>
+  <g fill="#070c13">
+    <path d="M24 1676 L72 1676 L62 1718 Z"/><path d="M156 1676 L206 1676 L196 1710 Z"/>
+    <path d="M966 1676 L1018 1676 L1010 1714 Z"/><path d="M1100 1676 L1148 1676 L1138 1708 Z"/>
+  </g>
+  <path d="M470 1676 L730 1676 L800 1800 L400 1800 Z" fill="#9ed4ff" opacity="0.07" filter="url(#soft8)"/>
+
+  <!-- ================= текст ================= -->
+  <text x="86" y="452" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="240"
+        font-weight="700" letter-spacing="16" fill="#f6faff">ШОВ</text>
+  <text x="98" y="552" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="88"
+        fill="#a7c6ef" letter-spacing="8">Орбита</text>
+  <text x="102" y="620" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="28"
+        letter-spacing="6" fill="#5f7ba6">КНИГА ВОСЬМАЯ</text>
+
+  <rect width="1200" height="1800" fill="url(#vignette8)"/>
+  <rect width="1200" height="1800" filter="url(#grain8)" opacity="0.05"/>
+</svg>
