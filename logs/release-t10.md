@@ -8,10 +8,10 @@
 
 | | |
 |---|---|
-| Текст | 610 573 знака, 100 818 слов, 15,3 а.л. |
+| Текст | 611 494 знака, 100 963 слова, 15,3 а.л. |
 | Главы | 34: Введение + 33 главы |
 | Сцены | 152 |
-| Системные строки | 157 (одна на ~3,9 тыс. знаков) |
+| Системные строки | 156 (одна на ~3,9 тыс. знаков) |
 | Диалог | 57 % строк |
 | Средняя фраза | 8,2 слова |
 
@@ -50,10 +50,10 @@ The tenth book of the «Seam» series: full text, EPUB and cover. Audio ships as
 
 | | |
 |---|---|
-| Text | 610,573 characters, 100,818 words, 15.3 author sheets |
+| Text | 611,494 characters, 100,963 words, 15.3 author sheets |
 | Chapters | 34: Introduction + 33 chapters |
 | Scenes | 152 |
-| System lines | 157 (one per ~3,900 characters) |
+| System lines | 156 (one per ~3,900 characters) |
 | Dialogue | 57 % of lines |
 | Average sentence | 8.2 words |
 
