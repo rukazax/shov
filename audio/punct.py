@@ -182,7 +182,7 @@ def render(pred):
             out.append(piece)
         glue = False
         sentence_start = bool(mark) and mark[0] in SENTENCE_END
-        out[-1] += mark
+        out[-1] += (" " + mark) if "—" in mark else mark   # тире отделяют пробелами
     return " ".join(out)
 
 
