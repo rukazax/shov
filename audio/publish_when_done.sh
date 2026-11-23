@@ -59,7 +59,7 @@ hours, mins = divmod(round(dur / 60), 60)
 block = (
     "<!-- auto:start -->\n"
     "## Собранный том\n\n"
-    f"- дорожек: {len(files)}, общая длительность {hours} ч {mins} мин, {size / 2**20:.0f} МБ\n"
+    f"- дорожек: {len(files)}, общая длительность {hours} ч {mins} мин, {size / 1e6:.0f} МБ\n"
     f"- громкость: {min(lufs):.1f} … {max(lufs):.1f} LUFS, моно 44,1 кГц, 96 кбит/с\n"
     "- приёмка: `check_out.py` (длительность против объёма текста), лог `logs/check-out.txt`\n"
     "<!-- auto:end -->\n"
