@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800" role="img" aria-label="Шов. Книга десятая: Узел — обложка">
+<defs>
+    <linearGradient id="sky10" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04060a"/>
+      <stop offset="0.34" stop-color="#070d15"/>
+      <stop offset="0.68" stop-color="#0a1420"/>
+      <stop offset="1" stop-color="#03060b"/>
+    </linearGradient>
+    <radialGradient id="core10" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.18" stop-color="#d6ecff" stop-opacity="0.55"/>
+      <stop offset="0.45" stop-color="#8fbfe8" stop-opacity="0.20"/>
+      <stop offset="0.75" stop-color="#3d5c7c" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#080e16" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="far10" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#cfe8ff" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#6f9dc8" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#0a1420" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="thread10" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9ccaf0" stop-opacity="0"/>
+      <stop offset="0.28" stop-color="#bcdcf6" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#e8f5ff" stop-opacity="0.85"/>
+      <stop offset="0.72" stop-color="#bcdcf6" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#9ccaf0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edge10" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6fb6ee" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#cfeaff" stop-opacity="0.8"/>
+      <stop offset="0.5" stop-color="#9ed4ff" stop-opacity="0.95"/>
+      <stop offset="0.7" stop-color="#cfeaff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#6fb6ee" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="floor10" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1826"/>
+      <stop offset="0.5" stop-color="#070c14"/>
+      <stop offset="1" stop-color="#02040a"/>
+    </linearGradient>
+    <radialGradient id="vignette10" cx="0.5" cy="0.42" r="0.92">
+      <stop offset="0.36" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.9"/>
+    </radialGradient>
+    <filter id="soft10"><feGaussianBlur stdDeviation="24"/></filter>
+    <filter id="soft10b"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="glow10"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="grain10">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+</defs>
+
+  <rect width="1200" height="1800" fill="url(#sky10)"/>
+
+  <!-- полотно: основа и уток, узел в перекрестье -->
+  <g opacity="0.55">
+    <g stroke="#1c2c3e" stroke-width="2">
+      <path d="M0 1180 L1200 1180"/><path d="M0 1260 L1200 1260"/>
+      <path d="M0 1340 L1200 1340"/><path d="M0 1430 L1200 1430"/>
+      <path d="M0 1530 L1200 1530"/><path d="M0 1650 L1200 1650"/>
+    </g>
+    <g stroke="#172535" stroke-width="2">
+      <path d="M120 1120 L120 1800"/><path d="M300 1120 L300 1800"/>
+      <path d="M470 1120 L470 1800"/><path d="M600 1120 L600 1800"/>
+      <path d="M730 1120 L730 1800"/><path d="M900 1120 L900 1800"/>
+      <path d="M1080 1120 L1080 1800"/>
+    </g>
+  </g>
+
+  <!-- светящиеся нити, сходящиеся к узлу -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M-40 1300 C 380 1290 520 1180 600 1120" stroke="url(#thread10)" stroke-width="3.4" opacity="0.75"/>
+    <path d="M1240 1300 C 820 1290 680 1180 600 1120" stroke="url(#thread10)" stroke-width="3.4" opacity="0.75"/>
+    <path d="M-40 1560 C 360 1490 540 1260 600 1120" stroke="url(#thread10)" stroke-width="2.2" opacity="0.45"/>
+    <path d="M1240 1560 C 840 1490 660 1260 600 1120" stroke="url(#thread10)" stroke-width="2.2" opacity="0.45"/>
+    <path d="M600 1800 C 596 1480 600 1300 600 1120" stroke="url(#thread10)" stroke-width="2.6" opacity="0.5"/>
+  </g>
+
+  <!-- ядро узла -->
+  <ellipse cx="600" cy="1110" rx="330" ry="300" fill="url(#core10)" filter="url(#soft10)"/>
+  <g stroke="#eaf6ff" stroke-width="5" opacity="0.9" filter="url(#glow10)">
+    <path d="M470 1110 C 540 1046 660 1046 730 1110"/>
+    <path d="M470 1110 C 540 1174 660 1174 730 1110"/>
+  </g>
+  <circle cx="600" cy="1110" r="16" fill="#ffffff" opacity="0.92" filter="url(#glow10)"/>
+
+  <!-- одиннадцать узлов сети в глубине: четвёртый погашен -->
+  <g fill="#8fbfe8" opacity="0.38" transform="translate(0,120)">
+    <circle cx="220" cy="700" r="5"/><circle cx="330" cy="620" r="4.5"/>
+    <circle cx="450" cy="660" r="5"/><circle cx="1010" cy="690" r="5"/>
+    <circle cx="900" cy="600" r="4.5"/><circle cx="790" cy="650" r="5"/>
+    <circle cx="980" cy="560" r="4"/><circle cx="180" cy="600" r="4"/>
+    <circle cx="1150" cy="740" r="4"/><circle cx="60" cy="760" r="4"/>
+  </g>
+  <g fill="none" stroke="#2b4256" stroke-width="1.6" opacity="0.45" transform="translate(0,120)">
+    <path d="M220 700 L330 620 L450 660 L600 760 L790 650 L900 600 L1010 690 L1150 740"/>
+    <path d="M180 600 L220 700"/><path d="M60 760 L180 600"/>
+  </g>
+  <g>
+    <circle cx="790" cy="650" r="9" fill="#0a1220" stroke="#2b4256" stroke-width="2"/></g><g transform="translate(0,120)"><circle cx="790" cy="650" r="9" fill="#0a1220" stroke="#2b4256" stroke-width="2"/>
+    <circle cx="790" cy="650" r="26" fill="url(#far10)" opacity="0.25"/>
+  </g>
+
+  <!-- кромка с провисом -->
+  <path d="M0 1740 C 300 1722 480 1768 600 1780 C 720 1768 900 1722 1200 1740" stroke="url(#edge10)" stroke-width="18" fill="none" filter="url(#soft10)"/>
+  <path d="M0 1740 C 300 1722 480 1768 600 1780 C 720 1768 900 1722 1200 1740" stroke="#4894d0" stroke-width="1.6" opacity="0.30"/>
+
+  <!-- держащий: силуэт под узлом, ладони на нитях -->
+  <g fill="#02050a" transform="translate(600,1240) scale(1.1) translate(-600,-1120)">
+    <ellipse cx="600" cy="1352" rx="70" ry="10" opacity="0.6" fill="#010306" filter="url(#soft10b)"/>
+    <path d="M566 1350 L572 1240 L628 1240 L634 1350 Z"/>
+    <path d="M570 1250 C 574 1150 626 1140 636 1180 L644 1244 C 630 1262 604 1264 588 1256 Z"/>
+    <circle cx="622" cy="1122" r="30"/>
+    <path d="M600 1102 C 610 1076 642 1078 648 1106 Z"/>
+    <path d="M586 1200 C 560 1196 542 1204 528 1196" stroke="#02050a" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <path d="M636 1200 C 662 1196 680 1204 694 1196" stroke="#02050a" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <path d="M528 1196 L502 1180" stroke="#02050a" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M694 1196 L720 1180" stroke="#02050a" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- дальний свет и пыль -->
+  <ellipse cx="600" cy="1500" rx="300" ry="180" fill="#8fc4ee" opacity="0.07" filter="url(#soft10)"/>
+  <g fill="#cfe6ff" opacity="0.35">
+    <circle cx="420" cy="1430" r="1.6"/><circle cx="512" cy="1520" r="1.2"/>
+    <circle cx="700" cy="1465" r="1.5"/><circle cx="820" cy="1540" r="1.3"/>
+    <circle cx="348" cy="1600" r="1.4"/><circle cx="880" cy="1660" r="1.2"/>
+  </g>
+
+  <!-- ================= текст ================= -->
+  <text x="86" y="452" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="240"
+        font-weight="700" letter-spacing="16" fill="#f6faff">ШОВ</text>
+  <text x="98" y="552" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="88"
+        fill="#a7c6ef" letter-spacing="8">Узел</text>
+  <text x="102" y="620" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="28"
+        letter-spacing="6" fill="#5f7ba6">КНИГА ДЕСЯТАЯ</text>
+
+  <rect width="1200" height="1800" fill="url(#vignette10)"/>
+  <rect width="1200" height="1800" filter="url(#grain10)" opacity="0.05"/>
+</svg>
