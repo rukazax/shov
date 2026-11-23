@@ -240,6 +240,17 @@ def sess(name):
     return wav_read(p) if os.path.exists(p) else np.zeros(1, dtype=np.float32)
 
 
+def _fft_len(n):
+    """Длина БПФ до ближайшей степени двойки.
+
+    Замер 23.11: rfft по «случайной» длине уходит в алгоритм Блюстейна —
+    200 003 отсчёта 502 мс против 63 мс у 262 144, а 1 000 003 — 3,5 с.
+    room() и soften() считаются на каждый блок главы, поэтому простой
+    размерных чисел держал сборку дорожки десятки минут. Дополняем нулями.
+    """
+    return 1 << max(0, int(n) - 1).bit_length()
+
+
 def movavg(x, w):
     """Скользящее среднее за O(n): cumsum вместо convolve с длинным окном."""
     w = max(1, int(w))
@@ -581,15 +592,16 @@ def soften(x):
     n = len(x)
     if n < 256:
         return x
-    S = np.fft.rfft(x.astype(np.float64))
-    f = np.fft.rfftfreq(n, 1.0 / SR)
+    N = _fft_len(n)                     # степень двойки: без Блюстейна
+    S = np.fft.rfft(x.astype(np.float64), N)
+    f = np.fft.rfftfreq(N, 1.0 / SR)
     xs = np.log2(np.maximum(f, 1.0))
     pts_x = np.log2(np.array([p[0] for p in EQ_TABLE]))
     pts_y = np.array([p[1] for p in EQ_TABLE])
     db = np.interp(xs, pts_x, pts_y)
     g = 10.0 ** (db / 20.0)
     g *= 1.0 / (1.0 + (np.maximum(f - 11500.0, 0.0) / 1200.0) ** 4)   # без цифрового воздуха
-    return np.fft.irfft(S * g, n).astype(np.float32)
+    return np.fft.irfft(S * g, N)[:n].astype(np.float32)
 
 
 def room(x, wet=ROOM_WET):
@@ -606,7 +618,8 @@ def room(x, wet=ROOM_WET):
     ir[int(0.014 * SR):] += tail
     ir /= max(float(np.abs(ir).sum()), 1e-6)
     n = len(x) + ir_len - 1
-    y = np.fft.irfft(np.fft.rfft(x, n) * np.fft.rfft(ir, n), n).astype(np.float32)
+    N = _fft_len(n)                     # линейная свёртка нулями до степени 2
+    y = np.fft.irfft(np.fft.rfft(x, N) * np.fft.rfft(ir, N), N)[:n].astype(np.float32)
     out = np.zeros(n, dtype=np.float32)
     out[:len(x)] = x * (1.0 - wet)
     out += y * wet
